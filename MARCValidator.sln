@@ -7,9 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewLayer", "ViewLayer\View
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainLayer", "DomainLayer\DomainLayer.csproj", "{14841012-CFB3-4EC6-A7C9-52F8AB390261}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "ServiceLayer\DataAccessLayer.csproj", "{0879FB6C-FF37-48FD-9111-75889E58881C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1B6819F1-AAAF-46A6-B479-D18AC851D9A6}"
+	ProjectSection(SolutionItems) = preProject
+		F:\SQLITE\MARC_Validator.db = F:\SQLITE\MARC_Validator.db
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +30,14 @@ Global
 		{14841012-CFB3-4EC6-A7C9-52F8AB390261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14841012-CFB3-4EC6-A7C9-52F8AB390261}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14841012-CFB3-4EC6-A7C9-52F8AB390261}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0879FB6C-FF37-48FD-9111-75889E58881C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0879FB6C-FF37-48FD-9111-75889E58881C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0879FB6C-FF37-48FD-9111-75889E58881C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0879FB6C-FF37-48FD-9111-75889E58881C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
