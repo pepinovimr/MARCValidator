@@ -9,11 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainLayer", "DomainLayer\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1B6819F1-AAAF-46A6-B479-D18AC851D9A6}"
-	ProjectSection(SolutionItems) = preProject
-		F:\SQLITE\MARC_Validator.db = F:\SQLITE\MARC_Validator.db
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}"
 EndProject
 Global
