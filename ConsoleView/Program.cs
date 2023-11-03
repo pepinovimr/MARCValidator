@@ -1,5 +1,7 @@
-﻿using System;
-using ApplicationLayer;
+﻿using ApplicationLayer;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using SharedView;
 
 namespace ConsoleView
 {
@@ -13,15 +15,19 @@ namespace ConsoleView
         /// </summary>
         private static void Main()
         {
-            ConsoleViewModel consoleViewModel = new ConsoleViewModel();
+            HostApplicationBuilder builder = Startup.ConfigureHost();
+            BuildApplication(builder);
 
-            // Initialize the View from the View Layer, passing the ViewModel
-            ConsoleView consoleView = new ConsoleView(consoleViewModel);
-
-            // Perform logic or actions using the ViewModel
-            consoleViewModel.PerformApplicationLogic();
+            ConsoleView consoleView = new ConsoleView(builder.Services.BuildServiceProvider().GetService<ConsoleViewModel>());
 
             Console.ReadKey();
+        }
+
+        private static void BuildApplication(HostApplicationBuilder builder)
+        {
+            builder.Services.AddTransient<ConsoleViewModel>();
+
+            builder.Build();
         }
     }
 }

@@ -2,6 +2,9 @@
 {
     public class ConsoleViewModel
     {
+        /// <summary>
+        /// Handles ViewNotification for 
+        /// </summary>
         public event EventHandler<string> Notify;
 
         /// <summary>

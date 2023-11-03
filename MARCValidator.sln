@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationLayer", "Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleView", "ConsoleView\ConsoleView.csproj", "{B3771A70-949F-4621-81FD-15B7DA994469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleView", "ConsoleView\ConsoleView.csproj", "{B3771A70-949F-4621-81FD-15B7DA994469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedView", "SharedView\SharedView.csproj", "{79E313B0-6C73-4AD8-95AB-3376417C2A10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B3771A70-949F-4621-81FD-15B7DA994469}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3771A70-949F-4621-81FD-15B7DA994469}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3771A70-949F-4621-81FD-15B7DA994469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E313B0-6C73-4AD8-95AB-3376417C2A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E313B0-6C73-4AD8-95AB-3376417C2A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E313B0-6C73-4AD8-95AB-3376417C2A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E313B0-6C73-4AD8-95AB-3376417C2A10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
