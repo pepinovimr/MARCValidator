@@ -22,7 +22,6 @@ namespace ConsoleView
 
             viewModel.Notify += ViewModel_Notify;
 
-            viewModel.PerformApplicationLogic();
         }
 
         /// <summary>
