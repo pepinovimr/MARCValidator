@@ -1,4 +1,5 @@
 ﻿using ApplicationLayer;
+using ApplicationLayer.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace ConsoleView
@@ -8,16 +9,26 @@ namespace ConsoleView
     /// </summary>
     internal class ConsoleView
     {
+        /// <summary>
+        /// Injected ViewModel
+        /// </summary>
         private readonly ConsoleViewModel _viewModel;
 
-        private readonly ILogger _logger;
         /// <summary>
-        /// Constructor
+        /// Injected logger
         /// </summary>
-        public ConsoleView(ConsoleViewModel viewModel, ILogger<ConsoleViewModel> logger) 
+        private readonly ILogger _logger;
+
+        ILocalizationService _localizationService;
+
+        /// <summary>
+        /// Initializes Injected ViewModel and other fields and subscribes to viewModel events
+        /// </summary>
+        public ConsoleView(ConsoleViewModel viewModel, ILogger<ConsoleViewModel> logger, ILocalizationService localizationService) 
         {
             _viewModel = viewModel;
             _logger = logger;
+            _localizationService = localizationService;
 
             viewModel.Notify += ViewModel_Notify;
         }
@@ -27,9 +38,12 @@ namespace ConsoleView
         /// </summary>
         private void ViewModel_Notify(object sender, string message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(_localizationService[message]);
         }
 
+        /// <summary>
+        /// Starts Application
+        /// </summary>
         public void StartApplication()
         {
             _logger.Log(LogLevel.Information, "Application Started");

@@ -8,7 +8,6 @@ namespace ApplicationLayer
     /// </summary>
     public class ConsoleViewModel
     {
-        private readonly ILocalizationService _localization;
 
         private ILogger<ConsoleViewModel> _logger;
 
@@ -21,9 +20,8 @@ namespace ApplicationLayer
         /// <summary>
         /// Constructor for <see cref="ConsoleViewModel"/>
         /// </summary>
-        public ConsoleViewModel(ILocalizationService localizationService, ILogger<ConsoleViewModel> logger)
+        public ConsoleViewModel( ILogger<ConsoleViewModel> logger)
         {
-            _localization = localizationService;
             _logger = logger;
         }
 
@@ -32,9 +30,7 @@ namespace ApplicationLayer
         /// </summary>
         public void PerformApplicationLogic()
         {
-            Notify?.Invoke(this, _localization["ApplicationName"]);
-            _localization.SetCultureInfo("en");
-            Notify?.Invoke(this, _localization["ApplicationName"]);
+            Notify?.Invoke(this, "ApplicationName");
         }
     }
 }

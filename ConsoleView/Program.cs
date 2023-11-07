@@ -26,6 +26,11 @@ namespace ConsoleView
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Dependency injection for classes only used in ConsoleApp
+        /// </summary>
+        /// <param name="builder">Builder from <see cref="Startup.ConfigureHost()"/> method.</param>
+        /// <returns>Builded Host to be used in <see cref="Program.Main()"/></returns>
         private static IHost BuildApplication(HostApplicationBuilder builder)
         {
             //Add ViewModels
