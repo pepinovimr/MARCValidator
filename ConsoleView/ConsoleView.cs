@@ -21,6 +21,7 @@ namespace ConsoleView
             _viewModel = viewModel;
 
             viewModel.Notify += ViewModel_Notify;
+            viewModel.PerformApplicationLogic();
 
         }
 
@@ -29,7 +30,7 @@ namespace ConsoleView
         /// </summary>
         private void ViewModel_Notify(object sender, string message)
         {
-            Console.WriteLine("Received notification: " + message);
+            Console.WriteLine(message);
         }
     }
 }

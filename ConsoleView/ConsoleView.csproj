@@ -5,16 +5,18 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<AssemblyVersion>0.0.4</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
   </ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\ApplicationLayer\ApplicationLayer.csproj" />
-		<ProjectReference Include="..\SharedView\SharedView.csproj" />
+		<ProjectReference Include="..\SharedView\SharedLayer.csproj" />
 	</ItemGroup>
 
 </Project>
