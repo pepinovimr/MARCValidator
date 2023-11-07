@@ -18,14 +18,21 @@ namespace ConsoleView
             HostApplicationBuilder builder = Startup.ConfigureHost();
             IHost host = BuildApplication(builder);
 
-            ConsoleView consoleView = new ConsoleView(host.Services.GetRequiredService<ConsoleViewModel>());
+
+            ConsoleView consoleView = host.Services.GetRequiredService<ConsoleView>();
+
+            consoleView.StartApplication();
 
             Console.ReadKey();
         }
 
         private static IHost BuildApplication(HostApplicationBuilder builder)
         {
+            //Add ViewModels
             builder.Services.AddTransient<ConsoleViewModel>();
+
+            //Add Views
+            builder.Services.AddTransient<ConsoleView>();
 
             return builder.Build();
         }

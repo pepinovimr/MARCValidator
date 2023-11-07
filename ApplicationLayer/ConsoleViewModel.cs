@@ -32,13 +32,9 @@ namespace ApplicationLayer
         /// </summary>
         public void PerformApplicationLogic()
         {
-            _logger.Log(LogLevel.Information, "Performing Application logic");
-
             Notify?.Invoke(this, _localization["ApplicationName"]);
             _localization.SetCultureInfo("en");
             Notify?.Invoke(this, _localization["ApplicationName"]);
-
-            _logger.Log(LogLevel.Information, "Application Logic Performed");
         }
     }
 }
