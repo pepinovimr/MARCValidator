@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="NReco.Logging.File" Version="1.1.7" />
     <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
 	<ProjectReference Include="..\ApplicationLayer\ApplicationLayer.csproj" />
   </ItemGroup>

@@ -4,6 +4,7 @@ using System.Resources;
 using ApplicationLayer.Services;
 using ApplicationLayer.Services.Interfaces;
 using System.Globalization;
+using Microsoft.Extensions.Logging;
 
 namespace SharedLayer
 {
@@ -28,6 +29,13 @@ namespace SharedLayer
                             new CultureInfo("cs-CZ");
             builder.Services.AddScoped<ResourceManager>(provider => new ResourceManager("SharedLayer.Resources.ConsoleLocalization", typeof(Startup).Assembly));
             builder.Services.AddScoped<ILocalizationService, LocalizationService>();
+
+            //Setup Logging
+            builder.Services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.ClearProviders();    //Removes all logging outputs
+                loggingBuilder.AddFile("app.log");
+            });
 
 
             return builder;

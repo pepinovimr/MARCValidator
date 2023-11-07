@@ -1,4 +1,5 @@
 ﻿using ApplicationLayer.Services.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace ApplicationLayer
 {
@@ -9,6 +10,8 @@ namespace ApplicationLayer
     {
         private readonly ILocalizationService _localization;
 
+        private ILogger<ConsoleViewModel> _logger;
+
         /// <summary>
         /// Handles notifications for views.
         /// Should be the only interaction with Views
@@ -18,9 +21,10 @@ namespace ApplicationLayer
         /// <summary>
         /// Constructor for <see cref="ConsoleViewModel"/>
         /// </summary>
-        public ConsoleViewModel(ILocalizationService localizationService)
+        public ConsoleViewModel(ILocalizationService localizationService, ILogger<ConsoleViewModel> logger)
         {
             _localization = localizationService;
+            _logger = logger;
         }
 
         /// <summary>
@@ -28,9 +32,13 @@ namespace ApplicationLayer
         /// </summary>
         public void PerformApplicationLogic()
         {
+            _logger.Log(LogLevel.Information, "Performing Application logic");
+
             Notify?.Invoke(this, _localization["ApplicationName"]);
             _localization.SetCultureInfo("en");
             Notify?.Invoke(this, _localization["ApplicationName"]);
+
+            _logger.Log(LogLevel.Information, "Application Logic Performed");
         }
     }
 }

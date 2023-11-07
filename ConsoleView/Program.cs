@@ -16,18 +16,18 @@ namespace ConsoleView
         private static void Main()
         {
             HostApplicationBuilder builder = Startup.ConfigureHost();
-            BuildApplication(builder);
+            IHost host = BuildApplication(builder);
 
-            ConsoleView consoleView = new ConsoleView(builder.Services.BuildServiceProvider().GetService<ConsoleViewModel>());
+            ConsoleView consoleView = new ConsoleView(host.Services.GetRequiredService<ConsoleViewModel>());
 
             Console.ReadKey();
         }
 
-        private static void BuildApplication(HostApplicationBuilder builder)
+        private static IHost BuildApplication(HostApplicationBuilder builder)
         {
             builder.Services.AddTransient<ConsoleViewModel>();
 
-            builder.Build();
+            return builder.Build();
         }
     }
 }
