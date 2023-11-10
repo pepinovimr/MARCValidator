@@ -6,8 +6,6 @@ namespace MARCValidatorTests
 {
     /// <summary>
     /// Example unit test class for localization service
-    /// 
-    /// Disclaimer: These tests are largly 
     /// </summary>
     [TestClass]
     public class LocalizationServiceTests
