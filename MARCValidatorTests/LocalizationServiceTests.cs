@@ -20,7 +20,7 @@ namespace MARCValidatorTests
         }
         
         [TestMethod]
-        public void Indexer_GetLocalizedValue_Success()
+        public void GetLocalizedValue_UsingProperKey_ReturnsItsValue()
         {
             var localizationService = new LocalizationService(_resourceManagerMock.Object);
             string key = "ApplicationName";
@@ -34,7 +34,7 @@ namespace MARCValidatorTests
         }
 
         [TestMethod]
-        public void Indexer_KeyNotFound_ReturnsKey()
+        public void GetLocalizedValue_UsingWrongKey_ReturnsKey()
         {
             var localizationService = new LocalizationService(_resourceManagerMock.Object);
             string key = "KeyThatDoesNotExist";
@@ -45,7 +45,7 @@ namespace MARCValidatorTests
         }
 
         [TestMethod]
-        public void SetCultureInfo_ChangesCultureSuccessfully()
+        public void SetCultureInfo_WithProperValue_ChangesCultureSuccessfully()
         {
             var localizationService = new LocalizationService(_resourceManagerMock.Object);
             string newCulture = "en";
@@ -55,5 +55,17 @@ namespace MARCValidatorTests
             Assert.AreEqual(newCulture, CultureInfo.CurrentCulture.Name);
             Assert.AreEqual(newCulture, CultureInfo.CurrentUICulture.Name);
         }
+
+        [TestMethod]
+        public void SetCultureInfo_WithWrongValue_ThrowsException()
+        {
+            var localizationService = new LocalizationService(_resourceManagerMock.Object);
+            string newCulture = "0";    //Empty string is acceptable => 0
+
+            Action setCulture = () => localizationService.SetCultureInfo(newCulture);
+
+            Assert.ThrowsException<CultureNotFoundException>(setCulture);
+        }
+
     }
 }
