@@ -1,3 +1,4 @@
+using SharedLayer;
 using System.Globalization;
 using System.Resources;
 
@@ -16,8 +17,7 @@ namespace MARCValidatorTests
         [TestInitialize]
         public void Setup()
         {
-            const string RESOURCE_PATH = "MARCValidator.SharedLayer.Resources.ConsoleLocalization";
-            _resourceManagerMock = new Mock<ResourceManager>(RESOURCE_PATH, typeof(LocalizationService).Assembly);
+            _resourceManagerMock = new Mock<ResourceManager>();
             CultureInfo.CurrentCulture = new CultureInfo("cs");
         }
         
@@ -28,7 +28,7 @@ namespace MARCValidatorTests
             string key = "ApplicationName";
             string expectedValue = "Ovìøovaè MARC záznamù";
 
-            
+            _resourceManagerMock.Setup(x => x.GetString(key)).Returns(expectedValue);
 
             string result = localizationService[key];
 
