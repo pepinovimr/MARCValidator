@@ -1,5 +1,7 @@
-﻿using ApplicationLayer.Services.Interfaces;
+﻿using ApplicationLayer.Models;
+using ApplicationLayer.Services.Interfaces;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace ApplicationLayer
 {
@@ -15,7 +17,7 @@ namespace ApplicationLayer
         /// Handles notifications for views.
         /// Should be the only interaction with Views
         /// </summary>
-        public event EventHandler<string> Notify;
+        public event EventHandler<(string, MessageType)> Notify;
 
         /// <summary>
         /// Constructor for <see cref="ConsoleViewModel"/>
@@ -26,11 +28,12 @@ namespace ApplicationLayer
         }
 
         /// <summary>
-        /// Temporary
+        /// Starts application
         /// </summary>
-        public void PerformApplicationLogic()
+        public void StartApplication()
         {
-            Notify?.Invoke(this, "ApplicationName");
+            _logger.Log(LogLevel.Information, "Application Started");
+            Notify?.Invoke(this, ("ApplicationName", MessageType.Header));
         }
     }
 }

@@ -19,9 +19,9 @@ namespace ConsoleView
             IHost host = BuildApplication(builder);
 
 
-            ConsoleView consoleView = host.Services.GetRequiredService<ConsoleView>();
+            ConsoleViewModel consoleViewModel = host.Services.GetRequiredService<ConsoleViewModel>();
 
-            consoleView.StartApplication();
+            consoleViewModel.StartApplication();
 
             Console.ReadKey();
         }

@@ -1,4 +1,5 @@
 ﻿using ApplicationLayer;
+using ApplicationLayer.Models;
 using ApplicationLayer.Services.Interfaces;
 using Microsoft.Extensions.Logging;
 
@@ -36,18 +37,9 @@ namespace ConsoleView
         /// <summary>
         /// Handles notifiactions from ViewModel
         /// </summary>
-        private void ViewModel_Notify(object sender, string message)
+        private void ViewModel_Notify(object sender, (string, MessageType)message)
         {
-            Console.WriteLine(_localizationService[message]);
-        }
-
-        /// <summary>
-        /// Starts Application
-        /// </summary>
-        public void StartApplication()
-        {
-            _logger.Log(LogLevel.Information, "Application Started");
-            _viewModel.PerformApplicationLogic();
+            Console.WriteLine(_localizationService[message.Item1]);
         }
     }
 }

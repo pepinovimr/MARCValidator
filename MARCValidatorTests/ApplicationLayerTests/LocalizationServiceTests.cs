@@ -2,7 +2,7 @@ using SharedLayer;
 using System.Globalization;
 using System.Resources;
 
-namespace MARCValidatorTests
+namespace MARCValidatorTests.ApplicationLayerTests
 {
     /// <summary>
     /// Example unit test class for localization service
@@ -18,7 +18,7 @@ namespace MARCValidatorTests
             _resourceManagerMock = new Mock<ResourceManager>();
             CultureInfo.CurrentCulture = new CultureInfo("cs");
         }
-        
+
         [TestMethod]
         public void GetLocalizedValue_UsingProperKey_ReturnsItsValue()
         {

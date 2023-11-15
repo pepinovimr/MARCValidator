@@ -20,4 +20,11 @@
 	<ProjectReference Include="..\SharedLayer\SharedLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ConsoleViewLayerTests\" />
+    <Folder Include="DataAccessLayerTests\" />
+    <Folder Include="DomainLayerTests\" />
+    <Folder Include="SharedLayerTests\" />
+  </ItemGroup>
+
 </Project>
