@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="NReco.Logging.File" Version="1.1.7" />
     <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+    <ProjectReference Include="..\ComunicationDataLayer\ComunicationDataLayer.csproj" />
 	<ProjectReference Include="..\DomainLayer\DomainLayer.csproj" />
   </ItemGroup>
 

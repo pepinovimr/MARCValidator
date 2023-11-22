@@ -4,14 +4,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainLayer", "DomainLayer\DomainLayer.csproj", "{14841012-CFB3-4EC6-A7C9-52F8AB390261}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85BF0A7C-FBFB-4978-B647-B3475909E498} = {85BF0A7C-FBFB-4978-B647-B3475909E498}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationLayer", "ApplicationLayer\ApplicationLayer.csproj", "{76F9C986-3C49-4B9E-B7FE-10D4DDDDD1E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85BF0A7C-FBFB-4978-B647-B3475909E498} = {85BF0A7C-FBFB-4978-B647-B3475909E498}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{97120ECD-9E21-42DF-89A8-F47BAA1D4F34}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85BF0A7C-FBFB-4978-B647-B3475909E498} = {85BF0A7C-FBFB-4978-B647-B3475909E498}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleViewLayer", "ConsoleView\ConsoleViewLayer.csproj", "{B3771A70-949F-4621-81FD-15B7DA994469}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85BF0A7C-FBFB-4978-B647-B3475909E498} = {85BF0A7C-FBFB-4978-B647-B3475909E498}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLayer", "SharedLayer\SharedLayer.csproj", "{79E313B0-6C73-4AD8-95AB-3376417C2A10}"
+	ProjectSection(ProjectDependencies) = postProject
+		{85BF0A7C-FBFB-4978-B647-B3475909E498} = {85BF0A7C-FBFB-4978-B647-B3475909E498}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MARCValidatorTests", "MARCValidatorTests\MARCValidatorTests.csproj", "{7D866DA2-1F8E-4EA3-9F90-8570BB788BF2}"
 	ProjectSection(ProjectDependencies) = postProject

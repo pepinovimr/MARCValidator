@@ -1,4 +1,4 @@
-﻿namespace ApplicationLayer.Models
+﻿namespace ComunicationDataLayer.Enums
 {
     /// <summary>
     /// Represents possible message types to be displayed on ConsoleView
@@ -10,14 +10,21 @@
         /// </summary>
         Normal = 0,
         /// <summary>
-        /// Indicates to user in which part of program he is
-        /// eg.: Creating Validation, Validating MARC etc...
+        /// Indicates a successful operation
         /// </summary>
-        Section = 1,
+        Success = 1,
         /// <summary>
-        /// Header - should only by localized Value for ApplicationName
+        /// Indicates a severe problem invalidation 
         /// </summary>
-        Header = 2
+        Error = 2,
+        /// <summary>
+        /// Indicates a minor problem invalidation 
+        /// </summary>
+        Warning = 3,
+        /// <summary>
+        /// Indicates a neutral information user should see
+        /// </summary>
+        Info = 4
 
     }
 }

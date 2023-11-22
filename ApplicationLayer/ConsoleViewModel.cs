@@ -1,7 +1,7 @@
-﻿using ApplicationLayer.Models;
-using ApplicationLayer.Services.Interfaces;
+﻿using ApplicationLayer.Services.Interfaces;
+using ComunicationDataLayer.Enums;
+using ComunicationDataLayer.POCOs;
 using Microsoft.Extensions.Logging;
-using System;
 
 namespace ApplicationLayer
 {
@@ -10,21 +10,22 @@ namespace ApplicationLayer
     /// </summary>
     public class ConsoleViewModel
     {
-
+        ILocalizationService _localizationService;
         private ILogger<ConsoleViewModel> _logger;
 
         /// <summary>
         /// Handles notifications for views.
         /// Should be the only interaction with Views
         /// </summary>
-        public event EventHandler<(string, MessageType)> Notify;
+        public event EventHandler<MessageEventArgs> Notify;
 
         /// <summary>
         /// Constructor for <see cref="ConsoleViewModel"/>
         /// </summary>
-        public ConsoleViewModel( ILogger<ConsoleViewModel> logger)
+        public ConsoleViewModel(ILogger<ConsoleViewModel> logger, ILocalizationService localizationService)
         {
             _logger = logger;
+            _localizationService = localizationService;
         }
 
         /// <summary>
@@ -33,7 +34,12 @@ namespace ApplicationLayer
         public void StartApplication()
         {
             _logger.Log(LogLevel.Information, "Application Started");
-            Notify?.Invoke(this, ("ApplicationName", MessageType.Header));
+            Notify?.Invoke(this, new MessageEventArgs(
+                                    new Message 
+                                    { 
+                                        Text = _localizationService["ApplicationName"], 
+                                        Type = MessageType.Normal 
+                                    }));
         }
     }
 }
