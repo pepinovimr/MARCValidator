@@ -18,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 		{85BF0A7C-FBFB-4978-B647-B3475909E498} = {85BF0A7C-FBFB-4978-B647-B3475909E498}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleViewLayer", "ConsoleView\ConsoleViewLayer.csproj", "{B3771A70-949F-4621-81FD-15B7DA994469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleViewLayer", "ConsoleViewLayer\ConsoleViewLayer.csproj", "{B3771A70-949F-4621-81FD-15B7DA994469}"
 	ProjectSection(ProjectDependencies) = postProject
 		{85BF0A7C-FBFB-4978-B647-B3475909E498} = {85BF0A7C-FBFB-4978-B647-B3475909E498}
 	EndProjectSection

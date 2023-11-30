@@ -1,17 +1,21 @@
 ﻿using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
+using ConsoleViewLayer.IO.Interfaces;
 
 namespace ConsoleViewLayer.IO
 {
     /// <summary>
     /// Manages console output
     /// </summary>
-    internal class ConsoleWriter
+    public class ConsoleWriter : IConsoleWriter
     {
         public ConsoleWriter()
         {
         }
 
+        /// <summary>
+        /// Writes text to console
+        /// </summary>
         public void WriteToConsole(Message messageToWrite, bool clearBeforeWriting = false, bool addLineTerminator = true)
         {
             if (clearBeforeWriting)

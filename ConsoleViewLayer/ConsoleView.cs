@@ -1,5 +1,6 @@
 ﻿using ApplicationLayer;
 using ComunicationDataLayer.POCOs;
+using ConsoleViewLayer.IO.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace ConsoleView
@@ -7,7 +8,7 @@ namespace ConsoleView
     /// <summary>
     /// View for MARC Validator console app
     /// </summary>
-    internal class ConsoleView
+    public class ConsoleView
     {
         /// <summary>
         /// Injected ViewModel
@@ -19,14 +20,16 @@ namespace ConsoleView
         /// </summary>
         private readonly ILogger _logger;
 
+        private readonly IConsoleWriter _consoleWriter;
 
         /// <summary>
         /// Initializes Injected ViewModel and other fields and subscribes to viewModel events
         /// </summary>
-        public ConsoleView(ConsoleViewModel viewModel, ILogger<ConsoleView> logger) 
+        public ConsoleView(ConsoleViewModel viewModel, IConsoleWriter consoleWrier, ILogger<ConsoleView> logger) 
         {
             _viewModel = viewModel;
             _logger = logger;
+            _consoleWriter = consoleWrier;
 
             viewModel.Notify += ViewModel_Notify;
         }
@@ -36,7 +39,7 @@ namespace ConsoleView
         /// </summary>
         private void ViewModel_Notify(object sender, MessageEventArgs args)
         {
-            Console.WriteLine(args.Message.Text);
+            _consoleWriter.WriteToConsole(args.Message);
         }
 
         public void StartApplication()

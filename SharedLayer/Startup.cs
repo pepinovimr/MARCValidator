@@ -10,7 +10,6 @@ namespace SharedLayer
 {
     /// <summary>
     /// Handles operations needed for all Views
-    /// M2LO by stačit být v application layer a lokalizace pro každy viewlayer
     /// </summary>
     public static class Startup
     {

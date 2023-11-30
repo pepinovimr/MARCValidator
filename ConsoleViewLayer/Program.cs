@@ -1,4 +1,6 @@
 ﻿using ApplicationLayer;
+using ConsoleViewLayer.IO;
+using ConsoleViewLayer.IO.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SharedLayer;
@@ -38,6 +40,7 @@ namespace ConsoleView
 
             //Add Views
             builder.Services.AddTransient<ConsoleView>();
+            builder.Services.AddTransient<IConsoleWriter, ConsoleWriter>();
 
             return builder.Build();
         }
