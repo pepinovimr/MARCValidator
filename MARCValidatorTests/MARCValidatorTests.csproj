@@ -1,30 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="Moq" Version="4.20.69" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
     <PackageReference Include="coverlet.collector" Version="3.2.0" />
-    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
-	<ProjectReference Include="..\ApplicationLayer\ApplicationLayer.csproj" />
-	<ProjectReference Include="..\SharedLayer\SharedLayer.csproj" />
+    <ProjectReference Include="..\ApplicationLayer\ApplicationLayer.csproj" />
+    <ProjectReference Include="..\SharedLayer\SharedLayer.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="ConsoleViewLayerTests\" />
     <Folder Include="DataAccessLayerTests\" />
     <Folder Include="DomainLayerTests\" />
     <Folder Include="SharedLayerTests\" />
   </ItemGroup>
-
 </Project>

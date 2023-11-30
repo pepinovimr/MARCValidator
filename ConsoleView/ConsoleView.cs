@@ -23,7 +23,7 @@ namespace ConsoleView
         /// <summary>
         /// Initializes Injected ViewModel and other fields and subscribes to viewModel events
         /// </summary>
-        public ConsoleView(ConsoleViewModel viewModel, ILogger<ConsoleViewModel> logger) 
+        public ConsoleView(ConsoleViewModel viewModel, ILogger<ConsoleView> logger) 
         {
             _viewModel = viewModel;
             _logger = logger;
@@ -37,6 +37,11 @@ namespace ConsoleView
         private void ViewModel_Notify(object sender, MessageEventArgs args)
         {
             Console.WriteLine(args.Message.Text);
+        }
+
+        public void StartApplication()
+        {
+            _viewModel.StartApplication();
         }
     }
 }
