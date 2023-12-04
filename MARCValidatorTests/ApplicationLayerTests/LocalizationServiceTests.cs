@@ -10,12 +10,11 @@ namespace MARCValidatorTests.ApplicationLayerTests
     [TestClass]
     public class LocalizationServiceTests
     {
-        private Mock<ResourceManager> _resourceManagerMock;
+        private Mock<ResourceManager> _resourceManagerMock = new Mock<ResourceManager>();
 
         [TestInitialize]
         public void Setup()
         {
-            _resourceManagerMock = new Mock<ResourceManager>();
             CultureInfo.CurrentCulture = new CultureInfo("cs");
         }
 

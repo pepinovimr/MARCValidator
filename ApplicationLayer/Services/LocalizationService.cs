@@ -35,7 +35,7 @@ namespace ApplicationLayer.Services
         private string GetLocalizedValue(string key)
         {
             string? localizedString = _resourceManager.GetString(key);
-            return localizedString != null ? localizedString : key;
+            return localizedString ?? key;
         }
 
         /// <summary>

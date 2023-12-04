@@ -1,22 +1,18 @@
 ﻿using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
-using ConsoleViewLayer.IO.Interfaces;
 
 namespace ConsoleViewLayer.IO
 {
     /// <summary>
     /// Manages console output
     /// </summary>
-    public class ConsoleWriter : IConsoleWriter
+    public static class ConsoleWriter
     {
-        public ConsoleWriter()
-        {
-        }
 
         /// <summary>
         /// Writes text to console
         /// </summary>
-        public void WriteToConsole(Message messageToWrite, bool clearBeforeWriting = false, bool addLineTerminator = true)
+        public static void WriteToConsole(Message messageToWrite, bool clearBeforeWriting = false, bool addLineTerminator = true)
         {
             if (clearBeforeWriting)
             {
@@ -35,21 +31,15 @@ namespace ConsoleViewLayer.IO
             }
         }
 
-        private void ClearConsole()
-        {
-            Console.Clear();
-        }
+        private static void ClearConsole() => Console.Clear();
 
-        private ConsoleColor MapMessageTypeToConsoleColor(MessageType typeToMap)
+        private static ConsoleColor MapMessageTypeToConsoleColor(MessageType typeToMap) => typeToMap switch
         {
-            return typeToMap switch
-            {
-                MessageType.Success => ConsoleColor.DarkGreen,
-                MessageType.Warning => ConsoleColor.DarkYellow,
-                MessageType.Error => ConsoleColor.Red,
-                MessageType.Info => ConsoleColor.Blue,
-                _ => ConsoleColor.White,
-            };
-        }
+            MessageType.Success => ConsoleColor.DarkGreen,
+            MessageType.Warning => ConsoleColor.DarkYellow,
+            MessageType.Error => ConsoleColor.Red,
+            MessageType.Info => ConsoleColor.Blue,
+            _ => ConsoleColor.White,
+        };
     }
 }
