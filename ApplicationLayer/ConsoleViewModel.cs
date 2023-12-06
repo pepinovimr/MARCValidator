@@ -17,7 +17,7 @@ namespace ApplicationLayer
         /// Handles notifications for views.
         /// Should be the only interaction with Views
         /// </summary>
-        public event EventHandler<MessageEventArgs>? Notify;
+        public event EventHandler<MessageEventArgs?> Notify;
 
         /// <summary>
         /// Constructor for <see cref="ConsoleViewModel"/>
@@ -35,11 +35,10 @@ namespace ApplicationLayer
         {
             _logger.Log(LogLevel.Information, "Application Started");
             Notify?.Invoke(this, new MessageEventArgs(
-                                    new Message 
-                                    { 
-                                        Text = _localizationService["ApplicationName"], 
-                                        Type = MessageType.Normal 
-                                    }));
+                                    new Message(
+                                        _localizationService["ApplicationName"]
+                                        , MessageType.Normal
+                                        )));
         }
 
         public void ValidateMARC(string path)

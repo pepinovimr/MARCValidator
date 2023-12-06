@@ -1,12 +1,7 @@
 ﻿namespace ComunicationDataLayer.POCOs
 {
-    public class MessageEventArgs : EventArgs
+    public class MessageEventArgs(Message message) : EventArgs
     {
-        public Message Message { get; }
-
-        public MessageEventArgs(Message message)
-        {
-            Message = message;
-        }
+        public Message Message { get; } = message;
     }
 }
