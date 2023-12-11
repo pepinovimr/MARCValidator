@@ -1,4 +1,5 @@
 ﻿using ApplicationLayer.Services.Interfaces;
+using ApplicationLayer.Validations;
 using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
 using Microsoft.Extensions.Logging;
@@ -10,8 +11,8 @@ namespace ApplicationLayer
     /// </summary>
     public class ConsoleViewModel
     {
-        ILocalizationService _localizationService;
-        private ILogger<ConsoleViewModel> _logger;
+        private readonly ILocalizationService _localizationService;
+        private readonly ILogger<ConsoleViewModel> _logger;
 
         /// <summary>
         /// Handles notifications for views.
@@ -43,9 +44,13 @@ namespace ApplicationLayer
 
         public void ValidateMARC(string path)
         {
-            //method in DL to pass path to
+            UserInputChainValidation inputValidations = new(new FileExistsValidation(), new PathExtensionValidation(".xml"));
 
-            Notify?.Invoke(this, null);
+            Result result = inputValidations.Validate(path);
+            if(result.Type == ResultType.Error) { }
+                Notify?.Invoke(this, new MessageEventArgs(new Message("Chyba, nutno pak namapovat", MessageType.Error)));
+
+            //Continue
         }
     }
 }
