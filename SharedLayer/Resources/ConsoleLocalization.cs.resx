@@ -120,4 +120,25 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>Ověřovač MARC záznamů</value>
   </data>
+  <data name="Expected" xml:space="preserve">
+    <value>Očekávané</value>
+  </data>
+  <data name="FileNotExist" xml:space="preserve">
+    <value>Soubor neexistuje</value>
+  </data>
+  <data name="FileWrongFormat" xml:space="preserve">
+    <value>Soubor je ve špatném formátu</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value>Nalezeno</value>
+  </data>
+  <data name="InputFilePath" xml:space="preserve">
+    <value>Zadejte cestu k MARC: </value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Zdroj</value>
+  </data>
+  <data name="SuccessResult" xml:space="preserve">
+    <value>Validace byla úspěšná</value>
+  </data>
 </root>

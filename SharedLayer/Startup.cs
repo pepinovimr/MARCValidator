@@ -5,6 +5,7 @@ using ApplicationLayer.Services;
 using ApplicationLayer.Services.Interfaces;
 using System.Globalization;
 using Microsoft.Extensions.Logging;
+using ApplicationLayer.Mapping;
 
 namespace SharedLayer
 {
@@ -29,6 +30,10 @@ namespace SharedLayer
                             new CultureInfo("cs-CZ");
             builder.Services.AddScoped<ResourceManager>(provider => new ResourceManager("SharedLayer.Resources.ConsoleLocalization", typeof(Startup).Assembly));
             builder.Services.AddScoped<ILocalizationService, LocalizationService>();
+
+            ResultToMessageMapper.LocalizationService 
+                = builder.Services.BuildServiceProvider().GetService<ILocalizationService>() 
+                ?? throw new Exception("Localization service not found");
 
             //Setup Logging
             builder.Services.AddLogging(loggingBuilder =>

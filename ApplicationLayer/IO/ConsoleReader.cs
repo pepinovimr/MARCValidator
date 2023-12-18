@@ -1,4 +1,4 @@
-﻿namespace ConsoleViewLayer.IO
+﻿namespace ApplicationLayer.IO
 {
     public class ConsoleReader
     {

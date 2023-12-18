@@ -4,7 +4,7 @@
     {
         public override IFileStructureValidation CreateFileStructureValidation(string path)
         {
-            return new XMLFileStructureValidation();
+            throw new NotImplementedException();
         }
     }
 }

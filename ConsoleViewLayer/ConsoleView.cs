@@ -36,13 +36,14 @@ namespace ConsoleView
         /// </summary>
         private void ViewModel_Notify(object sender, MessageEventArgs args)
         {
-            ConsoleWriter.WriteToConsole(args.Message);
+            ConsoleWriter.WriteToConsole(args.Message, args.ClearConsole, args.AddLineTerminator);
         }
 
         public void StartApplication()
         {
             _viewModel.StartApplication();
-            ConsoleReader.ReadFromConsole();
+
+            _viewModel.ValidateMARC();
         }
     }
 }

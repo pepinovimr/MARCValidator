@@ -1,13 +1,11 @@
 ﻿using ApplicationLayer.Services.Interfaces;
+using Microsoft.Extensions.Logging;
 using System.Globalization;
 using System.Resources;
 
 namespace ApplicationLayer.Services
 {
-    /// <summary>
-    /// An implementation of the <see cref="ILocalizationService"/> interface.
-    /// </summary>
-    public class LocalizationService : ILocalizationService
+    public class LocalizationService(ResourceManager resourceManager, ILogger<LocalizationService> logger) : ILocalizationService
     {
         /// <summary>
         /// Gets localized value through <see cref="GetLocalizedValue(string)"/>
@@ -16,16 +14,9 @@ namespace ApplicationLayer.Services
         /// <returns>Value by key from file depending on <see cref="CultureInfo.CurrentCulture"/> or just key if value is not found.</returns>
         public string this[string name] => GetLocalizedValue(name);
 
-        private readonly ResourceManager _resourceManager;
+        private readonly ResourceManager _resourceManager = resourceManager;
 
-        /// <summary>
-        /// Constructor for the <see cref="LocalizationService"/> class.
-        /// </summary>
-        /// <param name="resourceManager">The resource manager providing access to localized resources</param>
-        public LocalizationService(ResourceManager resourceManager)
-        {
-            _resourceManager = resourceManager;
-        }
+        private readonly ILogger _logger = logger;
 
         /// <summary>
         /// Gets localized value using <see cref="_resourceManager"/>.
@@ -34,7 +25,15 @@ namespace ApplicationLayer.Services
         /// <returns>Value by key from file depending on <see cref="CultureInfo.CurrentCulture"/> or just key if value is not found.</returns>
         private string GetLocalizedValue(string key)
         {
-            string? localizedString = _resourceManager.GetString(key);
+            string? localizedString = null;
+            try
+            {
+                localizedString = _resourceManager.GetString(key);
+            }
+            catch (MissingManifestResourceException ex)
+            {
+                _logger.LogWarning(ex.Message, ex.StackTrace);
+            }
             return localizedString ?? key;
         }
 
