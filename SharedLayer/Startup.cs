@@ -28,13 +28,13 @@ namespace SharedLayer
                     CultureInfo.DefaultThreadCurrentCulture = 
                         CultureInfo.DefaultThreadCurrentUICulture = 
                             new CultureInfo("cs-CZ");
-            builder.Services.AddScoped<ResourceManager>(provider => new ResourceManager("SharedLayer.Resources.ConsoleLocalization", typeof(Startup).Assembly));
+            builder.Services.AddScoped<ResourceManager>(provider => new ResourceManager("SharedLayer.Properties.ConsoleLocalization", typeof(Startup).Assembly));
             builder.Services.AddScoped<ILocalizationService, LocalizationService>();
 
             ResultToMessageMapper.LocalizationService 
                 = builder.Services.BuildServiceProvider().GetService<ILocalizationService>() 
                 ?? throw new Exception("Localization service not found");
-
+            
             //Setup Logging
             builder.Services.AddLogging(loggingBuilder =>
             {

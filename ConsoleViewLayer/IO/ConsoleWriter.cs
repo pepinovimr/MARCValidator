@@ -29,6 +29,8 @@ namespace ConsoleViewLayer.IO
             {
                 Console.Write(messageToWrite.Text);
             }
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         private static void ClearConsole() => Console.Clear();

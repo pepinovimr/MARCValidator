@@ -4,6 +4,7 @@ using ApplicationLayer.Services.Interfaces;
 using ApplicationLayer.Validations;
 using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
+using DomainLayer.Managers;
 using Microsoft.Extensions.Logging;
 
 namespace ApplicationLayer
@@ -51,11 +52,18 @@ namespace ApplicationLayer
 
             Result result = inputValidations.Validate(path);
             if(result.Type == ResultType.Error)
+            {
+                Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));
+                return;
+            }
+
+            ValidationManager v = new(path);
+            result = v.Validate();
+
+            if (result.Type == ResultType.Error)
                 Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));
             else
                 Notify?.Invoke(this, new MessageEventArgs(Result.Success.ToMessage()));
-
-            //Continue
         }
 
         public void NotifyView(MessageEventArgs messageEventArgs)

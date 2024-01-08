@@ -4,6 +4,6 @@ namespace DomainLayer.FileStructureValidations
 {
     public interface IFileStructureValidation
     {
-        public List<Result> ValidateFileStructure(string filePath);
+        public Result ValidateFileStructure();
     }
 }

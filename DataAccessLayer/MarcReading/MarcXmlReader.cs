@@ -1,4 +1,5 @@
 ﻿using System.Xml.Linq;
+using System.Xml.Schema;
 
 namespace DataAccessLayer.MarcReading
 {
