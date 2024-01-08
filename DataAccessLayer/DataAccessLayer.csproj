@@ -23,4 +23,7 @@
   <ItemGroup>
     <Folder Include="Repositories\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComunicationDataLayer\ComunicationDataLayer.csproj" />
+  </ItemGroup>
 </Project>

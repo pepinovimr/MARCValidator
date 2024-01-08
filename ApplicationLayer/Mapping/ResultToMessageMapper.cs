@@ -7,13 +7,12 @@ namespace ApplicationLayer.Mapping
     public static class ResultToMessageMapper
     {
         public static ILocalizationService LocalizationService { set; get; }
-        public static Message ToMessage(this Result result)
-        {
-            return new Message(result.MapToText(), result.Type.MapToMessageType());
-        }
+        public static Message ToMessage(this Result result) =>
+            new (result.MapToText(), result.Type.MapToMessageType());
+        
 
-        private static MessageType MapToMessageType(this ResultType resultType)
-            => resultType switch
+        private static MessageType MapToMessageType(this ResultType resultType) =>
+            resultType switch
             {
                 ResultType.Success => MessageType.Success,
                 ResultType.Info => MessageType.Info,

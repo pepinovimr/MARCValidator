@@ -47,7 +47,7 @@ namespace ApplicationLayer
 
             string path = ConsoleReader.ReadFromConsole();
 
-            UserInputChainValidation inputValidations = new(new FileExistsValidation(), new PathExtensionValidation(".xml"));
+            UserInputChainValidation inputValidations = new(new FileExistsValidation(), new FileFormatValidation());
 
             Result result = inputValidations.Validate(path);
             if(result.Type == ResultType.Error)
