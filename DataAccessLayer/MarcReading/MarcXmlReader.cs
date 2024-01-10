@@ -1,5 +1,4 @@
 ﻿using System.Xml.Linq;
-using System.Xml.Schema;
 
 namespace DataAccessLayer.MarcReading
 {
@@ -19,7 +18,7 @@ namespace DataAccessLayer.MarcReading
             GetSubfieldValues(GetDatafieldElements(tagNumber, ind1, ind2), subfieldCode);
 
         public string GetLeaderValue() => 
-            _xDocument.Descendants("leader").FirstOrDefault().Value;
+            _xDocument.Descendants("leader").First().Value;
 
         public int GetNumberOfMarcRecords() =>
             _xDocument.Descendants("record").Count();
