@@ -33,15 +33,14 @@
         public SubField SubField { get; set; }
     }
 
-    [Flags]
     public enum FieldObligationScope
     {
         M = 1,
         MA = 2,
-        R = 4,
-        RA = 8,
-        O = 16,
-        FORBIDDEN = 32
+        R = 3,
+        RA = 4,
+        O = 5,
+        FORBIDDEN = 6
     }
 
     public enum MarcField
