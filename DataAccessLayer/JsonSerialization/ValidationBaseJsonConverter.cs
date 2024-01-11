@@ -1,6 +1,6 @@
-﻿using DataAccessLayer.MarcValidationStructure;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using ComunicationDataLayer.POCOs;
 
 namespace DataAccessLayer.JsonSerialization
 {

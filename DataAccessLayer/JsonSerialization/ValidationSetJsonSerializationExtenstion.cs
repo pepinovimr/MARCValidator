@@ -1,4 +1,4 @@
-﻿using DataAccessLayer.MarcValidationStructure;
+﻿using ComunicationDataLayer.POCOs;
 using Newtonsoft.Json;
 
 namespace DataAccessLayer.JsonSerialization

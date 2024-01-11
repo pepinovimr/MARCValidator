@@ -1,4 +1,4 @@
-﻿namespace DataAccessLayer.MarcValidationStructure
+﻿namespace ComunicationDataLayer.POCOs
 {
     public class ValidationSet
     {
