@@ -1,4 +1,4 @@
-using SharedLayer;
+using Microsoft.Extensions.Logging;
 using System.Globalization;
 using System.Resources;
 
@@ -10,7 +10,8 @@ namespace MARCValidatorTests.ApplicationLayerTests
     [TestClass]
     public class LocalizationServiceTests
     {
-        private Mock<ResourceManager> _resourceManagerMock = new Mock<ResourceManager>();
+        private Mock<ResourceManager> _resourceManagerMock = new();
+        private ILogger<LocalizationService> _loggerMock;
 
         [TestInitialize]
         public void Setup()
@@ -21,7 +22,7 @@ namespace MARCValidatorTests.ApplicationLayerTests
         [TestMethod]
         public void GetLocalizedValue_UsingProperKey_ReturnsItsValue()
         {
-            var localizationService = new LocalizationService(_resourceManagerMock.Object);
+            var localizationService = new LocalizationService(_resourceManagerMock.Object, _loggerMock);
             string key = "ApplicationName";
             string expectedValue = "Ovìøovaè MARC záznamù";
 
@@ -35,7 +36,7 @@ namespace MARCValidatorTests.ApplicationLayerTests
         [TestMethod]
         public void GetLocalizedValue_UsingWrongKey_ReturnsKey()
         {
-            var localizationService = new LocalizationService(_resourceManagerMock.Object);
+            var localizationService = new LocalizationService(_resourceManagerMock.Object, _loggerMock);
             string key = "KeyThatDoesNotExist";
 
             string result = localizationService[key];
@@ -46,7 +47,7 @@ namespace MARCValidatorTests.ApplicationLayerTests
         [TestMethod]
         public void SetCultureInfo_WithProperValue_ChangesCultureSuccessfully()
         {
-            var localizationService = new LocalizationService(_resourceManagerMock.Object);
+            var localizationService = new LocalizationService(_resourceManagerMock.Object, _loggerMock);
             string newCulture = "en";
 
             localizationService.SetCultureInfo(newCulture);
@@ -58,7 +59,7 @@ namespace MARCValidatorTests.ApplicationLayerTests
         [TestMethod]
         public void SetCultureInfo_WithWrongValue_ThrowsException()
         {
-            var localizationService = new LocalizationService(_resourceManagerMock.Object);
+            var localizationService = new LocalizationService(_resourceManagerMock.Object, _loggerMock);
             string newCulture = "0";    //Empty string is acceptable => 0
 
             Action setCulture = () => localizationService.SetCultureInfo(newCulture);
