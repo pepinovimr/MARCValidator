@@ -5,6 +5,7 @@ using ApplicationLayer.Validations;
 using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
 using DomainLayer.Managers;
+using MARC4J.Net.MARC;
 using Microsoft.Extensions.Logging;
 
 namespace ApplicationLayer
@@ -59,6 +60,8 @@ namespace ApplicationLayer
 
             ValidationManager v = new(path);
             result = v.Validate();
+
+            //List<Record> m = v.GetMarc().ToList();
 
             if (result.Type == ResultType.Error)
                 Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));

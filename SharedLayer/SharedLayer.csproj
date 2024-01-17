@@ -8,9 +8,9 @@
     <None Remove="MarcXmlSchema.xsd" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="NReco.Logging.File" Version="1.1.7" />
+    <PackageReference Include="NReco.Logging.File" Version="1.2.0" />
     <ProjectReference Include="..\ApplicationLayer\ApplicationLayer.csproj" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>

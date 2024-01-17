@@ -6,6 +6,7 @@ using ApplicationLayer.Services.Interfaces;
 using System.Globalization;
 using Microsoft.Extensions.Logging;
 using ApplicationLayer.Mapping;
+using NReco.Logging.File;
 
 namespace SharedLayer
 {

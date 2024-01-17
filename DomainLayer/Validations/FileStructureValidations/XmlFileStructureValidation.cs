@@ -4,7 +4,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
 
-namespace DomainLayer.FileStructureValidations
+namespace DomainLayer.Validations.FileStructureValidations
 {
     internal class XmlFileStructureValidation : IFileStructureValidation
     {
@@ -12,7 +12,7 @@ namespace DomainLayer.FileStructureValidations
         private readonly XmlSchemaSet _xmlSchemaSet = new();
         private XDocument _xDocument;
         private readonly string _filePath;
-        public XmlFileStructureValidation(string filePath)
+        public XmlFileStructureValidation(string filePath) //Could be rafctored into builder with more validations
         {
             _xmlSchemaSet.Add("http://www.loc.gov/MARC21/slim", XML_SCHEMA_File);
             _filePath = filePath;
@@ -23,13 +23,12 @@ namespace DomainLayer.FileStructureValidations
 
         private Result ValidateByXsd()
         {
-            Result result;
+            Result result = Result.Success;
             _xDocument.Validate(_xmlSchemaSet, (o, e) =>
             {
-                result = new Result(e.Severity == XmlSeverityType.Warning ? ResultType.Warning : ResultType.Error, 
+                result = new Result(e.Severity == XmlSeverityType.Warning ? ResultType.Warning : ResultType.Error,
                                     ValidationErrorType.XsdValidationError, e.Message);
             });
-            result = Result.Success;
             return result;
         }
 
@@ -40,7 +39,9 @@ namespace DomainLayer.FileStructureValidations
             try
             {
                 _xDocument = XDocument.Load(_filePath);
-            }catch (XmlException e){
+            }
+            catch (XmlException e)
+            {
                 return new Result(ResultType.Error, ValidationErrorType.FileStructureError, e.Message);
             }
             return Result.Success;

@@ -1,6 +1,6 @@
 ﻿using ComunicationDataLayer.POCOs;
 
-namespace DomainLayer.FileStructureValidations
+namespace DomainLayer.Validations.FileStructureValidations
 {
     public interface IFileStructureValidation
     {

@@ -1,15 +1,12 @@
 ﻿using System.Xml.Linq;
 
-namespace DataAccessLayer.MarcReading
+namespace DataAccessLayer.MarcReading.RawReading
 {
     //Null references on attributes in this class should not happen with properly validated MARCXML using .xsd
-    internal class MarcXmlReader : IMarcReader
+    internal class MarcXmlReader(string filePath) : IMarcReader
     {
-        private readonly XDocument _xDocument;
-        public MarcXmlReader(string filePath)
-        {
-            _xDocument = XDocument.Load(filePath);
-        }
+        private readonly XDocument _xDocument = XDocument.Load(filePath);
+
         public string? GetControlFieldValue(int tagNumber) => 
             _xDocument.Descendants("controlfield")
                 .FirstOrDefault(e => e.Attribute("tag")?.Value == tagNumber.ToStringWithLeadingZeroes())?.Value;

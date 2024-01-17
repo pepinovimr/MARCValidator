@@ -1,4 +1,4 @@
-﻿namespace DataAccessLayer.MarcReading
+﻿namespace DataAccessLayer.MarcReading.RawReading
 {
     internal static class MarcAttributesExtensions
     {

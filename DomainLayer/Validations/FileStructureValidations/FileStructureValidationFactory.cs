@@ -1,13 +1,13 @@
 ﻿using ComunicationDataLayer.Enums;
 
-namespace DomainLayer.FileStructureValidations
+namespace DomainLayer.Validations.FileStructureValidations
 {
     /// <summary>
     /// Factory for File structure validations
     /// </summary>
-    public static class FileStructureValidationFactory
+    public class FileStructureValidationFactory : IFileStructureValidationFactory
     {
-        public static IFileStructureValidation CreateFileStructureValidation(string path) =>
+        public IFileStructureValidation CreateFileStructureValidation(string path) =>
             Path.GetExtension(path) switch
             {
                 var extension when extension == AllowedFileFormatMapping.Map[AllowedFileFormat.xml] => new XmlFileStructureValidation(path),

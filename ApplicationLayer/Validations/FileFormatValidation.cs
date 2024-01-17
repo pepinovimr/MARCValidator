@@ -1,6 +1,5 @@
 ﻿using ComunicationDataLayer.POCOs;
 using ComunicationDataLayer.Enums;
-using Humanizer;
 namespace ApplicationLayer.Validations
 {
     internal class FileFormatValidation() : IUserInputValidation
@@ -9,6 +8,6 @@ namespace ApplicationLayer.Validations
             new FileInfo(input).Extension is var extension && 
             AllowedFileFormatMapping.Map.ContainsValue(extension)
             ? Result.Success
-            : new Result(ResultType.Error, ValidationErrorType.FileWrongFormat, AllowedFileFormatMapping.Map.Values.Humanize(), extension);
+            : new Result(ResultType.Error, ValidationErrorType.FileWrongFormat, string.Join(",",AllowedFileFormatMapping.Map.Values), extension);
     }
 }

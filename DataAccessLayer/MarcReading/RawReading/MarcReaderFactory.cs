@@ -1,8 +1,8 @@
 ﻿using ComunicationDataLayer.Enums;
 
-namespace DataAccessLayer.MarcReading
+namespace DataAccessLayer.MarcReading.RawReading
 {
-    internal static class MarcReaderFactory
+    public static class MarcReaderFactory
     {
         public static IMarcReader CreateMarcReader(string filePath) =>
         Path.GetExtension(filePath) switch
