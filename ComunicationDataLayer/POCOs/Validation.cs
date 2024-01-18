@@ -43,17 +43,6 @@
         FORBIDDEN = 6
     }
 
-    public enum MarcField
-    {
-        Leader = 1,
-        ControlField = 2,
-        Directory = 3,
-        Datafield = 4,
-        Subfield = 5
-    }
-
-
-
     public class Leader
     {
         public int Index;

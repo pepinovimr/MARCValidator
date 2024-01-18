@@ -1,0 +1,25 @@
+{
+  "Name": "Test",
+  "ValidationList": [
+    {
+      "ControlField": {
+        "Tag": 8,
+        "Index": 18,
+        "IndexEnd": 21
+      },
+      "Pattern": "[abcdeghijklmop]",
+      "Obligation": 1,
+      "Conditions": [
+        {
+          "SubField": {
+            "Code": "b",
+            "Parrent": {
+              "Tag": 300
+            }
+          },
+          "Obligation": 1
+        }
+      ]
+    }
+  ]
+}

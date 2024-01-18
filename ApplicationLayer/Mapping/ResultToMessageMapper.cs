@@ -11,23 +11,23 @@ namespace ApplicationLayer.Mapping
             new (result.MapToText(), result.Type.MapToMessageType());
         
 
-        private static MessageType MapToMessageType(this ResultType resultType) =>
+        private static MessageType MapToMessageType(this Severity resultType) =>
             resultType switch
             {
-                ResultType.Success => MessageType.Success,
-                ResultType.Info => MessageType.Info,
-                ResultType.Warning => MessageType.Warning,
-                ResultType.Error => MessageType.Error,
+                Severity.Success => MessageType.Success,
+                Severity.Info => MessageType.Info,
+                Severity.Warning => MessageType.Warning,
+                Severity.Error => MessageType.Error,
                 _ => MessageType.Normal,
             };
 
         private static string MapToText(this Result result) =>
             result.Type switch
             {
-                ResultType.Success => LocalizationService["SuccessResult"],
-                ResultType.Info => "Info: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
-                ResultType.Warning => "Warning: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
-                ResultType.Error => "Error: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
+                Severity.Success => LocalizationService["SuccessResult"],
+                Severity.Info => "Info: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
+                Severity.Warning => "Warning: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
+                Severity.Error => "Error: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
                 _ => throw new NotImplementedException(),
             };
     }

@@ -8,6 +8,6 @@ namespace ApplicationLayer.Validations
         public Result Validate(string input) =>
             File.Exists(input)
             ? Result.Success
-            : new Result(ResultType.Error, ValidationErrorType.FileNotExist);
+            : new Result(Severity.Error, ValidationType.FileNotExist);
     }
 }

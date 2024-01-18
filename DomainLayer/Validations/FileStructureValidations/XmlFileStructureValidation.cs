@@ -26,8 +26,8 @@ namespace DomainLayer.Validations.FileStructureValidations
             Result result = Result.Success;
             _xDocument.Validate(_xmlSchemaSet, (o, e) =>
             {
-                result = new Result(e.Severity == XmlSeverityType.Warning ? ResultType.Warning : ResultType.Error,
-                                    ValidationErrorType.XsdValidationError, e.Message);
+                result = new Result(e.Severity == XmlSeverityType.Warning ? Severity.Warning : Severity.Error,
+                                    ComunicationDataLayer.Enums.ValidationType.XsdValidationError, e.Message);
             });
             return result;
         }
@@ -42,7 +42,7 @@ namespace DomainLayer.Validations.FileStructureValidations
             }
             catch (XmlException e)
             {
-                return new Result(ResultType.Error, ValidationErrorType.FileStructureError, e.Message);
+                return new Result(Severity.Error, ComunicationDataLayer.Enums.ValidationType.FileStructureError, e.Message);
             }
             return Result.Success;
         }

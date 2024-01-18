@@ -1,6 +1,6 @@
 ﻿namespace ComunicationDataLayer.Enums
 {
-    public enum ResultType
+    public enum Severity
     {
         Success = 0,
         Info = 1,

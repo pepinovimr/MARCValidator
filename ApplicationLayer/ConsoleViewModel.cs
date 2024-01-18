@@ -52,18 +52,18 @@ namespace ApplicationLayer
             UserInputChainValidation inputValidations = new(new FileExistsValidation(), new FileFormatValidation());
 
             Result result = inputValidations.Validate(path);
-            if(result.Type == ResultType.Error)
+            if(result.Type == Severity.Error)
             {
                 Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));
                 return;
             }
 
             ValidationManager v = new(path);
-            result = v.Validate();
+            //result = v.Validate();
 
             //List<Record> m = v.GetMarc().ToList();
 
-            if (result.Type == ResultType.Error)
+            if (result.Type == Severity.Error)
                 Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));
             else
                 Notify?.Invoke(this, new MessageEventArgs(Result.Success.ToMessage()));

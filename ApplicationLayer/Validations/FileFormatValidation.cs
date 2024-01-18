@@ -8,6 +8,6 @@ namespace ApplicationLayer.Validations
             new FileInfo(input).Extension is var extension && 
             AllowedFileFormatMapping.Map.ContainsValue(extension)
             ? Result.Success
-            : new Result(ResultType.Error, ValidationErrorType.FileWrongFormat, string.Join(",",AllowedFileFormatMapping.Map.Values), extension);
+            : new Result(Severity.Error, ValidationType.FileWrongFormat, string.Join(",",AllowedFileFormatMapping.Map.Values), extension);
     }
 }

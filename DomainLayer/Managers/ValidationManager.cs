@@ -1,16 +1,17 @@
 ﻿using ComunicationDataLayer.POCOs;
-using DataAccessLayer.MarcReading.Serialization;
 using DomainLayer.Validations.FileStructureValidations;
-using MARC4J.Net.MARC;
 namespace DomainLayer.Managers
 {
     public class ValidationManager(string Path)
     {
-        public Result Validate() =>
+        public IEnumerable<Result> Validate() =>
+            PerformStructureValidations() is var result &&
+            result == Result.Success ? PerformDataValidations() : new List<Result> { result };
+
+        private Result PerformStructureValidations() => 
             new FileStructureValidationFactory().CreateFileStructureValidation(Path).ValidateFileStructure();
 
-        public IEnumerable<Record> GetMarc() =>
-            new MarcSerializer().Serialize(Path);
-
+        private IEnumerable<Result> PerformDataValidations() => 
+            throw new NotImplementedException();
     }
 }
