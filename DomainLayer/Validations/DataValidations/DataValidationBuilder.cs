@@ -5,7 +5,7 @@ namespace DomainLayer.Validations.DataValidations
 {
     internal abstract class DataValidationBuilder(Record Record, ValidationBase Rules) : IDataValidationBuilder
     {
-        protected ICollection<Result> Results = new List<Result>();
+        protected List<Result> Results = new List<Result>();
         public abstract IDataValidationBuilder ValidateObligation();
 
         public abstract IDataValidationBuilder ValidatePattern();
@@ -15,16 +15,21 @@ namespace DomainLayer.Validations.DataValidations
             if (Rules.Conditions is null)
                 return this;
 
+            DataValidationBuilderFactory factory = new(Record);
+
             foreach (var rule in Rules.Conditions)
             {
-                new DataValidationBuilderFactory(Record)
-                    .CreateValidations(rule)
-                    .ValidateObligation()
-                    .ValidatePattern()
-                    .ValidateConditions();
+                IDataValidationBuilder builder = factory.CreateValidations(rule);
+                builder.ValidateObligation()
+                       .ValidatePattern()
+                       .ValidateConditions();
+
+                Results.AddRange(builder.GetResults());
             }
 
             return this;
         }
+
+        public IEnumerable<Result> GetResults() => Results;
     }
 }

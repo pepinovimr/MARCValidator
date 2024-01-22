@@ -7,5 +7,6 @@ namespace DomainLayer.Validations.DataValidations
         public IDataValidationBuilder ValidateObligation();
         public IDataValidationBuilder ValidatePattern();
         public IDataValidationBuilder ValidateConditions();
+        public IEnumerable<Result> GetResults();
     }
 }
