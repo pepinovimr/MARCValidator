@@ -3,20 +3,14 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations
 {
-    internal class SubFieldValidationBuilder(Record Record) : IDataValidationBuilder
+    internal class SubFieldValidationBuilder(Record Record, ValidationBase Rules) : DataValidationBuilder(Record, Rules)
     {
-
-        public IDataValidationBuilder ValidateConditions()
+        public override IDataValidationBuilder ValidateObligation()
         {
             throw new NotImplementedException();
         }
 
-        public IDataValidationBuilder ValidateObligation()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataValidationBuilder ValidatePattern()
+        public override IDataValidationBuilder ValidatePattern()
         {
             throw new NotImplementedException();
         }
