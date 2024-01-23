@@ -11,6 +11,7 @@
         public string? Pattern { get; set; }
         public FieldObligationScope Obligation { get; set; }
         public List<ValidationBase>? Conditions { get; set; }
+        public List<ValidationBase>? Alternatives { get; set; }
     }
 
     public class LeaderValidation : ValidationBase
