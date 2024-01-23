@@ -45,13 +45,13 @@
 
     public class Leader
     {
-        public int Index;
+        public int? Index;
         public int? IndexEnd;
     }
     public class ControlField
     {
         public int Tag;
-        public int Index;
+        public int? Index;
         public int? IndexEnd;
     }
     public class DataField
