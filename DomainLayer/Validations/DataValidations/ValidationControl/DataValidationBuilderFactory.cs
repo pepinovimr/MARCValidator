@@ -1,7 +1,9 @@
 ﻿using ComunicationDataLayer.POCOs;
+using DomainLayer.Validations.DataValidations.Infrastrucure;
+using DomainLayer.Validations.DataValidations.Validations;
 using MARC4J.Net.MARC;
 
-namespace DomainLayer.Validations.DataValidations
+namespace DomainLayer.Validations.DataValidations.ValidationControl
 {
     internal class DataValidationBuilderFactory(Record Record) : IDataValidationBuilderFactory
     {

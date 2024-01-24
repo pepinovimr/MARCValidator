@@ -25,9 +25,9 @@ namespace ApplicationLayer.Mapping
             result.Type switch
             {
                 Severity.Success => LocalizationService["SuccessResult"],
-                Severity.Info => "Info: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
-                Severity.Warning => "Warning: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
-                Severity.Error => "Error: " + LocalizationService[result.Error.ToString()] + " " + result.Source + " Expected: " + result.Expected + " Found: " + result.Found,
+                Severity.Info => "Info: " + LocalizationService[result.Error.ToString()] + " " + result.SourceField + " Expected: " + result.Expected + " Found: " + result.Found,
+                Severity.Warning => "Warning: " + LocalizationService[result.Error.ToString()] + " " + result.SourceField + " Expected: " + result.Expected + " Found: " + result.Found,
+                Severity.Error => "Error: " + LocalizationService[result.Error.ToString()] + " " + result.SourceField + " Expected: " + result.Expected + " Found: " + result.Found,
                 _ => throw new NotImplementedException(),
             };
     }

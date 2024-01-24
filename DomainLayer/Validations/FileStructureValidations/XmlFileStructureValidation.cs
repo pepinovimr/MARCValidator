@@ -27,7 +27,7 @@ namespace DomainLayer.Validations.FileStructureValidations
             _xDocument.Validate(_xmlSchemaSet, (o, e) =>
             {
                 result = new Result(e.Severity == XmlSeverityType.Warning ? Severity.Warning : Severity.Error,
-                                    ComunicationDataLayer.Enums.ValidationType.XsdValidationError, e.Message);
+                                    ComunicationDataLayer.Enums.ValidationType.XsdValidationError, Found: e.Message);
             });
             return result;
         }
@@ -42,7 +42,7 @@ namespace DomainLayer.Validations.FileStructureValidations
             }
             catch (XmlException e)
             {
-                return new Result(Severity.Error, ComunicationDataLayer.Enums.ValidationType.FileStructureError, e.Message);
+                return new Result(Severity.Error, ComunicationDataLayer.Enums.ValidationType.FileStructureError, SourceRecord: _filePath, Found: e.Message);
             }
             return Result.Success;
         }
