@@ -6,9 +6,9 @@ namespace DomainLayer.Managers
     {
         public IEnumerable<Result> Validate() =>
             PerformStructureValidations() is var result &&
-            result == Result.Success ? PerformDataValidations() : new List<Result> { result };
+            result.DefaultIfEmpty(null) is not null ? PerformDataValidations() : result ;
 
-        private Result PerformStructureValidations() => 
+        private List<Result> PerformStructureValidations() => 
             new FileStructureValidationFactory().CreateFileStructureValidation(Path).ValidateFileStructure();
 
         private IEnumerable<Result> PerformDataValidations() => 
