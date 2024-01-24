@@ -4,7 +4,7 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
-    internal class LeaderValidationBuilder : DataValidationBuilder
+    internal class LeaderValidationBuilder : BaseDataValidationBuilder
     {
         private LeaderValidation _leaderFieldValidation;
         private string _leaderValue;

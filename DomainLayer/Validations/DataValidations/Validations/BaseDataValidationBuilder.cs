@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
-    internal abstract class DataValidationBuilder(Record marcRecord, ValidationBase rules) : IDataValidationBuilder
+    internal abstract class BaseDataValidationBuilder(Record marcRecord, ValidationBase rules) : IDataValidationBuilder
     {
         protected Record Record { get; } = marcRecord;
         private ValidationBase Rules { get; } = rules;

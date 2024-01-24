@@ -4,7 +4,7 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
-    internal class ControlFieldValidationBuilder : DataValidationBuilder
+    internal class ControlFieldValidationBuilder : BaseDataValidationBuilder
     {
         private ControlFieldValidation _controlFieldValidation;
         private IControlField? _field;

@@ -4,7 +4,7 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
-    internal class SubFieldValidationBuilder : DataValidationBuilder
+    internal class SubFieldValidationBuilder : BaseDataValidationBuilder
     {
         private SubFieldValidation _subFieldValidation;
         private ISubfield? _field;
