@@ -18,7 +18,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
                 .FirstOrDefault();
         }
         public override string GetSourceField() =>
-            $"DataField Tag: {_field?.Tag} ind1: {_field?.Indicator1} ind2: {_field?.Indicator2}";
+            $"DataField Tag: {_dataFieldValidation.DataField.Tag} ind1: {_dataFieldValidation.DataField.Identificator1} ind2: {_dataFieldValidation.DataField.Identificator2}";
 
         public override string? GetSourceFieldValue() => null;
 

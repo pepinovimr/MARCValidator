@@ -8,15 +8,17 @@ namespace DomainLayer.Validations.DataValidations.Validations
     {
         private ControlFieldValidation _controlFieldValidation;
         private IControlField? _field;
+        private ControlFieldValidation _rules;
 
         public ControlFieldValidationBuilder(Record marcRecord, ValidationBase rules) : base(marcRecord, rules)
         {
             _controlFieldValidation = rules as ControlFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
             _field = Record.GetControlFields().Where(x => x.Tag.Equals(_controlFieldValidation.ControlField.Tag.ToString("000"))).FirstOrDefault();
+            _rules = rules as ControlFieldValidation;
         }
 
         public override string GetSourceField() =>
-            "ControlField Tag: " + _field?.Tag;
+            "ControlField Tag: " + _rules.ControlField.Tag;
 
         public override string? GetSourceFieldValue() =>
             _field?.Data;

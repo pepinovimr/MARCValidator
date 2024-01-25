@@ -19,7 +19,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
                 .FirstOrDefault()?.GetSubfield(_subFieldValidation.SubField.Code[0]);
         }
         public override string GetSourceField() =>
-            $"SubField Code: {_field?.Code} [DataField Tag: {_subFieldValidation.SubField.Parrent.Tag} ind1: {_subFieldValidation.SubField.Parrent.Identificator1} ind2: {_subFieldValidation.SubField.Parrent.Identificator2}]";
+            $"SubField Code: {_subFieldValidation.SubField.Code} Parrent: [DataField Tag: {_subFieldValidation.SubField.Parrent.Tag} ind1: {_subFieldValidation.SubField.Parrent.Identificator1} ind2: {_subFieldValidation.SubField.Parrent.Identificator2}]";
 
         public override string? GetSourceFieldValue() =>
             _field?.Data;
