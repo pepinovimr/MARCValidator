@@ -1,9 +1,10 @@
 ﻿using ComunicationDataLayer.POCOs;
+using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Infrastrucure
 {
-    internal interface IDataValidationBuilderFactory
+    public interface IDataValidationBuilderFactory
     {
-        public IDataValidationBuilder CreateValidations(ValidationBase validation);
+        public IDataValidationBuilder CreateValidations(ValidationBase validation, Record record);
     }
 }

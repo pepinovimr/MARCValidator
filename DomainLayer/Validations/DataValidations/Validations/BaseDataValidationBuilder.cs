@@ -28,7 +28,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
         {
             if (Rules.Conditions is null) return this;
 
-            DataValidationBuilderFactory factory = new(Record);
+            DataValidationBuilderFactory factory = new();
 
             foreach (var rule in Rules.Conditions)
             {
@@ -52,7 +52,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             if (Results.FindLast(matchAlternative) is null)
                 return this;
 
-            DataValidationBuilderFactory factory = new(Record);
+            DataValidationBuilderFactory factory = new();
 
             List<Result> alternativeResults = [];
 
@@ -75,7 +75,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         private IEnumerable<Result> ValidateRule(ValidationBase rule, DataValidationBuilderFactory factory)
         {
-            IDataValidationBuilder builder = factory.CreateValidations(rule);
+            IDataValidationBuilder builder = factory.CreateValidations(rule, Record);
             builder
                 .ValidateObligation()
                 .ValidatePattern()
@@ -132,7 +132,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
         /// Ensures that pattern can be validated without null references
         /// </summary>
         protected bool CanValidatePattern() =>
-            Results.Last() is var lastResult
+            Results.LastOrDefault() is var lastResult
             && lastResult is not null
             && Rules.Pattern is not null
             && lastResult.Error != ValidationType.ForbidenFieldExistsError
@@ -154,7 +154,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             Results.Select(result => result with { SourceRecord = GetRecordName() });
 
         public string GetRecordName() =>
-            Record.GetDataFields().First(x => x.Tag.Equals("015")).GetSubfield('a').Data ?? Record.GetControlNumber();
+            Record.GetDataFields().FirstOrDefault(x => x.Tag.Equals("015"))?.GetSubfield('a').Data ?? Record.GetControlNumber();
 
         public abstract IDataValidationBuilder ValidateObligation();
 

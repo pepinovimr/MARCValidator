@@ -1,4 +1,6 @@
-﻿namespace ComunicationDataLayer.POCOs
+﻿using System.Text.Json.Serialization;
+
+namespace ComunicationDataLayer.POCOs
 {
     public class ValidationSet
     {

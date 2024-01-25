@@ -7,6 +7,10 @@ using System.Globalization;
 using Microsoft.Extensions.Logging;
 using ApplicationLayer.Mapping;
 using NReco.Logging.File;
+using DomainLayer.Validations.DataValidations.Infrastrucure;
+using DomainLayer.Validations.DataValidations.ValidationControl;
+using DataAccessLayer.Repositories;
+using DomainLayer.Managers;
 
 namespace SharedLayer
 {
@@ -43,6 +47,10 @@ namespace SharedLayer
                 loggingBuilder.AddFile("app.log");
             });
 
+            builder.Services.AddScoped<IDataValidationBuilderFactory, DataValidationBuilderFactory>();
+            builder.Services.AddScoped<IValidationRepository, ValidationRepository>();
+            builder.Services.AddScoped<IMarcRepository, MarcRepository>();
+            builder.Services.AddScoped<IValidationManager, ValidationManager>();
 
             return builder;
         }

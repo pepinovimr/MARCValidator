@@ -12,10 +12,10 @@ namespace DomainLayer.Validations.DataValidations.Validations
         {
             _dataFieldValidation = rules as DataFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
             _field = Record.GetDataFields().Where(x =>
-                x.Tag.Equals(_dataFieldValidation.DataField.Tag)
+                x.Tag.Equals(_dataFieldValidation.DataField.Tag.ToString("000"))
                 && (x.Indicator1.Equals(_dataFieldValidation.DataField.Identificator1 ?? " ") || x.Indicator1.Equals(_dataFieldValidation.DataField.Identificator1 ?? "#"))
                 && (x.Indicator2.Equals(_dataFieldValidation.DataField.Identificator2 ?? " ") || x.Indicator2.Equals(_dataFieldValidation.DataField.Identificator2 ?? "#")))
-                .First();
+                .FirstOrDefault();
         }
         public override string GetSourceField() =>
             $"DataField Tag: {_field?.Tag} ind1: {_field?.Indicator1} ind2: {_field?.Indicator2}";

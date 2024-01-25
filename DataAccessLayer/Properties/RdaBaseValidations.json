@@ -3,7 +3,7 @@
   "ValidationList": [
     {
       "Leader": {},
-      "Obligation": 1
+       "Obligation": 1
     },
     {
       "ControlField": {
@@ -50,11 +50,9 @@
     {
       "SubField": {
         "Code": "a",
-        "Regex": "^(?:ISBN(?:-1[03])?:?●)?(?=[0-9X]{10}$|(?=(?:[0-9]+[-●]){3})[-●0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[-●]){4})[-●0-9]{17}$)(?:97[89][-●]?)?[0-9]{1,5}[-●]?[0-9]+[-●]?[0-9]+[-●]?[0-9X]$",
+        "Pattern": "^(?:ISBN(?:-1[03])?:?●)?(?=[0-9X]{10}$|(?=(?:[0-9]+[-●]){3})[-●0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[-●]){4})[-●0-9]{17}$)(?:97[89][-●]?)?[0-9]{1,5}[-●]?[0-9]+[-●]?[0-9]+[-●]?[0-9X]$",
         "Parrent": {
-          "DataField": {
-            "Tag": 20
-          }
+          "Tag": 20
         }
       },
       "Obligation": 2
@@ -63,9 +61,7 @@
       "SubField": {
         "Code": "q",
         "Parrent": {
-          "DataField": {
-            "Tag": 20
-          }
+          "Tag": 20
         }
       },
       "Obligation": 2
@@ -74,9 +70,7 @@
       "SubField": {
         "Code": "z",
         "Parrent": {
-          "DataField": {
-            "Tag": 20
-          }
+          "Tag": 20
         }
       },
       "Obligation": 2
@@ -85,9 +79,7 @@
       "SubField": {
         "Code": "a",
         "Parrent": {
-          "DataField": {
-            "Tag": 40
-          }
+          "Tag": 40
         }
       },
       "Obligation": 1
@@ -97,9 +89,7 @@
         "Code": "b",
         "Pattern": "^[a-z]{2,3}$",
         "Parrent": {
-          "DataField": {
-            "Tag": 40
-          }
+          "Tag": 40
         }
       },
       "Obligation": 1
@@ -108,9 +98,7 @@
       "SubField": {
         "Code": "c",
         "Parrent": {
-          "DataField": {
-            "Tag": 40
-          }
+          "Tag": 40
         }
       },
       "Obligation": 2
@@ -119,9 +107,7 @@
       "SubField": {
         "Code": "d",
         "Parrent": {
-          "DataField": {
-            "Tag": 40
-          }
+          "Tag": 40
         }
       },
       "Obligation": 2
@@ -131,9 +117,7 @@
         "Code": "e",
         "Pattern": "^rda$",
         "Parrent": {
-          "DataField": {
-            "Tag": 40
-          }
+          "Tag": 40
         }
       },
       "Obligation": 1
@@ -143,9 +127,7 @@
         "Code": "a",
         "Pattern": "^[a-z]{2,3}$",
         "Parrent": {
-          "DataField": {
-            "Tag": 41
-          }
+          "Tag": 41
         }
       },
       "Obligation": 2
@@ -155,9 +137,7 @@
         "Code": "a",
         "Pattern": "^[a-z]{2,3}$",
         "Parrent": {
-          "DataField": {
-            "Tag": 44
-          }
+          "Tag": 44
         }
       },
       "Obligation": 2
@@ -172,69 +152,58 @@
           "SubField": {
             "Code": "a",
             "Parrent": {
-              "DataField": {
-                "Tag": 72
-              }
-            },
-            "Obligation": 1
-          }
+              "Tag": 72
+            }
+          },
+          "Obligation": 1
         },
         {
           "SubField": {
             "Code": "x",
             "Parrent": {
-              "DataField": {
-                "Tag": 72
-              },
-              "Obligation": 1
+              "Tag": 72
             }
-          }
+          },
+          "Obligation": 1
         },
         {
           "SubField": {
             "Code": "2",
             "Parrent": {
-              "DataField": {
-                "Tag": 72
-              },
-              "Obligation": 1
+              "Tag": 72
             }
-          }
+          },
+          "Obligation": 1
         }
       ],
       "Alternatives": [
         {
-          {
-            "DataField": {
-              "Tag": 80
-            },
-            "Obligation": 1,
-            "Conditions": [
-              {
-                "SubField": {
-                  "Code": "a",
-                  "Parrent": {
-                    "DataField": {
-                      "Tag": 80
-                    }
-                  },
-                  "Obligation": 1
-                }
-              },
-              {
-                "SubField": {
-                  "Code": "2",
-                  "Parrent": {
-                    "DataField": {
-                      "Tag": 80
-                    },
-                    "Obligation": 1
-                  }
-                }
+          "DataField": {
+            "Tag": 80
+          },
+          "Obligation": 1,
+          "Conditions": [
+            {
+              "SubField": {
+                "Code": "a",
+                "Parrent": {
+                  "Tag": 80
+                },
+                "Obligation": 1
               }
-            ]
-          }
+            },
+            {
+              "SubField": {
+                "Code": "2",
+                "Parrent": {
+                  "Tag": 80
+                },
+                "Obligation": 1
+              }
+            }
+          ]
         }
       ]
     }
+  ]
 }

@@ -13,10 +13,10 @@ namespace DomainLayer.Validations.DataValidations.Validations
             _subFieldValidation = rules as SubFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
 
             _field = Record.GetDataFields().Where(x =>
-                x.Tag.Equals(_subFieldValidation.SubField.Parrent.Tag)
+                x.Tag.Equals(_subFieldValidation.SubField.Parrent.Tag.ToString("000"))
                 && (x.Indicator1.Equals(_subFieldValidation.SubField.Parrent.Identificator1 ?? " ") || x.Indicator1.Equals(_subFieldValidation.SubField.Parrent.Identificator1 ?? "#"))
                 && (x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2 ?? " ") || x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2 ?? "#")))
-                .First().GetSubfield(_subFieldValidation.SubField.Code[0]);
+                .FirstOrDefault()?.GetSubfield(_subFieldValidation.SubField.Code[0]);
         }
         public override string GetSourceField() =>
             $"SubField Code: {_field?.Code} [DataField Tag: {_subFieldValidation.SubField.Parrent.Tag} ind1: {_subFieldValidation.SubField.Parrent.Identificator1} ind2: {_subFieldValidation.SubField.Parrent.Identificator2}]";
@@ -34,7 +34,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            if (PatternValidation(_subFieldValidation, _field.Data) is var result && result != Result.Success)
+            if (PatternValidation(_subFieldValidation, _field?.Data) is var result && result != Result.Success)
                 Results.Add(result);
             return this;
         }

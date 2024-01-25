@@ -2,7 +2,7 @@
 
 namespace DomainLayer.Validations.DataValidations.Infrastrucure
 {
-    internal interface IDataValidationBuilder
+    public interface IDataValidationBuilder
     {
         public IDataValidationBuilder ValidateObligation();
         public IDataValidationBuilder ValidatePattern();

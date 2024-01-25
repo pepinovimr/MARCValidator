@@ -12,7 +12,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
         public ControlFieldValidationBuilder(Record marcRecord, ValidationBase rules) : base(marcRecord, rules)
         {
             _controlFieldValidation = rules as ControlFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
-            _field = Record.GetControlFields().Where(x => x.Tag.Equals(_controlFieldValidation.ControlField.Tag)).First();
+            _field = Record.GetControlFields().Where(x => x.Tag.Equals(_controlFieldValidation.ControlField.Tag.ToString("000"))).FirstOrDefault();
         }
 
         public override string GetSourceField() =>
@@ -31,7 +31,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            if (PatternValidation(_controlFieldValidation, _field.Data) is var result && result != Result.Success)
+            if (PatternValidation(_controlFieldValidation, _field?.Data) is var result && result != Result.Success)
                 Results.Add(result);
             return this;
         }

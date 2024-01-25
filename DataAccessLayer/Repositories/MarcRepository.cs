@@ -1,11 +1,11 @@
 ﻿using MARC4J.Net;
 using MARC4J.Net.MARC;
 
-namespace DataAccessLayer.MarcReading.Serialization
+namespace DataAccessLayer.Repositories
 {
-    public class MarcSerializer : IMarcSerializer
+    public class MarcRepository : IMarcRepository
     {
-        public IEnumerable<Record> Serialize(string path)
+        public IEnumerable<Record> GetRecords(string path)
         {
             using var fs = new FileStream(path, FileMode.Open);
             MarcXmlReader reader = new(fs);

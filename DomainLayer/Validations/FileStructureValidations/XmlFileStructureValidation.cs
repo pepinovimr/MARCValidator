@@ -8,13 +8,13 @@ namespace DomainLayer.Validations.FileStructureValidations
 {
     internal class XmlFileStructureValidation : IFileStructureValidation
     {
-        private readonly string XML_SCHEMA_File = @".\Properties\MarcXmlSchema.xsd";
+        private readonly string _xmlSchemaFile = Path.Combine(".", "Properties", "MarcXmlSchema.xsd");
         private readonly XmlSchemaSet _xmlSchemaSet = new();
         private XDocument _xDocument;
         private readonly string _filePath;
         public XmlFileStructureValidation(string filePath)
         {
-            _xmlSchemaSet.Add("http://www.loc.gov/MARC21/slim", XML_SCHEMA_File);
+            _xmlSchemaSet.Add("http://www.loc.gov/MARC21/slim", _xmlSchemaFile);
             _filePath = filePath;
         }
 
