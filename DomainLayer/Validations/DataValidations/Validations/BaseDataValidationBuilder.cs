@@ -143,7 +143,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
             if (!Regex.IsMatch(value, validation.Pattern))
                 Results.Add(new Result(ObligationToSeverityMap[validation.Obligation],
-                    ValidationType.FieldDoesNotMatchPattern, DefaultOutput: new( Expected: validation.Pattern, Found: value, SourceField: GetSourceField())));
+                    ValidationType.FieldDoesNotMatchPattern, DefaultOutput: new( Expected: validation.PatternErrorMessage ?? validation.Pattern, Found: value, SourceField: GetSourceField())));
 
             return Result.Success;
         }

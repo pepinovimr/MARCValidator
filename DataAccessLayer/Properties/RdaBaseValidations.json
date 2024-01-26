@@ -51,6 +51,7 @@
       "SubField": {
         "Code": "a",
         "Pattern": "^(?:ISBN(?:-1[03])?:?●)?(?=[0-9X]{10}$|(?=(?:[0-9]+[-●]){3})[-●0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[-●]){4})[-●0-9]{17}$)(?:97[89][-●]?)?[0-9]{1,5}[-●]?[0-9]+[-●]?[0-9]+[-●]?[0-9X]$",
+        "PatternErrorMessage": "Pole musí být ve formátu ISBN - 10/13",
         "Parrent": {
           "Tag": 20
         }
@@ -87,7 +88,8 @@
     {
       "SubField": {
         "Code": "b",
-        "Pattern": "^[a-z]{2,3}$",
+        "Pattern": "^-?[a-z]{3}$",
+        "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
         "Parrent": {
           "Tag": 40
         }
@@ -116,6 +118,7 @@
       "SubField": {
         "Code": "e",
         "Pattern": "^rda$",
+        "PatternErrorMessage": "Pole musí mít vyplněnou hodnotu rda",
         "Parrent": {
           "Tag": 40
         }
@@ -125,7 +128,8 @@
     {
       "SubField": {
         "Code": "a",
-        "Pattern": "^[a-z]{2,3}$",
+        "Pattern": "^-?[a-z]{3}$",
+        "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
         "Parrent": {
           "Tag": 41
         }
@@ -134,8 +138,8 @@
     },
     {
       "SubField": {
-        "Code": "a",
-        "Pattern": "^[a-z]{2,3}$",
+        "Pattern": "^-?[a-z]{3}$",
+        "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
         "Parrent": {
           "Tag": 44
         }

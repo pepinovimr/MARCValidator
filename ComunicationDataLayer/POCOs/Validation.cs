@@ -11,6 +11,7 @@ namespace ComunicationDataLayer.POCOs
     public abstract class ValidationBase
     {
         public string? Pattern { get; set; }
+        public string? PatternErrorMessage { get; set; }
         public FieldObligationScope Obligation { get; set; }
         public List<ValidationBase>? Conditions { get; set; }
         public List<ValidationBase>? Alternatives { get; set; }
