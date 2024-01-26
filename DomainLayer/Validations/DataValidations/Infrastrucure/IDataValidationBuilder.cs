@@ -13,5 +13,6 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
         public string GetSourceField();
 
         public string? GetSourceFieldValue();
+        public IDataValidationBuilder SetValidationSource(ValidationSource validationSource);
     }
 }

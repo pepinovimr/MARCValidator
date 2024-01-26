@@ -26,7 +26,11 @@ namespace DomainLayer.Validations.DataValidations.Validations
         public override IDataValidationBuilder ValidateObligation()
         {
             if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
-                Results.Add(result with { SourceField = GetSourceField() });
+                Results.Add(result with 
+                    { DefaultOutput = 
+                        new(SourceField: GetSourceField(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "") 
+                    }
+                );
 
             return this;
         }

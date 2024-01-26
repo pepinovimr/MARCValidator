@@ -3,10 +3,15 @@
 namespace ComunicationDataLayer.POCOs
 {
     public record Result(Severity Type, ValidationType Error, string SourceRecord = "",
-        string Expected = "", string Found = "", string SourceField = "",
-        string ConditionSourceField = "", string ConditionExpected = "", string ConditionFound = "",
-        string AlternativeSourceField = "", string AlternativeExpected = "", string AlternativeFound = "")
+        ValidationOutput? DefaultOutput = null,
+        ValidationOutput? ConditionOutput = null,
+        ValidationOutput? AlternativeOutput = null)
     {
         public static Result Success { get; } = new(Severity.Success, ValidationType.None);
+    }
+
+    public record ValidationOutput(string SourceField = "", string Expected = "", string Found = "")
+    {
+        public static ValidationOutput NoOutput { get; } = new("", "", "");
     }
 }

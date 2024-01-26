@@ -10,6 +10,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 {
     internal abstract class BaseDataValidationBuilder(Record marcRecord, ValidationBase rules) : IDataValidationBuilder
     {
+        protected ValidationSource ValidationSource { get; set; } = ValidationSource.Normal;
         protected Record Record { get; } = marcRecord;
         private ValidationBase Rules { get; } = rules;
         protected List<Result> Results = [];
@@ -32,7 +33,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
             foreach (var rule in Rules.Conditions)
             {
-                IEnumerable<Result> results = ValidateRule(rule, factory);
+                IEnumerable<Result> results = ValidateRule(rule, factory, ValidationSource.Condition);
 
                 Results.AddRange(results.Select(MapConditionResult));
             }
@@ -44,10 +45,10 @@ namespace DomainLayer.Validations.DataValidations.Validations
         {
             if (Rules.Alternatives is null) return this;
 
-            Predicate<Result> matchAlternative = x =>
-                x.SourceField.Equals(GetSourceField()) &&
-                x.Expected.Equals(Rules.Pattern) &&
-                x.Found.Equals(GetSourceFieldValue());
+            Predicate<Result> matchAlternative = x => 
+                x.DefaultOutput.SourceField.Equals(GetSourceField()) &&
+                x.DefaultOutput.Expected.Equals(Rules.Pattern) &&
+                x.DefaultOutput.Found.Equals(GetSourceFieldValue());
 
             if (Results.FindLast(matchAlternative) is null)
                 return this;
@@ -58,7 +59,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
             foreach (var rule in Rules.Alternatives)
             {
-                IEnumerable<Result> results = ValidateRule(rule, factory);
+                IEnumerable<Result> results = ValidateRule(rule, factory, ValidationSource.Alternative);
 
                 if (!results.Any())
                 {
@@ -66,17 +67,18 @@ namespace DomainLayer.Validations.DataValidations.Validations
                     return this;
                 }
                 else
-                    alternativeResults.AddRange(results.Select(MapConditionResult));
+                    alternativeResults.AddRange(results.Select(MapAlternativeResult));
             }
             Results.AddRange(alternativeResults.Select(MapAlternativeResult));
 
             return this;
         }
 
-        private IEnumerable<Result> ValidateRule(ValidationBase rule, DataValidationBuilderFactory factory)
+        private IEnumerable<Result> ValidateRule(ValidationBase rule, DataValidationBuilderFactory factory, ValidationSource validationSource)
         {
             IDataValidationBuilder builder = factory.CreateValidations(rule, Record);
             builder
+                .SetValidationSource(validationSource)
                 .ValidateObligation()
                 .ValidatePattern()
                 .ValidateConditions()
@@ -108,23 +110,19 @@ namespace DomainLayer.Validations.DataValidations.Validations
         private Result MapConditionResult(Result resultToMap) =>
             resultToMap with
             {
-                ConditionSourceField = resultToMap.SourceField,
-                SourceField = GetSourceField(),
-                ConditionExpected = resultToMap.Expected,
-                Expected = Rules.Pattern ?? "",
-                ConditionFound = resultToMap.Found,
-                Found = GetSourceFieldValue() ?? ""
+                ConditionOutput = resultToMap.DefaultOutput,
+                DefaultOutput = new(SourceField: GetSourceField(), 
+                                    Expected:  Rules.Pattern ?? "", 
+                                    Found: GetSourceFieldValue() ?? "")
             };
 
         private Result MapAlternativeResult(Result resultToMap) =>
             resultToMap with
             {
-                AlternativeSourceField = resultToMap.SourceField,
-                SourceField = GetSourceField(),
-                AlternativeExpected = resultToMap.Expected,
-                Expected = Rules.Pattern ?? "",
-                AlternativeFound = resultToMap.Found,
-                Found = GetSourceFieldValue() ?? ""
+                AlternativeOutput = resultToMap.DefaultOutput,
+                DefaultOutput = new(SourceField: GetSourceField(),
+                                    Expected: Rules.Pattern ?? "",
+                                    Found: GetSourceFieldValue() ?? "")
             };
 
 
@@ -145,9 +143,15 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
             if (!Regex.IsMatch(value, validation.Pattern))
                 Results.Add(new Result(ObligationToSeverityMap[validation.Obligation],
-                    ValidationType.FieldDoesNotMatchPattern, Expected: validation.Pattern, Found: value, SourceField: GetSourceField()));
+                    ValidationType.FieldDoesNotMatchPattern, DefaultOutput: new( Expected: validation.Pattern, Found: value, SourceField: GetSourceField())));
 
             return Result.Success;
+        }
+
+        public IDataValidationBuilder SetValidationSource(ValidationSource validationSource) 
+        {
+            ValidationSource = validationSource;
+            return this;
         }
 
         public IEnumerable<Result> GetResults() =>
