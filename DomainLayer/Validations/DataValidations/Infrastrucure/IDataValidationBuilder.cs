@@ -10,7 +10,7 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
         public IDataValidationBuilder ValidateAlternatives();
         public IEnumerable<Result> GetResults();
 
-        public string GetSourceField();
+        public string GetSourceFieldName();
 
         public string? GetSourceFieldValue();
         public IDataValidationBuilder SetValidationSource(ValidationSource validationSource);

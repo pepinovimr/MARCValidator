@@ -17,7 +17,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             _rules = rules as ControlFieldValidation;
         }
 
-        public override string GetSourceField() =>
+        public override string GetSourceFieldName() =>
             "ControlField Tag: " + _rules.ControlField.Tag;
 
         public override string? GetSourceFieldValue() =>
@@ -28,7 +28,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
                 Results.Add(result with 
                     { DefaultOutput = 
-                        new(SourceField: GetSourceField(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "") 
+                        new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "") 
                     }
                 );
 

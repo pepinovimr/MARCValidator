@@ -16,7 +16,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
         }
 
 
-        public override string GetSourceField() =>
+        public override string GetSourceFieldName() =>
             "Leader";
 
         public override string? GetSourceFieldValue() =>

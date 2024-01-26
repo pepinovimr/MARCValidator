@@ -1,5 +1,6 @@
 ﻿using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
+using DomainLayer.Validations.DataValidations.Helpers;
 using DomainLayer.Validations.DataValidations.Infrastrucure;
 using DomainLayer.Validations.DataValidations.ValidationControl;
 using MARC4J.Net.MARC;
@@ -14,16 +15,6 @@ namespace DomainLayer.Validations.DataValidations.Validations
         protected Record Record { get; } = marcRecord;
         private ValidationBase Rules { get; } = rules;
         protected List<Result> Results = [];
-
-        protected Dictionary<FieldObligationScope, Severity> ObligationToSeverityMap = new()
-        {
-            {FieldObligationScope.M, Severity.Error },
-            {FieldObligationScope.MA, Severity.Error },
-            {FieldObligationScope.R, Severity.Warning },
-            {FieldObligationScope.RA, Severity.Warning },
-            {FieldObligationScope.O, Severity.Info },
-            {FieldObligationScope.FORBIDDEN, Severity.Error }
-        };
 
         public virtual IDataValidationBuilder ValidateConditions()
         {
@@ -46,7 +37,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             if (Rules.Alternatives is null) return this;
 
             Predicate<Result> matchAlternative = x => 
-                x.DefaultOutput.SourceField.Equals(GetSourceField()) &&
+                x.DefaultOutput.SourceField.Equals(GetSourceFieldName()) &&
                 x.DefaultOutput.Expected.Equals(Rules.Pattern) &&
                 x.DefaultOutput.Found.Equals(GetSourceFieldValue());
 
@@ -87,32 +78,21 @@ namespace DomainLayer.Validations.DataValidations.Validations
             return builder.GetResults();
         }
 
-        protected Result ValidateByFieldObligationScope(IVariableField? field) =>
+        protected Result ValidateByFieldObligationScope(object? field) =>
             Rules.Obligation == FieldObligationScope.FORBIDDEN
-                ? ValidateForbidden(field)
-                : ValidateObligated(field);
-
-        protected Result ValidateByFieldObligationScope(ISubfield? field) =>
-            Rules.Obligation == FieldObligationScope.FORBIDDEN
-                ? ValidateForbidden(field)
-                : ValidateObligated(field);
-
-        private Result ValidateForbidden(object? field) =>
-            field is not null
-            ? new Result(ObligationToSeverityMap[Rules.Obligation], ValidationType.ForbidenFieldExistsError)
-            : Result.Success;
-
-        private Result ValidateObligated(object? field) =>
-            field is null
-            ? new Result(ObligationToSeverityMap[Rules.Obligation], ValidationType.ObligatedFieldNotExists)
-            : Result.Success;
+                ? field is not null 
+                    ? new Result(PatternValidationHelper.ObligationToSeverityMap[Rules.Obligation], ValidationType.ForbidenFieldExistsError) 
+                    : Result.Success
+                : field is null 
+                    ? new Result(PatternValidationHelper.ObligationToSeverityMap[Rules.Obligation], ValidationType.ObligatedFieldNotExists) 
+                    : Result.Success;
 
         private Result MapConditionResult(Result resultToMap) =>
             resultToMap with
             {
                 ConditionOutput = resultToMap.DefaultOutput,
-                DefaultOutput = new(SourceField: GetSourceField(), 
-                                    Expected:  Rules.Pattern ?? "", 
+                DefaultOutput = new(SourceField: GetSourceFieldName(), 
+                                    Expected:  Rules.PatternErrorMessage ?? Rules.Pattern ?? "", 
                                     Found: GetSourceFieldValue() ?? "")
             };
 
@@ -120,8 +100,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
             resultToMap with
             {
                 AlternativeOutput = resultToMap.DefaultOutput,
-                DefaultOutput = new(SourceField: GetSourceField(),
-                                    Expected: Rules.Pattern ?? "",
+                DefaultOutput = new(SourceField: GetSourceFieldName(),
+                                    Expected: Rules.PatternErrorMessage ?? Rules.Pattern ?? "",
                                     Found: GetSourceFieldValue() ?? "")
             };
 
@@ -138,12 +118,13 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         protected Result PatternValidation(ValidationBase validation, string? value)
         {
-            if (!CanValidatePattern())
+            if (!PatternValidationHelper.CanValidatePattern(Results, validation))
                 return Result.Success;
 
             if (!Regex.IsMatch(value, validation.Pattern))
-                Results.Add(new Result(ObligationToSeverityMap[validation.Obligation],
-                    ValidationType.FieldDoesNotMatchPattern, DefaultOutput: new( Expected: validation.PatternErrorMessage ?? validation.Pattern, Found: value, SourceField: GetSourceField())));
+                Results.Add(new Result(PatternValidationHelper.ObligationToSeverityMap[validation.Obligation],
+                    ValidationType.FieldDoesNotMatchPattern, 
+                        DefaultOutput: new( Expected: validation.PatternErrorMessage ?? validation.Pattern, Found: value, SourceField: GetSourceFieldName())));
 
             return Result.Success;
         }
@@ -155,7 +136,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
         }
 
         public IEnumerable<Result> GetResults() =>
-            Results.Select(result => result with { SourceRecord = GetRecordName() });
+            Results.Select(result => result with { SourceRecord = Record.GetName() });
 
         public string GetRecordName() =>
             Record.GetDataFields().FirstOrDefault(x => x.Tag.Equals("015"))?.GetSubfield('a').Data ?? Record.GetControlNumber();
@@ -164,7 +145,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public abstract IDataValidationBuilder ValidatePattern();
 
-        public abstract string GetSourceField();
+        public abstract string GetSourceFieldName();
 
         public abstract string? GetSourceFieldValue();
     }

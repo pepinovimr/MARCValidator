@@ -18,7 +18,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
                 && (x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2 ?? " ") || x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2 ?? "#")))
                 .FirstOrDefault()?.GetSubfield(_subFieldValidation.SubField.Code[0]);
         }
-        public override string GetSourceField() =>
+        public override string GetSourceFieldName() =>
             $"SubField Code: {_subFieldValidation.SubField.Code} Parrent: [DataField Tag: {_subFieldValidation.SubField.Parrent.Tag} ind1: {_subFieldValidation.SubField.Parrent.Identificator1} ind2: {_subFieldValidation.SubField.Parrent.Identificator2}]";
 
         public override string? GetSourceFieldValue() =>
@@ -30,7 +30,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
                 Results.Add(result with
                 {
                     DefaultOutput =
-                        new(SourceField: GetSourceField(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
+                        new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
                 }
                 );
 
