@@ -138,6 +138,7 @@
     },
     {
       "SubField": {
+        "Code": "a",
         "Pattern": "^-?[a-z]{3}$",
         "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
         "Parrent": {

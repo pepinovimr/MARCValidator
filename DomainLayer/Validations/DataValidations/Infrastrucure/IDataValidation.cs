@@ -4,6 +4,6 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
 {
     internal interface IDataValidation
     {
-        public IEnumerable<Result> ValidateData();
+        public List<Result> ValidateData();
     }
 }

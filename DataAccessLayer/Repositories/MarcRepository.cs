@@ -5,15 +5,18 @@ namespace DataAccessLayer.Repositories
 {
     public class MarcRepository : IMarcRepository
     {
-        public IEnumerable<Record> GetRecords(string path)
+        public List<Record> GetRecords(string path)
         {
             using var fs = new FileStream(path, FileMode.Open);
             MarcXmlReader reader = new(fs);
+            List<Record> records = [];
 
             foreach (var record in reader)
             {
-                yield return (Record)record;
+                records.Add((Record)record);
             }
+
+            return records;
         }
     }
 }

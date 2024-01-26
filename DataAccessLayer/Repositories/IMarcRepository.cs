@@ -9,6 +9,6 @@ namespace DataAccessLayer.Repositories
 {
     public interface IMarcRepository
     {
-        public IEnumerable<Record> GetRecords(string path);
+        public List<Record> GetRecords(string path);
     }
 }

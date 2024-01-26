@@ -4,6 +4,6 @@ namespace DataAccessLayer.Repositories
 {
     public interface IValidationRepository
     {
-        public IEnumerable<ValidationSet> GetValidations();
+        public List<ValidationSet> GetValidations();
     }
 }

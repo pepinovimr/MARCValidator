@@ -24,7 +24,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
             foreach (var rule in Rules.Conditions)
             {
-                IEnumerable<Result> results = ValidateRule(rule, factory, ValidationSource.Condition);
+                List<Result> results = ValidateRule(rule, factory, ValidationSource.Condition);
 
                 Results.AddRange(results.Select(MapConditionResult));
             }
@@ -50,7 +50,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
             foreach (var rule in Rules.Alternatives)
             {
-                IEnumerable<Result> results = ValidateRule(rule, factory, ValidationSource.Alternative);
+                List<Result> results = ValidateRule(rule, factory, ValidationSource.Alternative);
 
                 if (!results.Any())
                 {
@@ -65,7 +65,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             return this;
         }
 
-        private IEnumerable<Result> ValidateRule(ValidationBase rule, DataValidationBuilderFactory factory, ValidationSource validationSource)
+        private List<Result> ValidateRule(ValidationBase rule, DataValidationBuilderFactory factory, ValidationSource validationSource)
         {
             IDataValidationBuilder builder = factory.CreateValidations(rule, Record);
             builder
@@ -135,8 +135,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
             return this;
         }
 
-        public IEnumerable<Result> GetResults() =>
-            Results.Select(result => result with { SourceRecord = Record.GetName() });
+        public List<Result> GetResults() =>
+            Results.Select(result => result with { SourceRecord = Record.GetName() }).ToList();
 
         public string GetRecordName() =>
             Record.GetDataFields().FirstOrDefault(x => x.Tag.Equals("015"))?.GetSubfield('a').Data ?? Record.GetControlNumber();

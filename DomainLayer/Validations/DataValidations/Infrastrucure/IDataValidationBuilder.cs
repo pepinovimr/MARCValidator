@@ -8,7 +8,7 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
         public IDataValidationBuilder ValidatePattern();
         public IDataValidationBuilder ValidateConditions();
         public IDataValidationBuilder ValidateAlternatives();
-        public IEnumerable<Result> GetResults();
+        public List<Result> GetResults();
 
         public string GetSourceFieldName();
 

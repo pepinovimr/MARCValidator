@@ -17,17 +17,17 @@ namespace DomainLayer.Managers
             _validationRepository = validationRepository;
             _marcRepository = marcRepository;
         }
-        public IEnumerable<Result> Validate(string path) =>
+        public List<Result> Validate(string path) =>
             PerformStructureValidations(path) is var result &&
             result.DefaultIfEmpty(null) is not null ? PerformDataValidations(path) : result;
 
         private List<Result> PerformStructureValidations(string path) =>
             new FileStructureValidationFactory().CreateFileStructureValidation(path).ValidateFileStructure();
 
-        private IEnumerable<Result> PerformDataValidations(string path) =>
+        private List<Result> PerformDataValidations(string path) =>
             ValidateRecords(_marcRepository.GetRecords(path), _validationRepository.GetValidations());
 
-        private List<Result> ValidateRecords(IEnumerable<Record> marcRecords, IEnumerable<ValidationSet> rules)
+        private List<Result> ValidateRecords(List<Record> marcRecords, List<ValidationSet> rules)
         {
             List<Result> results = [];
             foreach (Record record in marcRecords)

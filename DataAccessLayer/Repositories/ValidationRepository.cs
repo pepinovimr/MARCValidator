@@ -13,34 +13,36 @@ namespace DataAccessLayer.Repositories
         {
             _fileListPath = Path.Combine(_propertiesPath, "ValidationFiles.json");
         }
-        public IEnumerable<ValidationSet> GetValidations()
+        public List<ValidationSet> GetValidations()
         {
+            List<ValidationSet> validations = [];
             foreach (var file in GetFiles())
             {
                 string jsonString = File.ReadAllText(Path.Combine(_propertiesPath, file));
 
-                yield return JsonConvert.DeserializeObject<ValidationSet>(jsonString, new JsonSerializerSettings
+                validations.Add(JsonConvert.DeserializeObject<ValidationSet>(jsonString, new JsonSerializerSettings
                     {
                         Converters = { new ValidationBaseJsonConverter(), new SubFieldConverter() }
-                    }) ?? throw new JsonSerializationException("Deserialization returned null");
+                    }) ?? throw new JsonSerializationException("Deserialization returned null"));
             }
+
+            return validations;
         }
 
-        public IEnumerable<string> GetFiles()
+        public List<string> GetFiles()
         {
-
             string jsonContent = File.ReadAllText(_fileListPath);
-
             JsonDocument jsonDocument = JsonDocument.Parse(jsonContent);
-
             JsonElement root = jsonDocument.RootElement;
-
             JsonElement filesArray = root.GetProperty("Files");
+            List<string> files = [];
 
             foreach (JsonElement fileElement in filesArray.EnumerateArray())
             {
-                yield return fileElement.GetProperty("File").GetString();
+                files.Add(fileElement.GetProperty("File").GetString());
             }
+
+            return files;
         }
     }
 }

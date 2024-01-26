@@ -9,13 +9,11 @@ namespace DataAccessLayer.Repositories.JsonConverters
         public override SubField ReadJson(JsonReader reader, Type objectType, SubField existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             JObject jsonObject = JObject.Load(reader);
-            SubField subField = new SubField();
+            SubField subField = new()
+            {
+                Code = jsonObject["Code"]?.ToObject<string>(serializer)
+            };
 
-            // Manually deserialize the Parrent property here
-
-            subField.Code = jsonObject["Code"].ToObject<string>(serializer);
-
-            // Deserialize Parrent property
             if (jsonObject["Parrent"] != null)
             {
                 subField.Parrent = jsonObject["Parrent"].ToObject<DataField>(serializer);
@@ -26,7 +24,6 @@ namespace DataAccessLayer.Repositories.JsonConverters
 
         public override void WriteJson(JsonWriter writer, SubField value, JsonSerializer serializer)
         {
-            // Implement serialization if needed
             throw new NotImplementedException();
         }
     }
