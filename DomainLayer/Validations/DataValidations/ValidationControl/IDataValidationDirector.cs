@@ -1,4 +1,5 @@
-﻿using ComunicationDataLayer.POCOs;
+﻿using ComunicationDataLayer.Enums;
+using ComunicationDataLayer.POCOs;
 
 namespace DomainLayer.Validations.DataValidations.ValidationControl
 {

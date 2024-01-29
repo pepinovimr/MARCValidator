@@ -5,8 +5,6 @@ using ApplicationLayer.Validations;
 using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
 using DomainLayer.Managers;
-using DomainLayer.Validations.DataValidations.Infrastrucure;
-using MARC4J.Net.MARC;
 using Microsoft.Extensions.Logging;
 
 namespace ApplicationLayer

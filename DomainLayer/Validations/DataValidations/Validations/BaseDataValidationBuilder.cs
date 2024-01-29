@@ -75,17 +75,6 @@ namespace DomainLayer.Validations.DataValidations.Validations
                                     Found: GetSourceFieldValue() ?? "")
             };
 
-
-        /// <summary>
-        /// Ensures that pattern can be validated without null references
-        /// </summary>
-        protected bool CanValidatePattern() =>
-            _validationBase.ValidationResults.LastOrDefault() is var lastResult
-            && lastResult is not null
-            && _validationBase.Pattern is not null
-            && lastResult.Error != ValidationType.ForbidenFieldExistsError
-            && lastResult.Error != ValidationType.ObligatedFieldNotExists;
-
         protected Result PatternValidation(ValidationBase validation, string? value)
         {
             if (!PatternValidationHelper.CanValidatePattern(_validationBase.ValidationResults, validation))
@@ -109,8 +98,6 @@ namespace DomainLayer.Validations.DataValidations.Validations
         {
             return _validationBase.ValidationResults;
         }
-        public string GetRecordName() =>
-            Record.GetDataFields().FirstOrDefault(x => x.Tag.Equals("015"))?.GetSubfield('a').Data ?? Record.GetControlNumber();
 
         public abstract IDataValidationBuilder ValidateObligation();
 

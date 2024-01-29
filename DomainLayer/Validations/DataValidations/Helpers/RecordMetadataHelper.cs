@@ -9,7 +9,7 @@ namespace DomainLayer.Validations.DataValidations.Helpers
             record.GetDataFields().FirstOrDefault(x => x.Tag.Equals("015"))?.GetSubfield('a').Data ?? record.GetControlNumber();
 
         public static AllowedDescriptionStandard GetDescriptionStandard(this Record record) =>
-            (record.GetDataFields()?.FirstOrDefault(x => x.Tag.Equals("040"))?.GetSubfield('e').Data.Equals("rda") ?? false)
+            (record.GetDataFields()?.FirstOrDefault(x => x.Tag.Equals("040"))?.GetSubfield('e')?.Data?.Equals("rda") ?? false)
             ? AllowedDescriptionStandard.rda
             : record.Leader.Marshal()[18].Equals('a')
                 ? AllowedDescriptionStandard.aacr2

@@ -1,4 +1,5 @@
-﻿using ComunicationDataLayer.POCOs;
+﻿using ComunicationDataLayer.Enums;
+using ComunicationDataLayer.POCOs;
 using DataAccessLayer.Repositories;
 using DomainLayer.Validations.DataValidations.Helpers;
 using DomainLayer.Validations.DataValidations.Infrastrucure;
@@ -18,7 +19,7 @@ namespace DomainLayer.Validations.DataValidations.ValidationControl
             foreach (Record record in _marcRepository.GetRecords(path))
             {
                 List<Result> setResults = [];
-                foreach (ValidationSet rule in _validationRepository.GetValidations())
+                foreach (ValidationSet rule in _validationRepository.GetValidations(record.GetDescriptionStandard()))
                 {
                     setResults.AddRange(CreateValidation(record, rule));
                 }

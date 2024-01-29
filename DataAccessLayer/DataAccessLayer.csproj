@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Properties\RdaBaseValidations.json" />
+    <None Remove="Properties\rda_minimal.json" />
     <None Remove="Properties\ValidationFiles.json" />
   </ItemGroup>
   <ItemGroup>
@@ -28,7 +28,7 @@
     <Content Include="Properties\ValidationFiles.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Properties\RdaBaseValidations.json">
+    <Content Include="Properties\rda_minimal.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

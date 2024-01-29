@@ -1,7 +1,16 @@
 {
   "Files": [
     {
-      "File": "RdaBaseValidations.json"
+      "File": "rda_minimal.json"
+    },
+    {
+      "File": "rda_recomended.json"
+    },
+    {
+      "File": "aacr2_minimal.json"
+    },
+    {
+      "File": "aacr2_recomended.json"
     }
   ]
 }
