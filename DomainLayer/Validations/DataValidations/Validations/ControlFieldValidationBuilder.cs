@@ -6,8 +6,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
 {
     internal class ControlFieldValidationBuilder : BaseDataValidationBuilder
     {
-        private ControlFieldValidation _controlFieldValidation;
-        private IControlField? _field;
+        private readonly ControlFieldValidation _controlFieldValidation;
+        private readonly IControlField? _field;
 
         public ControlFieldValidationBuilder(Record marcRecord, ValidationBase rules) : base(marcRecord, rules)
         {
@@ -24,20 +24,19 @@ namespace DomainLayer.Validations.DataValidations.Validations
         public override IDataValidationBuilder ValidateObligation()
         {
             var result = ValidateByFieldObligationScope(_field);
-            //if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
-                _controlFieldValidation.ValidationResults.Add(result with 
-                    { DefaultOutput = 
-                        new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "") 
-                    }
-                );
+            _controlFieldValidation.ValidationResults.Add(result with
+            {
+                DefaultOutput =
+                    new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
+            }
+            );
 
             return this;
         }
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            //if (PatternValidation(_controlFieldValidation, _field?.Data) is var result && result != Result.Success)
-                _controlFieldValidation.ValidationResults.Add(PatternValidation(_controlFieldValidation, _field?.Data));
+            _controlFieldValidation.ValidationResults.Add(PatternValidation(_controlFieldValidation, _field?.Data));
             return this;
         }
     }

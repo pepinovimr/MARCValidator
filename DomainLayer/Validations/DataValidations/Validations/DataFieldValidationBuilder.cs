@@ -6,8 +6,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
 {
     internal class DataFieldValidationBuilder : BaseDataValidationBuilder
     {
-        private DataFieldValidation _dataFieldValidation;
-        private IDataField? _field;
+        private readonly DataFieldValidation _dataFieldValidation;
+        private readonly IDataField? _field;
         public DataFieldValidationBuilder(Record marcRecord, ValidationBase rules) : base(marcRecord, rules)
         {
             _dataFieldValidation = rules as DataFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
@@ -25,13 +25,12 @@ namespace DomainLayer.Validations.DataValidations.Validations
         public override IDataValidationBuilder ValidateObligation()
         {
             var result = ValidateByFieldObligationScope(_field);
-            //if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
-                _dataFieldValidation.ValidationResults.Add(result with
-                {
-                    DefaultOutput =
-                        new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
-                }
-                );
+            _dataFieldValidation.ValidationResults.Add(result with
+            {
+                DefaultOutput =
+                    new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
+            }
+            );
 
             return this;
         }

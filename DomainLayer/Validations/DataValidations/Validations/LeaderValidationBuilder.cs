@@ -7,8 +7,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
 {
     internal class LeaderValidationBuilder : BaseDataValidationBuilder
     {
-        private LeaderValidation _leaderFieldValidation;
-        private string _leaderValue;
+        private readonly LeaderValidation _leaderFieldValidation;
+        private readonly string _leaderValue;
 
         public LeaderValidationBuilder(Record marcRecord, ValidationBase rules) : base(marcRecord, rules)
         {
@@ -27,8 +27,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            //if (PatternValidation(_leaderFieldValidation, _leaderValue) is var result && result != Result.Success)
-                _leaderFieldValidation.ValidationResults.Add(PatternValidation(_leaderFieldValidation, _leaderValue));
+            _leaderFieldValidation.ValidationResults.Add(PatternValidation(_leaderFieldValidation, _leaderValue));
             return this;
         }
     }

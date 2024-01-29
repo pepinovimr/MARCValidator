@@ -6,8 +6,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
 {
     internal class SubFieldValidationBuilder : BaseDataValidationBuilder
     {
-        private SubFieldValidation _subFieldValidation;
-        private ISubfield? _field;
+        private readonly SubFieldValidation _subFieldValidation;
+        private readonly ISubfield? _field;
         public SubFieldValidationBuilder(Record marcRecord, ValidationBase rules) : base(marcRecord, rules)
         {
             _subFieldValidation = rules as SubFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
@@ -26,23 +26,20 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public override IDataValidationBuilder ValidateObligation()
         {
-            //if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
             var result = ValidateByFieldObligationScope(_field);
-                _subFieldValidation.ValidationResults.Add(result with
-                {
-                    DefaultOutput =
-                        new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
-                }
-                );
-            //else
+            _subFieldValidation.ValidationResults.Add(result with
+            {
+                DefaultOutput =
+                    new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
+            }
+            );
 
             return this;
         }
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            //if (PatternValidation(_subFieldValidation, _field?.Data) is var result && result != Result.Success)
-                _subFieldValidation.ValidationResults.Add(PatternValidation(_subFieldValidation, _field?.Data));
+            _subFieldValidation.ValidationResults.Add(PatternValidation(_subFieldValidation, _field?.Data));
             return this;
         }
     }
