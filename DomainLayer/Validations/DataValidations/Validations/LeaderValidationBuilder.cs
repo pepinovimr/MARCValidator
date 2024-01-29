@@ -1,6 +1,7 @@
 ﻿using ComunicationDataLayer.POCOs;
 using DomainLayer.Validations.DataValidations.Infrastrucure;
 using MARC4J.Net.MARC;
+using System.Data;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
@@ -26,8 +27,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            if (PatternValidation(_leaderFieldValidation, _leaderValue) is var result && result != Result.Success)
-                Results.Add(result);
+            //if (PatternValidation(_leaderFieldValidation, _leaderValue) is var result && result != Result.Success)
+                _leaderFieldValidation.ValidationResults.Add(PatternValidation(_leaderFieldValidation, _leaderValue));
             return this;
         }
     }

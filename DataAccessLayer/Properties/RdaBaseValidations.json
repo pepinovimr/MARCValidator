@@ -3,7 +3,7 @@
   "ValidationList": [
     {
       "Leader": {},
-       "Obligation": 1
+      "Obligation": 1
     },
     {
       "ControlField": {
@@ -193,18 +193,18 @@
                 "Code": "a",
                 "Parrent": {
                   "Tag": 80
-                },
-                "Obligation": 1
-              }
+                }
+              },
+              "Obligation": 1
             },
             {
               "SubField": {
                 "Code": "2",
                 "Parrent": {
                   "Tag": 80
-                },
-                "Obligation": 1
-              }
+                }
+              },
+              "Obligation": 1
             }
           ]
         }

@@ -15,6 +15,8 @@ namespace ComunicationDataLayer.POCOs
         public FieldObligationScope Obligation { get; set; }
         public List<ValidationBase>? Conditions { get; set; }
         public List<ValidationBase>? Alternatives { get; set; }
+        [JsonIgnore]
+        public List<Result> ValidationResults { get; set; } = [];
     }
 
     public class LeaderValidation : ValidationBase

@@ -51,6 +51,7 @@ namespace SharedLayer
             builder.Services.AddScoped<IValidationRepository, ValidationRepository>();
             builder.Services.AddScoped<IMarcRepository, MarcRepository>();
             builder.Services.AddScoped<IValidationManager, ValidationManager>();
+            builder.Services.AddScoped<IDataValidationDirector, DataValidationDirector>();
 
             return builder;
         }

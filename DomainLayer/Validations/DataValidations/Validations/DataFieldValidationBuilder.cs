@@ -13,8 +13,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
             _dataFieldValidation = rules as DataFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
             _field = Record.GetDataFields().Where(x =>
                 x.Tag.Equals(_dataFieldValidation.DataField.Tag.ToString("000"))
-                && (x.Indicator1.Equals(_dataFieldValidation.DataField.Identificator1 ?? " ") || x.Indicator1.Equals(_dataFieldValidation.DataField.Identificator1 ?? "#"))
-                && (x.Indicator2.Equals(_dataFieldValidation.DataField.Identificator2 ?? " ") || x.Indicator2.Equals(_dataFieldValidation.DataField.Identificator2 ?? "#")))
+                && (x.Indicator1.Equals(_dataFieldValidation.DataField.Identificator1?[0] ?? ' ') || x.Indicator1.Equals(_dataFieldValidation.DataField.Identificator1?[0] ?? '#'))
+                && (x.Indicator2.Equals(_dataFieldValidation.DataField.Identificator2?[0] ?? ' ') || x.Indicator2.Equals(_dataFieldValidation.DataField.Identificator2?[0] ?? '#')))
                 .FirstOrDefault();
         }
         public override string GetSourceFieldName() =>
@@ -24,8 +24,9 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public override IDataValidationBuilder ValidateObligation()
         {
-            if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
-                Results.Add(result with
+            var result = ValidateByFieldObligationScope(_field);
+            //if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
+                _dataFieldValidation.ValidationResults.Add(result with
                 {
                     DefaultOutput =
                         new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")

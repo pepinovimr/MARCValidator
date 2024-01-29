@@ -14,8 +14,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
             _field = Record.GetDataFields().Where(x =>
                 x.Tag.Equals(_subFieldValidation.SubField.Parrent.Tag.ToString("000"))
-                && (x.Indicator1.Equals(_subFieldValidation.SubField.Parrent.Identificator1 ?? " ") || x.Indicator1.Equals(_subFieldValidation.SubField.Parrent.Identificator1 ?? "#"))
-                && (x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2 ?? " ") || x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2 ?? "#")))
+                && (x.Indicator1.Equals(_subFieldValidation.SubField.Parrent.Identificator1?[0] ?? ' ') || x.Indicator1.Equals(_subFieldValidation.SubField.Parrent.Identificator1?[0] ?? '#'))
+                && (x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2?[0] ?? ' ') || x.Indicator2.Equals(_subFieldValidation.SubField.Parrent.Identificator2?[0] ?? '#')))
                 .FirstOrDefault()?.GetSubfield(_subFieldValidation.SubField.Code[0]);
         }
         public override string GetSourceFieldName() =>
@@ -26,21 +26,23 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public override IDataValidationBuilder ValidateObligation()
         {
-            if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
-                Results.Add(result with
+            //if (ValidateByFieldObligationScope(_field) is var result && result != Result.Success)
+            var result = ValidateByFieldObligationScope(_field);
+                _subFieldValidation.ValidationResults.Add(result with
                 {
                     DefaultOutput =
                         new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
                 }
                 );
+            //else
 
             return this;
         }
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            if (PatternValidation(_subFieldValidation, _field?.Data) is var result && result != Result.Success)
-                Results.Add(result);
+            //if (PatternValidation(_subFieldValidation, _field?.Data) is var result && result != Result.Success)
+                _subFieldValidation.ValidationResults.Add(PatternValidation(_subFieldValidation, _field?.Data));
             return this;
         }
     }

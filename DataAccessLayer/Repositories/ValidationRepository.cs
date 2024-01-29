@@ -22,7 +22,7 @@ namespace DataAccessLayer.Repositories
 
                 validations.Add(JsonConvert.DeserializeObject<ValidationSet>(jsonString, new JsonSerializerSettings
                     {
-                        Converters = { new ValidationBaseJsonConverter(), new SubFieldConverter() }
+                        Converters = { new ValidationBaseJsonConverter(), /*new SubFieldConverter()*/ }
                     }) ?? throw new JsonSerializationException("Deserialization returned null"));
             }
 

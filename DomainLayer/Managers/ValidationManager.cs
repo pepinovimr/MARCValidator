@@ -1,22 +1,13 @@
 ﻿using ComunicationDataLayer.POCOs;
-using DataAccessLayer.Repositories;
-using DomainLayer.Validations.DataValidations.Infrastrucure;
+using DomainLayer.Validations.DataValidations.ValidationControl;
 using DomainLayer.Validations.FileStructureValidations;
-using MARC4J.Net.MARC;
 
 namespace DomainLayer.Managers
 {
-    public class ValidationManager : IValidationManager
+    public class ValidationManager(IDataValidationDirector dataValidationDirector) : IValidationManager
     {
-        private readonly IDataValidationBuilderFactory _dataValidationBuilderFactory;
-        private readonly IValidationRepository _validationRepository;
-        private readonly IMarcRepository _marcRepository;
-        public ValidationManager(IDataValidationBuilderFactory dataValidationBuilderFactory, IValidationRepository validationRepository, IMarcRepository marcRepository)
-        {
-            _dataValidationBuilderFactory = dataValidationBuilderFactory;
-            _validationRepository = validationRepository;
-            _marcRepository = marcRepository;
-        }
+        private readonly IDataValidationDirector _dataValidationDirector = dataValidationDirector;
+
         public List<Result> Validate(string path) =>
             PerformStructureValidations(path) is var result &&
             result.DefaultIfEmpty(null) is not null ? PerformDataValidations(path) : result;
@@ -25,35 +16,6 @@ namespace DomainLayer.Managers
             new FileStructureValidationFactory().CreateFileStructureValidation(path).ValidateFileStructure();
 
         private List<Result> PerformDataValidations(string path) =>
-            ValidateRecords(_marcRepository.GetRecords(path), _validationRepository.GetValidations());
-
-        private List<Result> ValidateRecords(List<Record> marcRecords, List<ValidationSet> rules)
-        {
-            List<Result> results = [];
-            foreach (Record record in marcRecords)
-            {
-                foreach (ValidationSet rule in rules)
-                {
-                    results.AddRange(ValidateRecord(record, rule));
-                }
-            }
-
-            return results;
-        }
-        private List<Result> ValidateRecord(Record marcRecord, ValidationSet rule)
-        {
-            List<Result> results = [];
-            foreach (ValidationBase validation in rule.ValidationList)
-            {
-                IDataValidationBuilder builder = _dataValidationBuilderFactory.CreateValidations(validation, marcRecord)
-                                                                              .ValidateObligation()
-                                                                              .ValidatePattern()
-                                                                              .ValidateConditions()
-                                                                              .ValidateObligation();
-                results.AddRange(builder.GetResults());
-            }
-
-            return results;
-        }
+            _dataValidationDirector.ValidateRecords(path);
     }
 }

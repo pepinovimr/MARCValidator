@@ -67,8 +67,8 @@ namespace ApplicationLayer
                 Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));
                 return;
             }
-
-            foreach (Result res in _validationManager.Validate(path).Distinct())
+            var rs = _validationManager.Validate(path).Distinct().ToList();
+            foreach (Result res in rs)
             {
                 Notify?.Invoke(this, new MessageEventArgs(res.ToMessage()));
             }

@@ -1,4 +1,5 @@
 ﻿using ComunicationDataLayer.POCOs;
+using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Infrastrucure
 {
@@ -8,8 +9,7 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
         public IDataValidationBuilder ValidatePattern();
         public IDataValidationBuilder ValidateConditions();
         public IDataValidationBuilder ValidateAlternatives();
-        public List<Result> GetResults();
-
+        public List<Result>? GetResults();
         public string GetSourceFieldName();
 
         public string? GetSourceFieldValue();
