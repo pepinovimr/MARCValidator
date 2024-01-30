@@ -13,13 +13,14 @@ namespace DataAccessLayer.Repositories
             string newPath = Path.Combine(".", "Properties", "tempMarc.xml");
             FileHelper.CopyFile(path, newPath);
             XmlHelper.AddTopLevelElement(newPath, "x");
-
-            using var fs = new FileStream(newPath, FileMode.Open);
-            MarcXmlReader reader = new(fs);
             List<Record> records = [];
-            foreach (var record in reader)
+            using (var fs = new FileStream(newPath, FileMode.Open))
             {
-                records.Add((Record)record);
+                MarcXmlReader reader = new(fs);
+                foreach (var record in reader)
+                {
+                    records.Add((Record)record);
+                }
             }
 
             FileHelper.RemoveFile(newPath);
