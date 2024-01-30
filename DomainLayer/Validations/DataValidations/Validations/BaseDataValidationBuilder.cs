@@ -31,7 +31,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public virtual IDataValidationBuilder ValidateAlternatives()
         {
-            if (_validationBase.Alternatives is null) return this;
+            if (_validationBase.Alternatives is null || _validationBase.ValidationResults.All(x => x.Type == Severity.Success)) return this;
 
             DataValidationBuilderFactory factory = new();
 
