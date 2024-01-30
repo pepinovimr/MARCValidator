@@ -41,6 +41,7 @@ namespace ConsoleViewLayer.IO
             MessageType.Warning => ConsoleColor.DarkYellow,
             MessageType.Error => ConsoleColor.Red,
             MessageType.Info => ConsoleColor.Blue,
+            MessageType.Header => ConsoleColor.Blue,
             _ => ConsoleColor.White,
         };
     }

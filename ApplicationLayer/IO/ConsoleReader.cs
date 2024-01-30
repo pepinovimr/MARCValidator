@@ -4,9 +4,7 @@
     {
         public static string ReadFromConsole()
         {
-            string input = Console.ReadLine() ?? string.Empty;
-
-            return input;
+            return Console.ReadLine() ?? string.Empty;
         }
     }
 }

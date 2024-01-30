@@ -24,7 +24,9 @@
         /// <summary>
         /// Indicates a neutral information user should see
         /// </summary>
-        Info = 4
+        Info = 4,
+
+        Header = 5
 
     }
 }

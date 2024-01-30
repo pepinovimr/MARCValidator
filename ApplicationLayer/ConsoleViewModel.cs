@@ -44,7 +44,7 @@ namespace ApplicationLayer
                                         , MessageType.Normal
                                         )));
         }
-
+        ///this should be refactored
         public void ValidateMARC()
         {
 
@@ -65,10 +65,16 @@ namespace ApplicationLayer
                 Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));
                 return;
             }
-            var rs = _validationManager.Validate(path).Distinct().ToList();
-            foreach (Result res in rs)
+            var results = _validationManager.Validate(path).Distinct().ToList();
+            var rs = results.ToMessages();
+            foreach (var res in rs)
             {
-                Notify?.Invoke(this, new MessageEventArgs(res.ToMessage()));
+                Notify?.Invoke(this, new MessageEventArgs(res.Key));
+                foreach(var s in res.Value)
+                {
+                    Notify?.Invoke(this, new MessageEventArgs(s));
+                }
+                Notify?.Invoke(this, new MessageEventArgs(new Message("", MessageType.Normal)));
             }
             //result = v.Validate();
 
