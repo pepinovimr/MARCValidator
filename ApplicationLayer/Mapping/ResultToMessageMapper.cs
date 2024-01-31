@@ -41,8 +41,8 @@ namespace ApplicationLayer.Mapping
                 message.Append($"{LocalizationService[result.Error.ToString()]} | ");
 
             message.Append(result.DefaultOutput.GetOutput());
-            message.Append("| " + result.ConditionOutput.GetOutput(LocalizationService["Where"] + " ", ": "));
-            message.Append("| " + result.AlternativeOutput.GetOutput(LocalizationService["Alternative"] + " ", ": "));
+            message.Append(result.ConditionOutput.GetOutput(LocalizationService["Where"] + " ", ": "));
+            message.Append(result.AlternativeOutput.GetOutput(LocalizationService["Alternative"] + " ", ": "));
 
             return message.ToString();
         }
