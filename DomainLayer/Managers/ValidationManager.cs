@@ -8,9 +8,10 @@ namespace DomainLayer.Managers
     /// Manages sequencing of validations in <see cref="DomainLayer"/>
     /// </summary>
     /// <param name="dataValidationDirector"></param>
-    public class ValidationManager(IDataValidationDirector dataValidationDirector) : IValidationManager
+    public class ValidationManager(IDataValidationDirector dataValidationDirector, IFileStructureValidationFactory fileStructureValidationFactory) : IValidationManager
     {
         private readonly IDataValidationDirector _dataValidationDirector = dataValidationDirector;
+        private readonly IFileStructureValidationFactory _fileStructureValidationFactory = fileStructureValidationFactory;
 
         /// <summary>
         /// Starts validation in sequence
@@ -21,7 +22,7 @@ namespace DomainLayer.Managers
             result.DefaultIfEmpty(null) is not null ? PerformDataValidations(path) : result;
 
         private List<Result> PerformStructureValidations(string path) =>
-            new FileStructureValidationFactory().CreateFileStructureValidation(path).ValidateFileStructure();
+            _fileStructureValidationFactory.CreateFileStructureValidation(path).ValidateFileStructure();
 
         private List<Result> PerformDataValidations(string path) =>
             _dataValidationDirector.ValidateRecords(path);

@@ -11,6 +11,7 @@ using DomainLayer.Validations.DataValidations.Infrastrucure;
 using DomainLayer.Validations.DataValidations.ValidationControl;
 using DataAccessLayer.Repositories;
 using DomainLayer.Managers;
+using DomainLayer.Validations.FileStructureValidations;
 
 namespace SharedLayer
 {
@@ -52,6 +53,7 @@ namespace SharedLayer
             builder.Services.AddScoped<IMarcRepository, MarcRepository>();
             builder.Services.AddScoped<IValidationManager, ValidationManager>();
             builder.Services.AddScoped<IDataValidationDirector, DataValidationDirector>();
+            builder.Services.AddScoped<IFileStructureValidationFactory, FileStructureValidationFactory>();
 
             return builder;
         }
