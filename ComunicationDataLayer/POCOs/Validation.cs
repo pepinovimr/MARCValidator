@@ -182,7 +182,7 @@ namespace ComunicationDataLayer.POCOs
         /// <summary>
         /// Datafield parent of Subfield to validate
         /// </summary>
-        public DataField Parrent { get; set; }
+        public DataField Parent { get; set; }
         /// <summary>
         /// Code of Subfield
         /// </summary>

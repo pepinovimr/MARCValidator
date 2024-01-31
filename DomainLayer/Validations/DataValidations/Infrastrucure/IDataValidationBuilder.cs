@@ -18,12 +18,12 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
         public IDataValidationBuilder ValidatePattern();
         /// <summary>
         /// Validates all <see cref="ValidationBase.Conditions"/>
-        /// <para>Should only be used when parrent <see cref="ValidationBase"/> was succesful</para>
+        /// <para>Should only be used when parent <see cref="ValidationBase"/> was succesful</para>
         /// </summary>
         public IDataValidationBuilder ValidateConditions();
         /// <summary>
         /// Validates all <see cref="ValidationBase.Alternatives"/>
-        /// <para>Should only be used when parrent <see cref="ValidationBase"/> failed</para>
+        /// <para>Should only be used when parent <see cref="ValidationBase"/> failed</para>
         /// </summary>
         public IDataValidationBuilder ValidateAlternatives();
         /// <summary>

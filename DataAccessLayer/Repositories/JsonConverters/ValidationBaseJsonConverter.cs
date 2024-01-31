@@ -34,10 +34,10 @@ namespace DataAccessLayer.Repositories.JsonConverters
             {
                 SubFieldValidation subField = jsonObject.ToObject<SubFieldValidation>(serializer);
 
-                if (jsonObject["Parrent"] != null)
+                if (jsonObject["Parent"] != null)
                 {
-                    DataField parrentDataField = jsonObject["Parrent"]?.ToObject<DataField>(serializer);
-                    subField.SubField.Parrent = parrentDataField;
+                    DataField parentDataField = jsonObject["Parent"]?.ToObject<DataField>(serializer);
+                    subField.SubField.Parent = parentDataField;
                 }
 
                 return subField;
