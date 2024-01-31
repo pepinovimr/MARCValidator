@@ -2,8 +2,11 @@
 
 namespace DomainLayer.Managers
 {
+    /// <summary>
+    /// Interface for validation management
+    /// </summary>
     public interface IValidationManager
     {
-        public List<Result> Validate(string path);
+        public List<Result> StartValidation(string path);
     }
 }

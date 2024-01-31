@@ -65,7 +65,7 @@ namespace ApplicationLayer
                 Notify?.Invoke(this, new MessageEventArgs(result.ToMessage()));
                 return;
             }
-            var results = _validationManager.Validate(path).Distinct().ToList();
+            var results = _validationManager.StartValidation(path).Distinct().ToList();
             var rs = results.ToMessages();
             foreach (var res in rs)
             {
@@ -85,7 +85,9 @@ namespace ApplicationLayer
             //else
             //    Notify?.Invoke(this, new MessageEventArgs(Result.Success.ToMessage()));
         }
-
+        /// <summary>
+        /// Notifies ViewLayer
+        /// </summary>
         public void NotifyView(MessageEventArgs messageEventArgs)
         {
             Notify?.Invoke(this, messageEventArgs);

@@ -5,6 +5,9 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
+    /// <summary>
+    /// Data validation builder for <see cref="DataFieldValidation"/>
+    /// </summary>
     internal class DataFieldValidationBuilder : BaseDataValidationBuilder
     {
         private readonly DataFieldValidation _dataFieldValidation;

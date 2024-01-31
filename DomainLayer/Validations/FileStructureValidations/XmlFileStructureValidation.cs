@@ -6,6 +6,9 @@ using System.Xml.Schema;
 
 namespace DomainLayer.Validations.FileStructureValidations
 {
+    /// <summary>
+    /// Validates file structure of MARCXML file
+    /// </summary>
     internal class XmlFileStructureValidation : IFileStructureValidation
     {
         private readonly string _xmlSchemaFile = Path.Combine(".", "Properties", "MarcXmlSchema.xsd");

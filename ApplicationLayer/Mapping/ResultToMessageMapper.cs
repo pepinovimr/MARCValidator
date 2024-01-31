@@ -5,13 +5,23 @@ using System.Text;
 
 namespace ApplicationLayer.Mapping
 {
+    /// <summary>
+    /// Handles conversion of <see cref="Result"/> to <see cref="Message"/>
+    /// </summary>
     public static class ResultToMessageMapper
     {
         public static ILocalizationService LocalizationService { set; get; }
+
+        /// <summary>
+        /// Converts a single <see cref="Result"/> to <see cref="Message"/>
+        /// </summary>
         public static Message ToMessage(this Result result) =>
             new (result.MapToText(), result.Type.MapToMessageType());
 
-        public static Dictionary<Message, List<Message>> ToMessages(this List<Result> results) =>
+        /// <summary>
+        /// Converts a <see cref="IEnumerable{Result}"/> to <see cref="List{Message}"/>
+        /// </summary>
+        public static Dictionary<Message, List<Message>> ToMessages(this IEnumerable<Result> results) =>
             results
                 .GroupBy(x => x.SourceRecord)
                 .ToDictionary(
@@ -40,14 +50,14 @@ namespace ApplicationLayer.Mapping
             if (result.Error != ValidationType.None)
                 message.Append($"{LocalizationService[result.Error.ToString()]} | ");
 
-            message.Append(result.DefaultOutput.GetOutput());
-            message.Append(result.ConditionOutput.GetOutput(LocalizationService["Where"] + " ", ": "));
-            message.Append(result.AlternativeOutput.GetOutput(LocalizationService["Alternative"] + " ", ": "));
+            message.Append(result.DefaultOutput.GetStringValue());
+            message.Append(result.ConditionOutput.GetStringValue(LocalizationService["Where"] + " ", ": "));
+            message.Append(result.AlternativeOutput.GetStringValue(LocalizationService["Alternative"] + " ", ": "));
 
             return message.ToString();
         }
 
-        private static string GetOutput(this ValidationOutput? output, string? prefix = null, string? suffix = null)
+        private static string GetStringValue(this ValidationOutput? output, string? prefix = null, string? suffix = null)
         {
             string outputString = string.Empty;
 

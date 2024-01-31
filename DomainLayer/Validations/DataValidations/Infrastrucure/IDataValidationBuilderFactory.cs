@@ -1,11 +1,16 @@
 ﻿using ComunicationDataLayer.POCOs;
-using DomainLayer.Validations.DataValidations.Validations;
 using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Infrastrucure
 {
+    /// <summary>
+    /// Interface for creating DataValidation classes
+    /// </summary>
     public interface IDataValidationBuilderFactory
     {
+        /// <summary>
+        /// Creates ValidationBuilders base on field
+        /// </summary>
         public IDataValidationBuilder CreateValidations(ValidationBase validation, Record record);
     }
 }

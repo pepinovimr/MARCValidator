@@ -4,15 +4,16 @@ using DomainLayer.Validations.DataValidations.Helpers;
 using DomainLayer.Validations.DataValidations.Infrastrucure;
 using DomainLayer.Validations.DataValidations.ValidationControl;
 using MARC4J.Net.MARC;
-using System.Collections.Generic;
 using System.Data;
 using System.Text.RegularExpressions;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
+    /// <summary>
+    /// Base class for data validation.
+    /// </summary>
     internal abstract class BaseDataValidationBuilder(Record marcRecord, ValidationBase rules) : IDataValidationBuilder
     {
-        protected ValidationSource ValidationSource { get; set; } = ValidationSource.Normal;
         protected Record Record { get; } = marcRecord;
         private ValidationBase _validationBase { get; } = rules;
 
@@ -44,6 +45,9 @@ namespace DomainLayer.Validations.DataValidations.Validations
             return this;
         }
 
+        /// <summary>
+        /// Validates obligation of any field
+        /// </summary>
         protected Result ValidateByFieldObligationScope(object? field) =>
             _validationBase.Obligation == FieldObligationScope.FORBIDDEN
                 ? field is not null 
@@ -75,6 +79,9 @@ namespace DomainLayer.Validations.DataValidations.Validations
                                     Found: GetSourceFieldValue() ?? "")
             };
 
+        /// <summary>
+        /// Validates pattern of any field value
+        /// </summary>
         protected Result PatternValidation(ValidationBase validation, string? value)
         {
             if (!PatternValidationHelper.CanValidatePattern(_validationBase.ValidationResults, validation))
@@ -86,12 +93,6 @@ namespace DomainLayer.Validations.DataValidations.Validations
                         DefaultOutput: new( Expected: validation.PatternErrorMessage ?? validation.Pattern, Found: value, SourceField: GetSourceFieldName())));
 
             return Result.Success;
-        }
-
-        public IDataValidationBuilder SetValidationSource(ValidationSource validationSource) 
-        {
-            ValidationSource = validationSource;
-            return this;
         }
 
         public List<Result>? GetResults() 

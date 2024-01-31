@@ -5,8 +5,15 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.ValidationControl
 {
+    /// <summary>
+    /// Manages creating instances of classes inheriting <see cref="BaseDataValidationBuilder"/>
+    /// </summary>
     public class DataValidationBuilderFactory() : IDataValidationBuilderFactory
     {
+        /// <summary>
+        /// Creates class inheriting <see cref="BaseDataValidationBuilder"/> based on type of <see cref="ValidationBase"/>
+        /// </summary>
+        /// <exception cref="ArgumentException"></exception>
         public IDataValidationBuilder CreateValidations(ValidationBase validation, Record record) =>
             validation.GetType() switch
             {

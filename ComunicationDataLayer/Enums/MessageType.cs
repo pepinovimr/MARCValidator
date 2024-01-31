@@ -25,7 +25,9 @@
         /// Indicates a neutral information user should see
         /// </summary>
         Info = 4,
-
+        /// <summary>
+        /// Indicates a Header - information which somehow seperates some messages
+        /// </summary>
         Header = 5
 
     }

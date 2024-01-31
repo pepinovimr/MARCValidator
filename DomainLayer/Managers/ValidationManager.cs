@@ -4,11 +4,19 @@ using DomainLayer.Validations.FileStructureValidations;
 
 namespace DomainLayer.Managers
 {
+    /// <summary>
+    /// Manages sequencing of validations in <see cref="DomainLayer"/>
+    /// </summary>
+    /// <param name="dataValidationDirector"></param>
     public class ValidationManager(IDataValidationDirector dataValidationDirector) : IValidationManager
     {
         private readonly IDataValidationDirector _dataValidationDirector = dataValidationDirector;
 
-        public List<Result> Validate(string path) =>
+        /// <summary>
+        /// Starts validation in sequence
+        /// </summary>
+        /// <returns>List of validation Results</returns>
+        public List<Result> StartValidation(string path) =>
             PerformStructureValidations(path) is var result &&
             result.DefaultIfEmpty(null) is not null ? PerformDataValidations(path) : result;
 

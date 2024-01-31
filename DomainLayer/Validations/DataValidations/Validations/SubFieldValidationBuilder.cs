@@ -5,6 +5,9 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
+    /// <summary>
+    /// Data validation builder for <see cref="SubFieldValidation"/>
+    /// </summary>
     internal class SubFieldValidationBuilder : BaseDataValidationBuilder
     {
         private readonly SubFieldValidation _subFieldValidation;

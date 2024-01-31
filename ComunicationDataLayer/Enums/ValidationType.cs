@@ -1,7 +1,13 @@
 ﻿namespace ComunicationDataLayer.Enums
 {
+    /// <summary>
+    /// List of possible Validations
+    /// </summary>
     public enum ValidationType
     {
+        /// <summary>
+        /// To be used when validation was a succes
+        /// </summary>
         None = 0,
         FileNotExist = 1,
         FileWrongFormat = 2,

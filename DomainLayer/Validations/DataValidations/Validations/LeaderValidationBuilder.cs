@@ -1,10 +1,12 @@
 ﻿using ComunicationDataLayer.POCOs;
 using DomainLayer.Validations.DataValidations.Infrastrucure;
 using MARC4J.Net.MARC;
-using System.Data;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
+    /// <summary>
+    /// Data validation builder for <see cref="LeaderValidation"/>
+    /// </summary>
     internal class LeaderValidationBuilder : BaseDataValidationBuilder
     {
         private readonly LeaderValidation _leaderFieldValidation;

@@ -7,7 +7,7 @@ using SharedLayer;
 namespace ConsoleView
 {
     /// <summary>
-    /// Main entro point to program using console
+    /// Main entry point to program using console
     /// </summary>
     internal class Program
     {

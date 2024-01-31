@@ -7,6 +7,9 @@ using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.ValidationControl
 {
+    /// <summary>
+    /// Manages validations for Records
+    /// </summary>
     public class DataValidationDirector(IDataValidationBuilderFactory dataValidationBuilderFactory, IValidationRepository validationRepository, IMarcRepository marcRepository) : IDataValidationDirector
     {
         private readonly IDataValidationBuilderFactory _dataValidationBuilderFactory = dataValidationBuilderFactory;
