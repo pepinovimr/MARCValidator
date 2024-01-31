@@ -17,8 +17,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
             _dataFieldValidation = rules as DataFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
 
             _field = Record.GetDataField(_dataFieldValidation.DataField.Tag.ToString(), 
-                                        _dataFieldValidation.DataField.Identificator1?[0], 
-                                        _dataFieldValidation.DataField.Identificator2?[0]);
+                                        _dataFieldValidation.DataField.Identificator1, 
+                                        _dataFieldValidation.DataField.Identificator2);
         }
         public override string GetSourceFieldName() =>
             $"DataField Tag: {_dataFieldValidation.DataField.Tag} ind1: {_dataFieldValidation.DataField.Identificator1} ind2: {_dataFieldValidation.DataField.Identificator2}";
