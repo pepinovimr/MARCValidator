@@ -32,7 +32,7 @@ namespace ApplicationLayer.Services
             }
             catch (MissingManifestResourceException ex)
             {
-                //_logger.LogWarning(ex.Message,);
+                _logger.LogWarning(ex.Message);
             }
             return localizedString ?? key;
         }

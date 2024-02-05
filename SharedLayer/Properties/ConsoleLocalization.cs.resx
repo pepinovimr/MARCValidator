@@ -117,28 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Alternative" xml:space="preserve">
+    <value>Alternativy</value>
+  </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>Ověřovač MARC záznamů</value>
+  </data>
+  <data name="DataPatternError" xml:space="preserve">
+    <value>Hodnota nemá povolenou hodnotu</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Chyba</value>
   </data>
   <data name="Expected" xml:space="preserve">
     <value>Očekávané</value>
   </data>
+  <data name="FieldDoesNotMatchPattern" xml:space="preserve">
+    <value>Pole se neshoduje s regulárním výrazem</value>
+  </data>
   <data name="FileNotExist" xml:space="preserve">
     <value>Soubor neexistuje</value>
+  </data>
+  <data name="FileStructureError" xml:space="preserve">
+    <value>Chyba struktury souboru</value>
   </data>
   <data name="FileWrongFormat" xml:space="preserve">
     <value>Soubor je ve špatném formátu</value>
   </data>
+  <data name="ForbidenFieldExistsError" xml:space="preserve">
+    <value>Zakázané pole existuje</value>
+  </data>
   <data name="Found" xml:space="preserve">
     <value>Nalezeno</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Informace</value>
   </data>
   <data name="InputFilePath" xml:space="preserve">
     <value>Zadejte cestu k MARC: </value>
   </data>
+  <data name="None" xml:space="preserve">
+    <value>Žádná</value>
+  </data>
+  <data name="ObligatedFieldNotExists" xml:space="preserve">
+    <value>Povinné pole neexistuje</value>
+  </data>
   <data name="Source" xml:space="preserve">
     <value>Zdroj</value>
   </data>
+  <data name="Success" xml:space="preserve">
+    <value>Úspěch</value>
+  </data>
   <data name="SuccessResult" xml:space="preserve">
     <value>Validace byla úspěšná</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Varování</value>
+  </data>
+  <data name="Where" xml:space="preserve">
+    <value>Kde</value>
+  </data>
+  <data name="XsdValidationError" xml:space="preserve">
+    <value>Chyba validace podle xsd šablony</value>
   </data>
 </root>
