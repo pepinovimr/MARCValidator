@@ -20,7 +20,11 @@ namespace ConsoleViewLayer.IO
             }
 
             Console.ForegroundColor = MapMessageTypeToConsoleColor(messageToWrite.Type);
-
+            if(messageToWrite.Type != MessageType.Normal && messageToWrite.Type != MessageType.Header) 
+            { 
+                Console.Write(messageToWrite.Type.ToString() + ": ");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
             if (addLineTerminator)
             {
                 Console.WriteLine(messageToWrite.Text);

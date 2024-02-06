@@ -69,6 +69,7 @@ namespace ApplicationLayer
             var rs = results.ToMessages();
             foreach (var res in rs)
             {
+                Notify?.Invoke(this, new MessageEventArgs(new ("______________________________", MessageType.Normal)));
                 Notify?.Invoke(this, new MessageEventArgs(res.Key));
                 foreach(var s in res.Value)
                 {

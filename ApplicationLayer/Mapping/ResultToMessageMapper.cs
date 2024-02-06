@@ -44,15 +44,15 @@ namespace ApplicationLayer.Mapping
                 return LocalizationService["SuccessResult"];
 
             StringBuilder message = new();
-            message.Append(LocalizationService[result.Type.ToString()]);
-            message.Append(": ");
+            //message.Append(LocalizationService[result.Type.ToString()]);
+            //message.Append(": ");
 
             if (result.Error != ValidationType.None)
                 message.Append($"{LocalizationService[result.Error.ToString()]} | ");
 
             message.Append(result.DefaultOutput.GetStringValue());
-            message.Append(result.ConditionOutput.GetStringValue(LocalizationService["Where"] + " ", ": "));
-            message.Append(result.AlternativeOutput.GetStringValue(LocalizationService["Alternative"] + " ", ": "));
+            message.Append(result.ConditionOutput.GetStringValue(LocalizationService["Where"] + "\n \t \t", ": "));
+            message.Append(result.AlternativeOutput.GetStringValue(LocalizationService["Alternative"] + "\n \t \t", ": "));
 
             return message.ToString();
         }
