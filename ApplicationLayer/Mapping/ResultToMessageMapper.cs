@@ -51,8 +51,8 @@ namespace ApplicationLayer.Mapping
                 message.Append($"{LocalizationService[result.Error.ToString()]} | ");
 
             message.Append(result.DefaultOutput.GetStringValue());
-            message.Append(result.ConditionOutput.GetStringValue(LocalizationService["Where"] + "\n \t \t", ": "));
-            message.Append(result.AlternativeOutput.GetStringValue(LocalizationService["Alternative"] + "\n \t \t", ": "));
+            message.Append(result.ConditionOutput.GetStringValue("\n \t \t" + LocalizationService["Where"] + "\t"));
+            message.Append(result.AlternativeOutput.GetStringValue("\n \t \t" + LocalizationService["Alternative"] + "\t"));
 
             return message.ToString();
         }

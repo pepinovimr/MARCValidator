@@ -14,9 +14,9 @@ namespace DomainLayer.Validations.DataValidations.Helpers
         public static readonly Dictionary<FieldObligationScope, Severity> ObligationToSeverityMap = new()
         {
             {FieldObligationScope.M, Severity.Error },
-            {FieldObligationScope.MA, Severity.Error },
+            {FieldObligationScope.MA, Severity.Info },
             {FieldObligationScope.R, Severity.Warning },
-            {FieldObligationScope.RA, Severity.Warning },
+            {FieldObligationScope.RA, Severity.Info },
             {FieldObligationScope.O, Severity.Info },
             {FieldObligationScope.FORBIDDEN, Severity.Error }
         };

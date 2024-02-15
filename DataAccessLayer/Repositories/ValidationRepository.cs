@@ -41,6 +41,7 @@ namespace DataAccessLayer.Repositories
             List<string> filePaths = [];
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("Tohle smazat!");
+            Console.ForegroundColor = ConsoleColor.White;
             descriptionStandard = AllowedDescriptionStandard.rda;
             foreach (JsonElement fileElement in filesArray.EnumerateArray())
             {

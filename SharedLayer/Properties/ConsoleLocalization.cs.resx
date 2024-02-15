@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Alternative" xml:space="preserve">
-    <value>Alternativy</value>
+    <value>Alternativy:</value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>Ověřovač MARC záznamů</value>
@@ -156,11 +156,20 @@
   <data name="InputFilePath" xml:space="preserve">
     <value>Zadejte cestu k MARC: </value>
   </data>
+  <data name="MarcPath" xml:space="preserve">
+    <value>Cesta k MARC záznamu.</value>
+  </data>
+  <data name="MarcPathRequired" xml:space="preserve">
+    <value>Nutno zadat cestu k MARC záznamu</value>
+  </data>
   <data name="None" xml:space="preserve">
     <value>Žádná</value>
   </data>
   <data name="ObligatedFieldNotExists" xml:space="preserve">
     <value>Povinné pole neexistuje</value>
+  </data>
+  <data name="OutputPath" xml:space="preserve">
+    <value>Cesta k souboru do kterého bude zapsán výstup.</value>
   </data>
   <data name="Source" xml:space="preserve">
     <value>Zdroj</value>
@@ -171,11 +180,14 @@
   <data name="SuccessResult" xml:space="preserve">
     <value>Validace byla úspěšná</value>
   </data>
+  <data name="Verbosity" xml:space="preserve">
+    <value>Vypíše i INFO výsledky.</value>
+  </data>
   <data name="Warning" xml:space="preserve">
     <value>Varování</value>
   </data>
   <data name="Where" xml:space="preserve">
-    <value>Kde</value>
+    <value>Za podmínky:</value>
   </data>
   <data name="XsdValidationError" xml:space="preserve">
     <value>Chyba validace podle xsd šablony</value>

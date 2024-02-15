@@ -39,11 +39,12 @@ namespace ConsoleView
             ConsoleWriter.WriteToConsole(args.Message, args.ClearConsole, args.AddLineTerminator);
         }
 
-        public void StartApplication()
+        public void StartApplication(string[] args)
         {
             _viewModel.StartApplication();
-
-            _viewModel.ValidateMARC();
+            
+            if(_viewModel.SetConfiguration(args))
+                _viewModel.ValidateMARC();
         }
     }
 }

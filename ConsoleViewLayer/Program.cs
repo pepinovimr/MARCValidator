@@ -1,7 +1,7 @@
 ﻿using ApplicationLayer;
-using ConsoleViewLayer.IO;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NDesk.Options;
 using SharedLayer;
 
 namespace ConsoleView
@@ -14,7 +14,7 @@ namespace ConsoleView
         /// <summary>
         /// Initializes MARC Validator console view
         /// </summary>
-        private static void Main()
+        private static void Main(string[] args)
         {
             HostApplicationBuilder builder = Startup.ConfigureHost();
             IHost host = BuildApplication(builder);
@@ -22,9 +22,7 @@ namespace ConsoleView
 
             ConsoleView consoleView = host.Services.GetRequiredService<ConsoleView>();
 
-            consoleView.StartApplication();
-
-            Console.ReadKey();
+            consoleView.StartApplication(args);
         }
 
         /// <summary>
