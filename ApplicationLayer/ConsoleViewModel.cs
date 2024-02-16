@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.IO;
+﻿using ApplicationLayer.Helpers;
 using ApplicationLayer.Mapping;
 using ApplicationLayer.Services.Interfaces;
 using ApplicationLayer.Validations;
@@ -53,6 +53,7 @@ namespace ApplicationLayer
         /// <summary>
         /// Sets up configuration from CMD parameters
         /// </summary>
+        /// <returns>true if validation should continue, false otherwise</returns>
         /// <param name="args"></param>
         public bool SetConfiguration(string[] args)
         {
@@ -66,32 +67,15 @@ namespace ApplicationLayer
                 { "h|?|help",  v => { showHelp = v != null; } }
             };
 
-            try
+            if(!ArgumentOptionsHelper.ParseOptionSet(optionSet, args, out MessageEventArgs? messageEventArgs))
             {
-                optionSet.Parse(args);
-            }
-            catch (OptionException e)
-            {
-                NotifyView(new MessageEventArgs(
-                                    new Message(
-                                       e.Message
-                                        , MessageType.Error
-                                        ), addLineTerminator: false)
-                                        );
+                NotifyView(messageEventArgs);
                 return false;
             }
 
             if (showHelp)
             {
-                var writer = new StringWriter();
-                optionSet.WriteOptionDescriptions(writer);
-
-                NotifyView(new MessageEventArgs(
-                                    new Message(
-                                       writer.ToString()
-                                        , MessageType.Normal
-                                        ), addLineTerminator: false)
-                                        );
+                NotifyView(ArgumentOptionsHelper.GetShowHelpEventArgs(optionSet));
                 return false;
             }
 
@@ -135,6 +119,17 @@ namespace ApplicationLayer
                 results.RemoveAll(x => x.Type == Severity.Info);
 
             Dictionary<Message, List<Message>> messages = results.ToMessages();
+
+            if(_outputFile is not null)
+            {
+                FileWriteHelper.WriteOutputToFile(_outputFile, messages);
+            }
+
+            SendToView(messages);
+        }
+
+        private void SendToView(Dictionary<Message, List<Message>> messages)
+        {
             foreach (var res in messages)
             {
                 Notify?.Invoke(this, new MessageEventArgs(new("______________________________", MessageType.Normal)));
