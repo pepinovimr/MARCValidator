@@ -24,7 +24,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             DataValidationBuilderFactory factory = new();
 
             List<Result> conditionResults = new ChainValidation(factory).PerformChainValidation(Record, _validationBase.Conditions);
-
+            conditionResults.RemoveAll(x => x.AlternativeOutput is not null);
             _validationBase.ValidationResults.AddRange(conditionResults.Where(x => x != Result.Success).Select(MapConditionResult));
 
             return this;
@@ -41,7 +41,10 @@ namespace DomainLayer.Validations.DataValidations.Validations
             if (alternativeResults.Any(x => x.Type == Severity.Success || x == Result.Success))
                 _validationBase.ValidationResults = [Result.Success];
             else
+            {
+                alternativeResults.RemoveAll(x => x.ConditionOutput is not null);
                 _validationBase.ValidationResults.AddRange(alternativeResults.Select(MapAlternativeResult));
+            }
             return this;
         }
 
