@@ -7,11 +7,11 @@ using System.Globalization;
 using Microsoft.Extensions.Logging;
 using ApplicationLayer.Mapping;
 using NReco.Logging.File;
-using DomainLayer.Validations.DataValidations.Infrastrucure;
 using DomainLayer.Validations.DataValidations.ValidationControl;
 using DataAccessLayer.Repositories;
 using DomainLayer.Managers;
 using DomainLayer.Validations.FileStructureValidations;
+using DomainLayer.Validations.DataValidations.Interfaces;
 
 namespace SharedLayer
 {

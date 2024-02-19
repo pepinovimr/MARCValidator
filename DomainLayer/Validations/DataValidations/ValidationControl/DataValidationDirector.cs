@@ -1,8 +1,7 @@
-﻿using ComunicationDataLayer.Enums;
-using ComunicationDataLayer.POCOs;
+﻿using ComunicationDataLayer.POCOs;
 using DataAccessLayer.Repositories;
 using DomainLayer.Validations.DataValidations.Helpers;
-using DomainLayer.Validations.DataValidations.Infrastrucure;
+using DomainLayer.Validations.DataValidations.Interfaces;
 using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.ValidationControl

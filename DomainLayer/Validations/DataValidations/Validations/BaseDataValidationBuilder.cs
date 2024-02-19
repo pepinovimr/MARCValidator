@@ -1,7 +1,7 @@
 ﻿using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
 using DomainLayer.Validations.DataValidations.Helpers;
-using DomainLayer.Validations.DataValidations.Infrastrucure;
+using DomainLayer.Validations.DataValidations.Interfaces;
 using DomainLayer.Validations.DataValidations.ValidationControl;
 using MARC4J.Net.MARC;
 using System.Data;

@@ -1,6 +1,6 @@
 ﻿using ComunicationDataLayer.POCOs;
 
-namespace DomainLayer.Validations.DataValidations.Infrastrucure
+namespace DomainLayer.Validations.DataValidations.Interfaces
 {
     /// <summary>
     /// Interface for building a validation <see cref="MARC4J.Net.MARC.Record"/>

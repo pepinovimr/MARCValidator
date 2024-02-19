@@ -1,7 +1,7 @@
 ﻿using ComunicationDataLayer.POCOs;
 using MARC4J.Net.MARC;
 
-namespace DomainLayer.Validations.DataValidations.Infrastrucure
+namespace DomainLayer.Validations.DataValidations.Interfaces
 {
     /// <summary>
     /// Interface for creating DataValidation classes

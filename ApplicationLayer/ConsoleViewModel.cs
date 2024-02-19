@@ -6,7 +6,6 @@ using ComunicationDataLayer.Enums;
 using ComunicationDataLayer.POCOs;
 using DomainLayer.Managers;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using NDesk.Options;
 
 namespace ApplicationLayer

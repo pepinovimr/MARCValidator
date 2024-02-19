@@ -1,6 +1,6 @@
 ﻿using ComunicationDataLayer.POCOs;
 
-namespace DomainLayer.Validations.DataValidations.ValidationControl
+namespace DomainLayer.Validations.DataValidations.Interfaces
 {
     /// <summary>
     /// Interface for creating validations

@@ -1,7 +1,6 @@
 ﻿using ApplicationLayer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using NDesk.Options;
 using SharedLayer;
 
 namespace ConsoleView

@@ -1,5 +1,5 @@
 ﻿using ComunicationDataLayer.POCOs;
-using DomainLayer.Validations.DataValidations.Infrastrucure;
+using DomainLayer.Validations.DataValidations.Interfaces;
 using MARC4J.Net.MARC;
 
 namespace DomainLayer.Validations.DataValidations.Validations

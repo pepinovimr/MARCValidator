@@ -1,5 +1,5 @@
 ﻿using ComunicationDataLayer.POCOs;
-using DomainLayer.Validations.DataValidations.ValidationControl;
+using DomainLayer.Validations.DataValidations.Interfaces;
 using DomainLayer.Validations.FileStructureValidations;
 
 namespace DomainLayer.Managers
