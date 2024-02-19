@@ -17,6 +17,10 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
         /// <returns></returns>
         public IDataValidationBuilder ValidatePattern();
         /// <summary>
+        /// Validates whether number of fields does not exceed max allowed coent for them
+        /// </summary>
+        public IDataValidationBuilder ValidateMaxCount();
+        /// <summary>
         /// Validates all <see cref="ValidationBase.Conditions"/>
         /// <para>Should only be used when parent <see cref="ValidationBase"/> was succesful</para>
         /// </summary>
@@ -34,10 +38,5 @@ namespace DomainLayer.Validations.DataValidations.Infrastrucure
         /// Gets string representation of field name
         /// </summary>
         public string GetSourceFieldName();
-        /// <summary>
-        /// Gets value of field name
-        /// </summary>
-        /// <returns></returns>
-        public string? GetSourceFieldValue();
     }
 }

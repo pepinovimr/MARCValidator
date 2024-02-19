@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleViewLayer": {
+      "commandName": "Project",
+      "commandLineArgs": "-p C:\\Users\\pepin\\Desktop\\marc_example_collection.xml -o C:\\Users\\pepin\\Desktop\\output.txt"
+    }
+  }
+}

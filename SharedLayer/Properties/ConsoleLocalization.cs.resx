@@ -162,6 +162,9 @@
   <data name="MarcPathRequired" xml:space="preserve">
     <value>Nutno zadat cestu k MARC záznamu</value>
   </data>
+  <data name="MaxCountExceeded" xml:space="preserve">
+    <value>Byl přesažen maximální povolený počet výskytů daného pole.</value>
+  </data>
   <data name="None" xml:space="preserve">
     <value>Žádná</value>
   </data>

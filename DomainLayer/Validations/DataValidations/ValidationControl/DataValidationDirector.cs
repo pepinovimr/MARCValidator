@@ -42,6 +42,7 @@ namespace DomainLayer.Validations.DataValidations.ValidationControl
                 IDataValidationBuilder builder = _dataValidationBuilderFactory.CreateValidations(validation, marcRecord)
                                                                               .ValidateObligation()
                                                                               .ValidatePattern()
+                                                                              .ValidateMaxCount()
                                                                               .ValidateConditions()
                                                                               .ValidateAlternatives();
                 results.AddRange(builder?.GetResults() ?? [Result.Success]);

@@ -32,6 +32,10 @@ namespace ComunicationDataLayer.POCOs
         /// </summary>
         public FieldObligationScope Obligation { get; set; }
         /// <summary>
+        /// Max allowed count of occurrences of said field
+        /// </summary>
+        public int? MaxCount { get; set; }
+        /// <summary>
         /// List of validation for when field is valid, but other, dependand fields, also have to be valid
         /// </summary>
         public List<ValidationBase>? Conditions { get; set; }
@@ -55,6 +59,10 @@ namespace ComunicationDataLayer.POCOs
         /// Leader of file
         /// </summary>
         public Leader Leader { get; set; }
+        /// <summary>
+        /// There can be just 1 Leader in MARC record
+        /// </summary>
+        private new readonly int MaxCount = 1;
     }
 
     /// <summary>
@@ -66,6 +74,10 @@ namespace ComunicationDataLayer.POCOs
         /// COntrol field to validate
         /// </summary>
         public ControlField ControlField { get; set; }
+        /// <summary>
+        /// There can be just 1 ControlField for each tag in MARC record
+        /// </summary>
+        private new readonly int MaxCount = 1;
     }
 
     /// <summary>

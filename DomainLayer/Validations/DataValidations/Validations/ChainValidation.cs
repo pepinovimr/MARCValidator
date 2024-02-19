@@ -21,6 +21,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
                 IDataValidationBuilder builder = _factory.CreateValidations(validation, record)
                                                             .ValidateObligation()
                                                             .ValidatePattern()
+                                                            .ValidateMaxCount()
                                                             .ValidateConditions()
                                                             .ValidateAlternatives();
 

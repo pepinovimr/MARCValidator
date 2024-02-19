@@ -53,11 +53,13 @@ namespace DomainLayer.Validations.DataValidations.Validations
         /// </summary>
         protected Result ValidateByFieldObligationScope(object? field) =>
             _validationBase.Obligation == FieldObligationScope.FORBIDDEN
-                ? field is not null 
-                    ? new Result(PatternValidationHelper.ObligationToSeverityMap[_validationBase.Obligation], ValidationType.ForbidenFieldExistsError) 
+                ? field is not null
+                    ? new Result(PatternValidationHelper.ObligationToSeverityMap[_validationBase.Obligation], ValidationType.ForbidenFieldExistsError,
+                                    DefaultOutput: new ValidationOutput(SourceField: GetSourceFieldName()))
                     : Result.Success
                 : field is null 
-                    ? new Result(PatternValidationHelper.ObligationToSeverityMap[_validationBase.Obligation], ValidationType.ObligatedFieldNotExists) 
+                    ? new Result(PatternValidationHelper.ObligationToSeverityMap[_validationBase.Obligation], ValidationType.ObligatedFieldNotExists,
+                                    DefaultOutput: new ValidationOutput(SourceField: GetSourceFieldName()))
                     : Result.Success;
 
         private Result MapConditionResult(Result resultToMap) =>
@@ -68,7 +70,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
                                     Found: resultToMap.DefaultOutput?.Found ?? ""),
                 DefaultOutput = new(SourceField: GetSourceFieldName(), 
                                     Expected:  _validationBase.PatternErrorMessage ?? _validationBase.Pattern ?? "", 
-                                    Found: GetSourceFieldValue() ?? "")
+                                    Found: "")
             };
 
         private Result MapAlternativeResult(Result resultToMap) =>
@@ -79,7 +81,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
                                     Found: resultToMap.DefaultOutput?.Found ?? ""),
                 DefaultOutput = new(SourceField: GetSourceFieldName(),
                                     Expected: _validationBase.PatternErrorMessage ?? _validationBase.Pattern ?? "",
-                                    Found: GetSourceFieldValue() ?? "")
+                                    Found: "")
             };
 
         /// <summary>
@@ -98,6 +100,12 @@ namespace DomainLayer.Validations.DataValidations.Validations
             return Result.Success;
         }
 
+        protected Result? CountValidation(int numberOfFields) =>
+            _validationBase.MaxCount is null || numberOfFields < _validationBase.MaxCount
+            ? null
+            : new Result(Type: Severity.Error, Error: ValidationType.MaxCountExceeded,
+                    DefaultOutput: new ValidationOutput(GetSourceFieldName(), _validationBase.MaxCount.ToString() ?? "", numberOfFields.ToString()));
+
         public List<Result>? GetResults() 
         {
             return _validationBase.ValidationResults;
@@ -107,8 +115,8 @@ namespace DomainLayer.Validations.DataValidations.Validations
 
         public abstract IDataValidationBuilder ValidatePattern();
 
-        public abstract string GetSourceFieldName();
+        public abstract IDataValidationBuilder ValidateMaxCount();
 
-        public abstract string? GetSourceFieldValue();
+        public abstract string GetSourceFieldName();
     }
 }

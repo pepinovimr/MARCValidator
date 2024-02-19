@@ -16,6 +16,7 @@
         DataPatternError = 5,
         ForbidenFieldExistsError = 6,
         ObligatedFieldNotExists = 7,
-        FieldDoesNotMatchPattern = 8
+        FieldDoesNotMatchPattern = 8,
+        MaxCountExceeded = 9
     }
 }

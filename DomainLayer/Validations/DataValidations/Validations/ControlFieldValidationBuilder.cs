@@ -10,36 +10,37 @@ namespace DomainLayer.Validations.DataValidations.Validations
     internal class ControlFieldValidationBuilder : BaseDataValidationBuilder
     {
         private readonly ControlFieldValidation _controlFieldValidation;
-        private readonly IControlField? _field;
+        private readonly List<IControlField?> _fields;
 
         public ControlFieldValidationBuilder(Record marcRecord, ValidationBase rules) : base(marcRecord, rules)
         {
             _controlFieldValidation = rules as ControlFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
-            _field = Record.GetControlFields().Where(x => x.Tag.Equals(_controlFieldValidation.ControlField.Tag.ToString("000"))).FirstOrDefault();
+            _fields = Record.GetControlFields().Where(x => x.Tag.Equals(_controlFieldValidation.ControlField.Tag.ToString("000"))).ToList();
         }
 
         public override string GetSourceFieldName() =>
             "ControlField Tag: " + _controlFieldValidation.ControlField.Tag;
 
-        public override string? GetSourceFieldValue() =>
-            _field?.Data;
-
         public override IDataValidationBuilder ValidateObligation()
         {
-            var result = ValidateByFieldObligationScope(_field);
-            _controlFieldValidation.ValidationResults.Add(result with
-            {
-                DefaultOutput =
-                    new(SourceField: GetSourceFieldName(), Expected: result.DefaultOutput?.Expected ?? "", Found: result.DefaultOutput?.Found ?? "")
-            }
-            );
-
+            var result = ValidateByFieldObligationScope(_fields.FirstOrDefault());
+            _controlFieldValidation.ValidationResults.Add(result);
             return this;
         }
 
         public override IDataValidationBuilder ValidatePattern()
         {
-            _controlFieldValidation.ValidationResults.Add(PatternValidation(_controlFieldValidation, _field?.Data));
+            foreach ( var field in _fields )
+            {
+                _controlFieldValidation.ValidationResults.Add(PatternValidation(_controlFieldValidation, field?.Data));
+            }
+            return this;
+        }
+
+        public override IDataValidationBuilder ValidateMaxCount()
+        {
+            if(CountValidation(_fields.Count) is var result && result is not null)
+                _controlFieldValidation.ValidationResults.Add(result);
             return this;
         }
     }

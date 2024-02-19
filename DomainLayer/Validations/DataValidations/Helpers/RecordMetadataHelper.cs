@@ -29,12 +29,11 @@ namespace DomainLayer.Validations.DataValidations.Helpers
         /// <summary>
         /// Gets <see cref="IDataField"/> from <see cref="Record"/> by tag and optionally indicators
         /// </summary>
-        public static IDataField? GetDataField(this Record record, string tag, string? ind1, string? ind2) =>
+        public static List<IDataField> GetDataFields(this Record record, string tag, string? ind1, string? ind2) =>
             record.GetDataFields().Where(x =>
                 x.Tag.Equals(tag.PadLeft(3, '0'))
                     && x.Indicator1.EqualsAny(ind1)
-                    && x.Indicator2.EqualsAny(ind2))
-                .FirstOrDefault();
+                    && x.Indicator2.EqualsAny(ind2)).ToList();
 
         private static bool EqualsAny(this char sourceIndicator, string? comparisonIndicator)
         {

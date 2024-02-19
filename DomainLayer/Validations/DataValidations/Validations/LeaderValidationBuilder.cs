@@ -1,6 +1,7 @@
 ﻿using ComunicationDataLayer.POCOs;
 using DomainLayer.Validations.DataValidations.Infrastrucure;
 using MARC4J.Net.MARC;
+using System.Reflection.Metadata.Ecma335;
 
 namespace DomainLayer.Validations.DataValidations.Validations
 {
@@ -22,9 +23,6 @@ namespace DomainLayer.Validations.DataValidations.Validations
         public override string GetSourceFieldName() =>
             "Leader";
 
-        public override string? GetSourceFieldValue() =>
-            _leaderValue;
-
         public override IDataValidationBuilder ValidateObligation() => this;
 
         public override IDataValidationBuilder ValidatePattern()
@@ -32,5 +30,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
             _leaderFieldValidation.ValidationResults.Add(PatternValidation(_leaderFieldValidation, _leaderValue));
             return this;
         }
+
+        public override IDataValidationBuilder ValidateMaxCount() => this;
     }
 }
