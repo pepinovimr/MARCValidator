@@ -1,0 +1,1035 @@
+{
+    "Name": "Test",
+    "ValidationList": [
+        {
+            "Leader": {},
+            "Obligation": 1
+        },
+        {
+            "ControlField": {
+                "Tag": 1
+            },
+            "Obligation": 1
+        },
+        {
+            "ControlField": {
+                "Tag": 3
+            },
+            "Obligation": 1
+        },
+        {
+            "ControlField": {
+                "Tag": 5,
+                "Pattern": "^([0-2]{1}[0-9]{3})([0-1]{1}[0-9]{1})([0-3]{1}[0-9]{1})([0-2]{1}[0-9]{1})([0-6]{1}[0-9]{1})([0-6]{1}[0-9]{1}).([0-9])$"
+            },
+            "Obligation": 1
+        },
+        {
+            "ControlField": {
+                "Tag": 8,
+                "Index": 0,
+                "IndexEnd": 10
+            },
+            "Obligation": 1
+        },
+        {
+            "ControlField": {
+                "Tag": 8,
+                "Index": 15,
+                "IndexEnd": 17
+            },
+            "Obligation": 1
+        },
+        {
+            "ControlField": {
+                "Tag": 8,
+                "Index": 35,
+                "IndexEnd": 38
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Pattern": "^(?:ISBN(?:-1[03])?:?●)?(?=[0-9X]{10}$|(?=(?:[0-9]+[-●]){3})[-●0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[-●]){4})[-●0-9]{17}$)(?:97[89][-●]?)?[0-9]{1,5}[-●]?[0-9]+[-●]?[0-9]+[-●]?[0-9X]$",
+                "PatternErrorMessage": "Pole musí být ve formátu ISBN - 10/13",
+                "Parent": {
+                    "Tag": 20,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "q",
+                "Parent": {
+                    "Tag": 20,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "z",
+                "Parent": {
+                    "Tag": 20,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 40,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Pattern": "^-?[a-z]{3}$",
+                "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
+                "Parent": {
+                    "Tag": 40,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 40,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "d",
+                "Parent": {
+                    "Tag": 40,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Pattern": "^-?[a-z]{3}$",
+                "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
+                "Parent": {
+                    "Tag": 41,
+                    "Identificator1": "#01",
+                    "Identificator2": "#7"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Pattern": "^-?[a-z]{3}$",
+                "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
+                "Parent": {
+                    "Tag": 44,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "DataField": {
+                "Tag": 72,
+                "Identificator1": " ",
+                "Identificator2": "7"
+            },
+            "Obligation": 1,
+            "Conditions": [
+                {
+                    "SubField": {
+                        "Code": "a",
+                        "Parent": {
+                            "Tag": 72,
+                            "Identificator1": " ",
+                            "Identificator2": "7"
+                        }
+                    },
+                    "Obligation": 1
+                },
+                {
+                    "SubField": {
+                        "Code": "x",
+                        "Parent": {
+                            "Tag": 72,
+                            "Identificator1": " ",
+                            "Identificator2": "7"
+                        }
+                    },
+                    "Obligation": 1
+                },
+                {
+                    "SubField": {
+                        "Code": "2",
+                        "Parent": {
+                            "Tag": 72,
+                            "Identificator1": " ",
+                            "Identificator2": "7"
+                        }
+                    },
+                    "Obligation": 1
+                }
+            ],
+            "Alternatives": [
+                {
+                    "DataField": {
+                        "Tag": 80,
+                        "Identificator1": "#01",
+                        "Identificator2": " "
+                    },
+                    "Obligation": 1,
+                    "Conditions": [
+                        {
+                            "SubField": {
+                                "Code": "a",
+                                "Parent": {
+                                    "Tag": 80,
+                                    "Identificator1": "#01",
+                                    "Identificator2": " "
+                                }
+                            },
+                            "Obligation": 1
+                        },
+                        {
+                            "SubField": {
+                                "Code": "2",
+                                "Parent": {
+                                    "Tag": 80,
+                                    "Identificator1": "#01",
+                                    "Identificator2": " "
+                                }
+                            },
+                            "Obligation": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 100,
+                    "Identificator1": "013",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Parent": {
+                    "Tag": 100,
+                    "Identificator1": "013",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 100,
+                    "Identificator1": "013",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "d",
+                "Parent": {
+                    "Tag": 100,
+                    "Identificator1": "013",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "q",
+                "Parent": {
+                    "Tag": 100,
+                    "Identificator1": "013",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "7",
+                "Parent": {
+                    "Tag": 100,
+                    "Identificator1": "013",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 700,
+                    "Identificator1": "013",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Parent": {
+                    "Tag": 700,
+                    "Identificator1": "013",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 700,
+                    "Identificator1": "013",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "d",
+                "Parent": {
+                    "Tag": 700,
+                    "Identificator1": "013",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "q",
+                "Parent": {
+                    "Tag": 700,
+                    "Identificator1": "013",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "7",
+                "Parent": {
+                    "Tag": 700,
+                    "Identificator1": "013",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 110,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Parent": {
+                    "Tag": 110,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 110,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "d",
+                "Parent": {
+                    "Tag": 110,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "g",
+                "Parent": {
+                    "Tag": 110,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "n",
+                "Parent": {
+                    "Tag": 110,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "7",
+                "Parent": {
+                    "Tag": 110,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 710,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Parent": {
+                    "Tag": 710,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 710,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "d",
+                "Parent": {
+                    "Tag": 710,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "g",
+                "Parent": {
+                    "Tag": 710,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "n",
+                "Parent": {
+                    "Tag": 710,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "7",
+                "Parent": {
+                    "Tag": 710,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "d",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "e",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "g",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "n",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "q",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "7",
+                "Parent": {
+                    "Tag": 111,
+                    "Identificator1": "012",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "d",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "e",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "g",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "n",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "q",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "7",
+                "Parent": {
+                    "Tag": 711,
+                    "Identificator1": "012",
+                    "Identificator2": "#2"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 245,
+                    "Identificator1": "01",
+                    "Identificator2": "123456789"
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Parent": {
+                    "Tag": 245,
+                    "Identificator1": "01",
+                    "Identificator2": "123456789"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "c",
+                "Parent": {
+                    "Tag": 245,
+                    "Identificator1": "01",
+                    "Identificator2": "123456789"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "n",
+                "Parent": {
+                    "Tag": 245,
+                    "Identificator1": "01",
+                    "Identificator2": "123456789"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "p",
+                "Parent": {
+                    "Tag": 245,
+                    "Identificator1": "01",
+                    "Identificator2": "123456789"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 250,
+                    "Identificator1": " ",
+                    "Identificator2": " "
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "DataField": {
+                "Tag": 264
+            },
+            "Obligation": 1,
+            "Conditions": [
+                {
+                    "SubField": {
+                        "Code": "a",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "1"
+                        }
+                    },
+                    "Obligation": 1
+                },
+                {
+                    "SubField": {
+                        "Code": "b",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "1"
+                        }
+                    },
+                    "Obligation": 1
+                },
+                {
+                    "SubField": {
+                        "Code": "c",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "1"
+                        }
+                    },
+                    "Obligation": 1
+                }
+            ],
+            "Alternatives": [
+                {
+                    "SubField": {
+                        "Code": "c",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "0"
+                        }
+                    },
+                    "Obligation": 1
+                }
+            ]
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 300
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 336
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Parent": {
+                    "Tag": 336
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "2",
+                "Parent": {
+                    "Tag": 336
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 338
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "b",
+                "Parent": {
+                    "Tag": 338
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "2",
+                "Parent": {
+                    "Tag": 338
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 490,
+                    "Identificator1": "01"
+                }
+            },
+            "Obligation": 2
+        },
+        {
+            "SubField": {
+                "Code": "v",
+                "Parent": {
+                    "Tag": 490,
+                    "Identificator1": "01"
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "DataField": {
+                "Tag": 655
+            },
+            "Obligation": 1,
+            "Conditions": [
+                {
+                    "SubField": {
+                        "Code": "2",
+                        "Parent": {
+                            "Tag": 655,
+                            "Identificator1": "#0",
+                            "Identificator2": "7"
+                        }
+                    },
+                    "Obligation": 1
+                },
+                {
+                    "SubField": {
+                        "Code": "a",
+                        "Parent": {
+                            "Tag": 655,
+                            "Identificator1": "#0",
+                            "Identificator2": "7"
+                        }
+                    },
+                    "Obligation": 1
+                }
+            ],
+            "Alternatives": [
+                {
+                    "SubField": {
+                        "Code": "a",
+                        "Parent": {
+                            "Tag": 655,
+                            "Identificator1": "#0",
+                            "Identificator2": "4"
+                        }
+                    },
+                    "Obligation": 1
+                }
+            ]
+        },
+        {
+            "SubField": {
+                "Code": "a",
+                "Parent": {
+                    "Tag": 910
+                }
+            },
+            "Obligation": 1
+        },
+        {
+            "DataField": {
+                "Tag": 264
+            },
+            "Obligation": 1,
+            "Conditions": [
+                {
+                    "SubField": {
+                        "Code": "a",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "1"
+                        }
+                    },
+                    "Obligation": 1
+                },
+                {
+                    "SubField": {
+                        "Code": "b",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "1"
+                        }
+                    },
+                    "Obligation": 1
+                },
+                {
+                    "SubField": {
+                        "Code": "c",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "1"
+                        }
+                    },
+                    "Obligation": 1
+                }
+            ],
+            "Alternatives": [
+                {
+                    "SubField": {
+                        "Code": "c",
+                        "Parent": {
+                            "Tag": 264,
+                            "Identificator1": "#23",
+                            "Identificator2": "0"
+                        }
+                    },
+                    "Obligation": 1
+                }
+            ]
+        },
+        {
+            "DataField": {
+                "Tag": 910
+            },
+            "Obligation": 2,
+            "Conditions": [
+                {
+                    "SubField": {
+                        "Code": "r",
+                        "Parent": {
+                            "Tag": 910
+                        }
+                    },
+                    "Obligation": 2
+                }
+            ],
+            "Alternatives": [
+                {
+                    "SubField": {
+                        "Code": "s",
+                        "Parent": {
+                            "Tag": 910
+                        }
+                    },
+                    "Obligation": 2
+                }
+            ]
+        }
+    ]
+}

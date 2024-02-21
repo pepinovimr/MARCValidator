@@ -5,7 +5,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Properties\rda_minimal.json" />
+    <None Remove="Properties\aacr2.json" />
+    <None Remove="Properties\rda.json" />
     <None Remove="Properties\ValidationFiles.json" />
   </ItemGroup>
   <ItemGroup>
@@ -19,10 +20,13 @@
     <ProjectReference Include="..\ComunicationDataLayer\ComunicationDataLayer.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\aacr2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\ValidationFiles.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Properties\rda_minimal.json">
+    <Content Include="Properties\rda.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

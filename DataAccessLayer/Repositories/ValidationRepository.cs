@@ -39,10 +39,6 @@ namespace DataAccessLayer.Repositories
             JsonElement root = jsonDocument.RootElement;
             JsonElement filesArray = root.GetProperty("Files");
             List<string> filePaths = [];
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("Tohle smazat!");
-            Console.ForegroundColor = ConsoleColor.White;
-            descriptionStandard = AllowedDescriptionStandard.rda;
             foreach (JsonElement fileElement in filesArray.EnumerateArray())
             {
                 var path = fileElement.GetProperty("File").GetString();

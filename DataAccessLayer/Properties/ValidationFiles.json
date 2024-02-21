@@ -1,16 +1,10 @@
 {
   "Files": [
     {
-      "File": "rda_minimal.json"
+      "File": "rda.json"
     },
     {
-      "File": "rda_recomended.json"
-    },
-    {
-      "File": "aacr2_minimal.json"
-    },
-    {
-      "File": "aacr2_recomended.json"
+      "File": "aacr2.json"
     }
   ]
 }
