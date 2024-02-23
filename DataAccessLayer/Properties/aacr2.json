@@ -3,26 +3,26 @@
     "ValidationList": [
         {
             "Leader": {},
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "ControlField": {
                 "Tag": 1
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "ControlField": {
                 "Tag": 3
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "ControlField": {
                 "Tag": 5,
                 "Pattern": "^([0-2]{1}[0-9]{3})([0-1]{1}[0-9]{1})([0-3]{1}[0-9]{1})([0-2]{1}[0-9]{1})([0-6]{1}[0-9]{1})([0-6]{1}[0-9]{1}).([0-9])$"
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "ControlField": {
@@ -30,7 +30,7 @@
                 "Index": 0,
                 "IndexEnd": 10
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "ControlField": {
@@ -38,7 +38,7 @@
                 "Index": 15,
                 "IndexEnd": 17
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "ControlField": {
@@ -46,7 +46,7 @@
                 "Index": 35,
                 "IndexEnd": 38
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -59,7 +59,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -70,7 +70,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -81,7 +81,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -92,7 +92,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -105,7 +105,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -116,7 +116,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -127,7 +127,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -140,7 +140,7 @@
                     "Identificator2": "#7"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -153,7 +153,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "DataField": {
@@ -161,7 +161,7 @@
                 "Identificator1": " ",
                 "Identificator2": "7"
             },
-            "Obligation": 1,
+            "Obligation": "M",
             "Conditions": [
                 {
                     "SubField": {
@@ -172,7 +172,7 @@
                             "Identificator2": "7"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 },
                 {
                     "SubField": {
@@ -183,7 +183,7 @@
                             "Identificator2": "7"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 },
                 {
                     "SubField": {
@@ -194,7 +194,7 @@
                             "Identificator2": "7"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 }
             ],
             "Alternatives": [
@@ -204,7 +204,7 @@
                         "Identificator1": "#01",
                         "Identificator2": " "
                     },
-                    "Obligation": 1,
+                    "Obligation": "M",
                     "Conditions": [
                         {
                             "SubField": {
@@ -215,7 +215,7 @@
                                     "Identificator2": " "
                                 }
                             },
-                            "Obligation": 1
+                            "Obligation": "M"
                         },
                         {
                             "SubField": {
@@ -226,7 +226,7 @@
                                     "Identificator2": " "
                                 }
                             },
-                            "Obligation": 1
+                            "Obligation": "M"
                         }
                     ]
                 }
@@ -241,7 +241,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -252,7 +252,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -263,7 +263,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -274,7 +274,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -285,7 +285,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -296,7 +296,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -307,7 +307,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -318,7 +318,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -329,7 +329,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -340,7 +340,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -351,7 +351,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -362,7 +362,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -373,7 +373,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -384,7 +384,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -395,7 +395,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -406,7 +406,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -417,7 +417,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -428,7 +428,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -439,7 +439,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -450,7 +450,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -461,7 +461,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -472,7 +472,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -483,7 +483,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -494,7 +494,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -505,7 +505,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -516,7 +516,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -527,7 +527,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -538,7 +538,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -549,7 +549,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -560,7 +560,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -571,7 +571,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -582,7 +582,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -593,7 +593,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -604,7 +604,7 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -615,7 +615,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -626,7 +626,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -637,7 +637,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -648,7 +648,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -659,7 +659,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -670,7 +670,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -681,7 +681,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -692,7 +692,7 @@
                     "Identificator2": "#2"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -703,7 +703,7 @@
                     "Identificator2": "123456789"
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -714,7 +714,7 @@
                     "Identificator2": "123456789"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -725,7 +725,7 @@
                     "Identificator2": "123456789"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -736,7 +736,7 @@
                     "Identificator2": "123456789"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -747,7 +747,7 @@
                     "Identificator2": "123456789"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -758,13 +758,13 @@
                     "Identificator2": " "
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "DataField": {
                 "Tag": 264
             },
-            "Obligation": 1,
+            "Obligation": "M",
             "Conditions": [
                 {
                     "SubField": {
@@ -775,7 +775,7 @@
                             "Identificator2": "1"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 },
                 {
                     "SubField": {
@@ -786,7 +786,7 @@
                             "Identificator2": "1"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 },
                 {
                     "SubField": {
@@ -797,7 +797,7 @@
                             "Identificator2": "1"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 }
             ],
             "Alternatives": [
@@ -810,7 +810,7 @@
                             "Identificator2": "0"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 }
             ]
         },
@@ -821,7 +821,7 @@
                     "Tag": 300
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -830,7 +830,7 @@
                     "Tag": 336
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -839,7 +839,7 @@
                     "Tag": 336
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -848,7 +848,7 @@
                     "Tag": 336
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -857,7 +857,7 @@
                     "Tag": 338
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -866,7 +866,7 @@
                     "Tag": 338
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -875,7 +875,7 @@
                     "Tag": 338
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "SubField": {
@@ -885,7 +885,7 @@
                     "Identificator1": "01"
                 }
             },
-            "Obligation": 2
+            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -895,13 +895,13 @@
                     "Identificator1": "01"
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "DataField": {
                 "Tag": 655
             },
-            "Obligation": 1,
+            "Obligation": "M",
             "Conditions": [
                 {
                     "SubField": {
@@ -912,7 +912,7 @@
                             "Identificator2": "7"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 },
                 {
                     "SubField": {
@@ -923,7 +923,7 @@
                             "Identificator2": "7"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 }
             ],
             "Alternatives": [
@@ -936,7 +936,7 @@
                             "Identificator2": "4"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 }
             ]
         },
@@ -947,13 +947,13 @@
                     "Tag": 910
                 }
             },
-            "Obligation": 1
+            "Obligation": "M"
         },
         {
             "DataField": {
                 "Tag": 264
             },
-            "Obligation": 1,
+            "Obligation": "M",
             "Conditions": [
                 {
                     "SubField": {
@@ -964,7 +964,7 @@
                             "Identificator2": "1"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 },
                 {
                     "SubField": {
@@ -975,7 +975,7 @@
                             "Identificator2": "1"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 },
                 {
                     "SubField": {
@@ -986,7 +986,7 @@
                             "Identificator2": "1"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 }
             ],
             "Alternatives": [
@@ -999,7 +999,7 @@
                             "Identificator2": "0"
                         }
                     },
-                    "Obligation": 1
+                    "Obligation": "M"
                 }
             ]
         },
@@ -1007,7 +1007,7 @@
             "DataField": {
                 "Tag": 910
             },
-            "Obligation": 2,
+            "Obligation": "MA",
             "Conditions": [
                 {
                     "SubField": {
@@ -1016,7 +1016,7 @@
                             "Tag": 910
                         }
                     },
-                    "Obligation": 2
+                    "Obligation": "MA"
                 }
             ],
             "Alternatives": [
@@ -1027,7 +1027,7 @@
                             "Tag": 910
                         }
                     },
-                    "Obligation": 2
+                    "Obligation": "MA"
                 }
             ]
         }
