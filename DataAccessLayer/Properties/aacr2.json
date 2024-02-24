@@ -63,7 +63,7 @@
         },
         {
             "SubField": {
-                "Code": "q",
+                "Code": "qz",
                 "Parent": {
                     "Tag": 20,
                     "Indicator1": " ",
@@ -74,18 +74,7 @@
         },
         {
             "SubField": {
-                "Code": "z",
-                "Parent": {
-                    "Tag": 20,
-                    "Indicator1": " ",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "acd",
                 "Parent": {
                     "Tag": 40,
                     "Indicator1": " ",
@@ -106,28 +95,6 @@
                 }
             },
             "Obligation": "M"
-        },
-        {
-            "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 40,
-                    "Indicator1": " ",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "d",
-                "Parent": {
-                    "Tag": 40,
-                    "Indicator1": " ",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
         },
         {
             "SubField": {
@@ -165,29 +132,7 @@
             "Conditions": [
                 {
                     "SubField": {
-                        "Code": "a",
-                        "Parent": {
-                            "Tag": 72,
-                            "Indicator1": " ",
-                            "Indicator2": "7"
-                        }
-                    },
-                    "Obligation": "M"
-                },
-                {
-                    "SubField": {
-                        "Code": "x",
-                        "Parent": {
-                            "Tag": 72,
-                            "Indicator1": " ",
-                            "Indicator2": "7"
-                        }
-                    },
-                    "Obligation": "M"
-                },
-                {
-                    "SubField": {
-                        "Code": "2",
+                        "Code": "ax2",
                         "Parent": {
                             "Tag": 72,
                             "Indicator1": " ",
@@ -208,18 +153,7 @@
                     "Conditions": [
                         {
                             "SubField": {
-                                "Code": "a",
-                                "Parent": {
-                                    "Tag": 80,
-                                    "Indicator1": "#01",
-                                    "Indicator2": " "
-                                }
-                            },
-                            "Obligation": "M"
-                        },
-                        {
-                            "SubField": {
-                                "Code": "2",
+                                "Code": "a2",
                                 "Parent": {
                                     "Tag": 80,
                                     "Indicator1": "#01",
@@ -234,7 +168,7 @@
         },
         {
             "SubField": {
-                "Code": "a",
+                "Code": "abcdq7",
                 "Parent": {
                     "Tag": 100,
                     "Indicator1": "013",
@@ -245,62 +179,7 @@
         },
         {
             "SubField": {
-                "Code": "b",
-                "Parent": {
-                    "Tag": 100,
-                    "Indicator1": "013",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 100,
-                    "Indicator1": "013",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "d",
-                "Parent": {
-                    "Tag": 100,
-                    "Indicator1": "013",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "q",
-                "Parent": {
-                    "Tag": 100,
-                    "Indicator1": "013",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "7",
-                "Parent": {
-                    "Tag": 100,
-                    "Indicator1": "013",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "abcdq7",
                 "Parent": {
                     "Tag": 700,
                     "Indicator1": "013",
@@ -311,62 +190,7 @@
         },
         {
             "SubField": {
-                "Code": "b",
-                "Parent": {
-                    "Tag": 700,
-                    "Indicator1": "013",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 700,
-                    "Indicator1": "013",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "d",
-                "Parent": {
-                    "Tag": 700,
-                    "Indicator1": "013",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "q",
-                "Parent": {
-                    "Tag": 700,
-                    "Indicator1": "013",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "7",
-                "Parent": {
-                    "Tag": 700,
-                    "Indicator1": "013",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "abcdgn7",
                 "Parent": {
                     "Tag": 110,
                     "Indicator1": "012",
@@ -377,73 +201,7 @@
         },
         {
             "SubField": {
-                "Code": "b",
-                "Parent": {
-                    "Tag": 110,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 110,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "d",
-                "Parent": {
-                    "Tag": 110,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "g",
-                "Parent": {
-                    "Tag": 110,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "n",
-                "Parent": {
-                    "Tag": 110,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "7",
-                "Parent": {
-                    "Tag": 110,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "abcdgn7",
                 "Parent": {
                     "Tag": 710,
                     "Indicator1": "012",
@@ -454,73 +212,7 @@
         },
         {
             "SubField": {
-                "Code": "b",
-                "Parent": {
-                    "Tag": 710,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 710,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "d",
-                "Parent": {
-                    "Tag": 710,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "g",
-                "Parent": {
-                    "Tag": 710,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "n",
-                "Parent": {
-                    "Tag": 710,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "7",
-                "Parent": {
-                    "Tag": 710,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "acdegnq7",
                 "Parent": {
                     "Tag": 111,
                     "Indicator1": "012",
@@ -531,84 +223,7 @@
         },
         {
             "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 111,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "d",
-                "Parent": {
-                    "Tag": 111,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "e",
-                "Parent": {
-                    "Tag": 111,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "g",
-                "Parent": {
-                    "Tag": 111,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "n",
-                "Parent": {
-                    "Tag": 111,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "q",
-                "Parent": {
-                    "Tag": 111,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "7",
-                "Parent": {
-                    "Tag": 111,
-                    "Indicator1": "012",
-                    "Indicator2": " "
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "acdegnq7",
                 "Parent": {
                     "Tag": 711,
                     "Indicator1": "012",
@@ -619,84 +234,7 @@
         },
         {
             "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 711,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "d",
-                "Parent": {
-                    "Tag": 711,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "e",
-                "Parent": {
-                    "Tag": 711,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "g",
-                "Parent": {
-                    "Tag": 711,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "n",
-                "Parent": {
-                    "Tag": 711,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "q",
-                "Parent": {
-                    "Tag": 711,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "7",
-                "Parent": {
-                    "Tag": 711,
-                    "Indicator1": "012",
-                    "Indicator2": "#2"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "abcnp",
                 "Parent": {
                     "Tag": 245,
                     "Indicator1": "01",
@@ -707,40 +245,7 @@
         },
         {
             "SubField": {
-                "Code": "b",
-                "Parent": {
-                    "Tag": 245,
-                    "Indicator1": "01",
-                    "Indicator2": "123456789"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "c",
-                "Parent": {
-                    "Tag": 245,
-                    "Indicator1": "01",
-                    "Indicator2": "123456789"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "n",
-                "Parent": {
-                    "Tag": 245,
-                    "Indicator1": "01",
-                    "Indicator2": "123456789"
-                }
-            },
-            "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "p",
+                "Code": "bcnp",
                 "Parent": {
                     "Tag": 245,
                     "Indicator1": "01",
@@ -768,29 +273,7 @@
             "Conditions": [
                 {
                     "SubField": {
-                        "Code": "a",
-                        "Parent": {
-                            "Tag": 264,
-                            "Indicator1": "#23",
-                            "Indicator2": "1"
-                        }
-                    },
-                    "Obligation": "M"
-                },
-                {
-                    "SubField": {
-                        "Code": "b",
-                        "Parent": {
-                            "Tag": 264,
-                            "Indicator1": "#23",
-                            "Indicator2": "1"
-                        }
-                    },
-                    "Obligation": "M"
-                },
-                {
-                    "SubField": {
-                        "Code": "c",
+                        "Code": "abc",
                         "Parent": {
                             "Tag": 264,
                             "Indicator1": "#23",
@@ -825,7 +308,7 @@
         },
         {
             "SubField": {
-                "Code": "a",
+                "Code": "ab2",
                 "Parent": {
                     "Tag": 336
                 }
@@ -834,25 +317,7 @@
         },
         {
             "SubField": {
-                "Code": "b",
-                "Parent": {
-                    "Tag": 336
-                }
-            },
-            "Obligation": "M"
-        },
-        {
-            "SubField": {
-                "Code": "2",
-                "Parent": {
-                    "Tag": 336
-                }
-            },
-            "Obligation": "M"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "ab2",
                 "Parent": {
                     "Tag": 338
                 }
@@ -861,41 +326,13 @@
         },
         {
             "SubField": {
-                "Code": "b",
-                "Parent": {
-                    "Tag": 338
-                }
-            },
-            "Obligation": "M"
-        },
-        {
-            "SubField": {
-                "Code": "2",
-                "Parent": {
-                    "Tag": 338
-                }
-            },
-            "Obligation": "M"
-        },
-        {
-            "SubField": {
-                "Code": "a",
+                "Code": "av",
                 "Parent": {
                     "Tag": 490,
                     "Indicator1": "01"
                 }
             },
             "Obligation": "MA"
-        },
-        {
-            "SubField": {
-                "Code": "v",
-                "Parent": {
-                    "Tag": 490,
-                    "Indicator1": "01"
-                }
-            },
-            "Obligation": "M"
         },
         {
             "DataField": {
@@ -905,18 +342,7 @@
             "Conditions": [
                 {
                     "SubField": {
-                        "Code": "2",
-                        "Parent": {
-                            "Tag": 655,
-                            "Indicator1": "#0",
-                            "Indicator2": "7"
-                        }
-                    },
-                    "Obligation": "M"
-                },
-                {
-                    "SubField": {
-                        "Code": "a",
+                        "Code": "a2",
                         "Parent": {
                             "Tag": 655,
                             "Indicator1": "#0",
@@ -957,29 +383,7 @@
             "Conditions": [
                 {
                     "SubField": {
-                        "Code": "a",
-                        "Parent": {
-                            "Tag": 264,
-                            "Indicator1": "#23",
-                            "Indicator2": "1"
-                        }
-                    },
-                    "Obligation": "M"
-                },
-                {
-                    "SubField": {
-                        "Code": "b",
-                        "Parent": {
-                            "Tag": 264,
-                            "Indicator1": "#23",
-                            "Indicator2": "1"
-                        }
-                    },
-                    "Obligation": "M"
-                },
-                {
-                    "SubField": {
-                        "Code": "c",
+                        "Code": "abc",
                         "Parent": {
                             "Tag": 264,
                             "Indicator1": "#23",
