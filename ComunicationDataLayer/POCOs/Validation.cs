@@ -179,11 +179,11 @@ namespace ComunicationDataLayer.POCOs
         /// <summary>
         /// [optional] First identificator
         /// </summary>
-        public string? Identificator1;
+        public string? Indicator1;
         /// <summary>
         /// [optional] Second identificator
         /// </summary>
-        public string? Identificator2;
+        public string? Indicator2;
     }
 
     /// <summary>

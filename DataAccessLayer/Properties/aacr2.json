@@ -55,8 +55,8 @@
                 "PatternErrorMessage": "Pole musí být ve formátu ISBN - 10/13",
                 "Parent": {
                     "Tag": 20,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -66,8 +66,8 @@
                 "Code": "q",
                 "Parent": {
                     "Tag": 20,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -77,8 +77,8 @@
                 "Code": "z",
                 "Parent": {
                     "Tag": 20,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -88,8 +88,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 40,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "M"
@@ -101,8 +101,8 @@
                 "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
                 "Parent": {
                     "Tag": 40,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "M"
@@ -112,8 +112,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 40,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -123,8 +123,8 @@
                 "Code": "d",
                 "Parent": {
                     "Tag": 40,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -136,8 +136,8 @@
                 "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
                 "Parent": {
                     "Tag": 41,
-                    "Identificator1": "#01",
-                    "Identificator2": "#7"
+                    "Indicator1": "#01",
+                    "Indicator2": "#7"
                 }
             },
             "Obligation": "MA"
@@ -149,8 +149,8 @@
                 "PatternErrorMessage": "Pole musí být kód ze seznamu MARC kódů pro jazyky",
                 "Parent": {
                     "Tag": 44,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -158,8 +158,8 @@
         {
             "DataField": {
                 "Tag": 72,
-                "Identificator1": " ",
-                "Identificator2": "7"
+                "Indicator1": " ",
+                "Indicator2": "7"
             },
             "Obligation": "M",
             "Conditions": [
@@ -168,8 +168,8 @@
                         "Code": "a",
                         "Parent": {
                             "Tag": 72,
-                            "Identificator1": " ",
-                            "Identificator2": "7"
+                            "Indicator1": " ",
+                            "Indicator2": "7"
                         }
                     },
                     "Obligation": "M"
@@ -179,8 +179,8 @@
                         "Code": "x",
                         "Parent": {
                             "Tag": 72,
-                            "Identificator1": " ",
-                            "Identificator2": "7"
+                            "Indicator1": " ",
+                            "Indicator2": "7"
                         }
                     },
                     "Obligation": "M"
@@ -190,8 +190,8 @@
                         "Code": "2",
                         "Parent": {
                             "Tag": 72,
-                            "Identificator1": " ",
-                            "Identificator2": "7"
+                            "Indicator1": " ",
+                            "Indicator2": "7"
                         }
                     },
                     "Obligation": "M"
@@ -201,8 +201,8 @@
                 {
                     "DataField": {
                         "Tag": 80,
-                        "Identificator1": "#01",
-                        "Identificator2": " "
+                        "Indicator1": "#01",
+                        "Indicator2": " "
                     },
                     "Obligation": "M",
                     "Conditions": [
@@ -211,8 +211,8 @@
                                 "Code": "a",
                                 "Parent": {
                                     "Tag": 80,
-                                    "Identificator1": "#01",
-                                    "Identificator2": " "
+                                    "Indicator1": "#01",
+                                    "Indicator2": " "
                                 }
                             },
                             "Obligation": "M"
@@ -222,8 +222,8 @@
                                 "Code": "2",
                                 "Parent": {
                                     "Tag": 80,
-                                    "Identificator1": "#01",
-                                    "Identificator2": " "
+                                    "Indicator1": "#01",
+                                    "Indicator2": " "
                                 }
                             },
                             "Obligation": "M"
@@ -237,8 +237,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 100,
-                    "Identificator1": "013",
-                    "Identificator2": " "
+                    "Indicator1": "013",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -248,8 +248,8 @@
                 "Code": "b",
                 "Parent": {
                     "Tag": 100,
-                    "Identificator1": "013",
-                    "Identificator2": " "
+                    "Indicator1": "013",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -259,8 +259,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 100,
-                    "Identificator1": "013",
-                    "Identificator2": " "
+                    "Indicator1": "013",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -270,8 +270,8 @@
                 "Code": "d",
                 "Parent": {
                     "Tag": 100,
-                    "Identificator1": "013",
-                    "Identificator2": " "
+                    "Indicator1": "013",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -281,8 +281,8 @@
                 "Code": "q",
                 "Parent": {
                     "Tag": 100,
-                    "Identificator1": "013",
-                    "Identificator2": " "
+                    "Indicator1": "013",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -292,8 +292,8 @@
                 "Code": "7",
                 "Parent": {
                     "Tag": 100,
-                    "Identificator1": "013",
-                    "Identificator2": " "
+                    "Indicator1": "013",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -303,8 +303,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 700,
-                    "Identificator1": "013",
-                    "Identificator2": "#2"
+                    "Indicator1": "013",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -314,8 +314,8 @@
                 "Code": "b",
                 "Parent": {
                     "Tag": 700,
-                    "Identificator1": "013",
-                    "Identificator2": "#2"
+                    "Indicator1": "013",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -325,8 +325,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 700,
-                    "Identificator1": "013",
-                    "Identificator2": "#2"
+                    "Indicator1": "013",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -336,8 +336,8 @@
                 "Code": "d",
                 "Parent": {
                     "Tag": 700,
-                    "Identificator1": "013",
-                    "Identificator2": "#2"
+                    "Indicator1": "013",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -347,8 +347,8 @@
                 "Code": "q",
                 "Parent": {
                     "Tag": 700,
-                    "Identificator1": "013",
-                    "Identificator2": "#2"
+                    "Indicator1": "013",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -358,8 +358,8 @@
                 "Code": "7",
                 "Parent": {
                     "Tag": 700,
-                    "Identificator1": "013",
-                    "Identificator2": "#2"
+                    "Indicator1": "013",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -369,8 +369,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 110,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -380,8 +380,8 @@
                 "Code": "b",
                 "Parent": {
                     "Tag": 110,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -391,8 +391,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 110,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -402,8 +402,8 @@
                 "Code": "d",
                 "Parent": {
                     "Tag": 110,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -413,8 +413,8 @@
                 "Code": "g",
                 "Parent": {
                     "Tag": 110,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -424,8 +424,8 @@
                 "Code": "n",
                 "Parent": {
                     "Tag": 110,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -435,8 +435,8 @@
                 "Code": "7",
                 "Parent": {
                     "Tag": 110,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -446,8 +446,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 710,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -457,8 +457,8 @@
                 "Code": "b",
                 "Parent": {
                     "Tag": 710,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -468,8 +468,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 710,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -479,8 +479,8 @@
                 "Code": "d",
                 "Parent": {
                     "Tag": 710,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -490,8 +490,8 @@
                 "Code": "g",
                 "Parent": {
                     "Tag": 710,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -501,8 +501,8 @@
                 "Code": "n",
                 "Parent": {
                     "Tag": 710,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -512,8 +512,8 @@
                 "Code": "7",
                 "Parent": {
                     "Tag": 710,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -523,8 +523,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -534,8 +534,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -545,8 +545,8 @@
                 "Code": "d",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -556,8 +556,8 @@
                 "Code": "e",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -567,8 +567,8 @@
                 "Code": "g",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -578,8 +578,8 @@
                 "Code": "n",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -589,8 +589,8 @@
                 "Code": "q",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -600,8 +600,8 @@
                 "Code": "7",
                 "Parent": {
                     "Tag": 111,
-                    "Identificator1": "012",
-                    "Identificator2": " "
+                    "Indicator1": "012",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -611,8 +611,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -622,8 +622,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -633,8 +633,8 @@
                 "Code": "d",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -644,8 +644,8 @@
                 "Code": "e",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -655,8 +655,8 @@
                 "Code": "g",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -666,8 +666,8 @@
                 "Code": "n",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -677,8 +677,8 @@
                 "Code": "q",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -688,8 +688,8 @@
                 "Code": "7",
                 "Parent": {
                     "Tag": 711,
-                    "Identificator1": "012",
-                    "Identificator2": "#2"
+                    "Indicator1": "012",
+                    "Indicator2": "#2"
                 }
             },
             "Obligation": "MA"
@@ -699,8 +699,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 245,
-                    "Identificator1": "01",
-                    "Identificator2": "123456789"
+                    "Indicator1": "01",
+                    "Indicator2": "123456789"
                 }
             },
             "Obligation": "M"
@@ -710,8 +710,8 @@
                 "Code": "b",
                 "Parent": {
                     "Tag": 245,
-                    "Identificator1": "01",
-                    "Identificator2": "123456789"
+                    "Indicator1": "01",
+                    "Indicator2": "123456789"
                 }
             },
             "Obligation": "MA"
@@ -721,8 +721,8 @@
                 "Code": "c",
                 "Parent": {
                     "Tag": 245,
-                    "Identificator1": "01",
-                    "Identificator2": "123456789"
+                    "Indicator1": "01",
+                    "Indicator2": "123456789"
                 }
             },
             "Obligation": "MA"
@@ -732,8 +732,8 @@
                 "Code": "n",
                 "Parent": {
                     "Tag": 245,
-                    "Identificator1": "01",
-                    "Identificator2": "123456789"
+                    "Indicator1": "01",
+                    "Indicator2": "123456789"
                 }
             },
             "Obligation": "MA"
@@ -743,8 +743,8 @@
                 "Code": "p",
                 "Parent": {
                     "Tag": 245,
-                    "Identificator1": "01",
-                    "Identificator2": "123456789"
+                    "Indicator1": "01",
+                    "Indicator2": "123456789"
                 }
             },
             "Obligation": "MA"
@@ -754,8 +754,8 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 250,
-                    "Identificator1": " ",
-                    "Identificator2": " "
+                    "Indicator1": " ",
+                    "Indicator2": " "
                 }
             },
             "Obligation": "MA"
@@ -771,8 +771,8 @@
                         "Code": "a",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "1"
+                            "Indicator1": "#23",
+                            "Indicator2": "1"
                         }
                     },
                     "Obligation": "M"
@@ -782,8 +782,8 @@
                         "Code": "b",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "1"
+                            "Indicator1": "#23",
+                            "Indicator2": "1"
                         }
                     },
                     "Obligation": "M"
@@ -793,8 +793,8 @@
                         "Code": "c",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "1"
+                            "Indicator1": "#23",
+                            "Indicator2": "1"
                         }
                     },
                     "Obligation": "M"
@@ -806,8 +806,8 @@
                         "Code": "c",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "0"
+                            "Indicator1": "#23",
+                            "Indicator2": "0"
                         }
                     },
                     "Obligation": "M"
@@ -882,7 +882,7 @@
                 "Code": "a",
                 "Parent": {
                     "Tag": 490,
-                    "Identificator1": "01"
+                    "Indicator1": "01"
                 }
             },
             "Obligation": "MA"
@@ -892,7 +892,7 @@
                 "Code": "v",
                 "Parent": {
                     "Tag": 490,
-                    "Identificator1": "01"
+                    "Indicator1": "01"
                 }
             },
             "Obligation": "M"
@@ -908,8 +908,8 @@
                         "Code": "2",
                         "Parent": {
                             "Tag": 655,
-                            "Identificator1": "#0",
-                            "Identificator2": "7"
+                            "Indicator1": "#0",
+                            "Indicator2": "7"
                         }
                     },
                     "Obligation": "M"
@@ -919,8 +919,8 @@
                         "Code": "a",
                         "Parent": {
                             "Tag": 655,
-                            "Identificator1": "#0",
-                            "Identificator2": "7"
+                            "Indicator1": "#0",
+                            "Indicator2": "7"
                         }
                     },
                     "Obligation": "M"
@@ -932,8 +932,8 @@
                         "Code": "a",
                         "Parent": {
                             "Tag": 655,
-                            "Identificator1": "#0",
-                            "Identificator2": "4"
+                            "Indicator1": "#0",
+                            "Indicator2": "4"
                         }
                     },
                     "Obligation": "M"
@@ -960,8 +960,8 @@
                         "Code": "a",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "1"
+                            "Indicator1": "#23",
+                            "Indicator2": "1"
                         }
                     },
                     "Obligation": "M"
@@ -971,8 +971,8 @@
                         "Code": "b",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "1"
+                            "Indicator1": "#23",
+                            "Indicator2": "1"
                         }
                     },
                     "Obligation": "M"
@@ -982,8 +982,8 @@
                         "Code": "c",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "1"
+                            "Indicator1": "#23",
+                            "Indicator2": "1"
                         }
                     },
                     "Obligation": "M"
@@ -995,8 +995,8 @@
                         "Code": "c",
                         "Parent": {
                             "Tag": 264,
-                            "Identificator1": "#23",
-                            "Identificator2": "0"
+                            "Indicator1": "#23",
+                            "Indicator2": "0"
                         }
                     },
                     "Obligation": "M"

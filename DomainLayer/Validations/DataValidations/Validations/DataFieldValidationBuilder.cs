@@ -17,11 +17,11 @@ namespace DomainLayer.Validations.DataValidations.Validations
             _dataFieldValidation = rules as DataFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
 
             _fields = Record.GetDataFields(_dataFieldValidation.DataField.Tag.ToString(), 
-                                        _dataFieldValidation.DataField.Identificator1, 
-                                        _dataFieldValidation.DataField.Identificator2);
+                                        _dataFieldValidation.DataField.Indicator1, 
+                                        _dataFieldValidation.DataField.Indicator2);
         }
         public override string GetSourceFieldName() =>
-            $"DataField Tag: {_dataFieldValidation.DataField.Tag} ind1: {_dataFieldValidation.DataField.Identificator1} ind2: {_dataFieldValidation.DataField.Identificator2}";
+            $"DataField Tag: {_dataFieldValidation.DataField.Tag} ind1: {_dataFieldValidation.DataField.Indicator1} ind2: {_dataFieldValidation.DataField.Indicator2}";
 
         public override IDataValidationBuilder ValidateObligation()
         {

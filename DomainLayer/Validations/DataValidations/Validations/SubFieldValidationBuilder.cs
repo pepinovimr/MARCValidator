@@ -17,12 +17,12 @@ namespace DomainLayer.Validations.DataValidations.Validations
             _subFieldValidation = rules as SubFieldValidation ?? throw new NullReferenceException("Validation base cannot be null");
 
             _fields = _fields = Record.GetDataFields(_subFieldValidation.SubField.Parent.Tag.ToString(),
-                                        _subFieldValidation.SubField.Parent.Identificator1,
-                                        _subFieldValidation.SubField.Parent.Identificator2)?
+                                        _subFieldValidation.SubField.Parent.Indicator1,
+                                        _subFieldValidation.SubField.Parent.Indicator2)?
                                         .Select(x => x.GetSubfield(_subFieldValidation.SubField.Code[0])).ToList() ?? [];
         }
         public override string GetSourceFieldName() =>
-            $"SubField Code: {_subFieldValidation.SubField.Code} Parent: [DataField Tag: {_subFieldValidation.SubField.Parent.Tag} ind1: {_subFieldValidation.SubField.Parent.Identificator1} ind2: {_subFieldValidation.SubField.Parent.Identificator2}]";
+            $"SubField Code: {_subFieldValidation.SubField.Code} Parent: [DataField Tag: {_subFieldValidation.SubField.Parent.Tag} ind1: {_subFieldValidation.SubField.Parent.Indicator1} ind2: {_subFieldValidation.SubField.Parent.Indicator2}]";
 
         public override IDataValidationBuilder ValidateObligation()
         {
