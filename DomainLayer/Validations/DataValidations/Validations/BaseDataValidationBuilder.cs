@@ -101,7 +101,7 @@ namespace DomainLayer.Validations.DataValidations.Validations
         }
 
         protected Result? CountValidation(int numberOfFields) =>
-            _validationBase.MaxCount is null || numberOfFields < _validationBase.MaxCount
+            _validationBase.MaxCount is null || numberOfFields <= _validationBase.MaxCount
             ? null
             : new Result(Type: Severity.Error, Error: ValidationType.MaxCountExceeded,
                     DefaultOutput: new ValidationOutput(GetSourceFieldName(), _validationBase.MaxCount.ToString() ?? "", numberOfFields.ToString()));
