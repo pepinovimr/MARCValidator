@@ -1,1 +1,2 @@
-Tool for validating MARC files.
+# MARC Validator
+Tool for validating MARC records.
