@@ -169,7 +169,7 @@
     <value>Žádná</value>
   </data>
   <data name="ObligatedFieldNotExists" xml:space="preserve">
-    <value>Povinné pole neexistuje</value>
+    <value>Pole neexistuje</value>
   </data>
   <data name="OutputPath" xml:space="preserve">
     <value>Cesta k souboru do kterého bude zapsán výstup.</value>
